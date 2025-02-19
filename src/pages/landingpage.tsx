@@ -152,7 +152,7 @@ const LandingPage = () => {
               <img src={mainImage4()} alt="Autumn Pearl Handbag" class="main-image" />
             </div>
             <h3>Focused Bowling Handbag</h3>
-            <p class="price">$67,900.00</p>
+            <p class="price">192.000 IDR</p>
             <div class="color-options" onMouseLeave={() => setMainImage4(tas4groupblack)}>
               <span class="color black" onMouseOver={() => setMainImage4(tas4groupblack)}></span>
               <span class="color brown" onMouseOver={() => setMainImage4(tas4groupbrown)}></span>

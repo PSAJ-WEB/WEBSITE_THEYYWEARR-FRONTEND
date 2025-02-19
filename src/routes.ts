@@ -8,6 +8,7 @@ import Dashboard from './pages/dashboard';
 import BlogPage from './pages/blogpage';
 import BlogPage5Fashion from './pages/BlogPageMore';
 import VerificationPage from './pages/verify';
+import ProductPage from './pages/productpage';
 
 export const routes: RouteDefinition[] = [
   {
@@ -21,6 +22,10 @@ export const routes: RouteDefinition[] = [
   {
     path: '/blogpage',
     component: BlogPage,
+  },
+  {
+    path: '/products',
+    component: ProductPage,
   },
   {
     path: '/blogpage/readmore5fahion',

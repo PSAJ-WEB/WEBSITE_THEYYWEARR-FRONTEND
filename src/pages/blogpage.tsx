@@ -60,6 +60,10 @@ const BlogPage = () => {
                     <span>Wear Confidence, Own the Moment</span>
                     <span>Wear Confidence, Own the Moment</span>
                     <span>Wear Confidence, Own the Moment</span>
+                    <span>Wear Confidence, Own the Moment</span>
+                    <span>Wear Confidence, Own the Moment</span>
+                    <span>Wear Confidence, Own the Moment</span>
+                    <span>Wear Confidence, Own the Moment</span>
                 </div>
             </section>
 
