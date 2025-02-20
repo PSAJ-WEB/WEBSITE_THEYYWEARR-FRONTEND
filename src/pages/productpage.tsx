@@ -3,30 +3,52 @@ import { useNavigate } from "@solidjs/router";
 import logo from '../img/logo.png';
 import logowhite from '../img/logowhite.png';
 import translate from '../img/Translate.svg';
-import trendy from '../img/Infinity.svg';
-import totebag from '../img/Tote.svg';
-import truck from '../img/Truck.svg';
-import returns from '../img/ArrowsClockwise.svg'
-import line from '../img/Union.png';
-import styleinmotion from '../img/styleinmotion.png';
-import fashiontips from '../img/fashiontips.png';
-import mixnmatch from '../img/mixnmatch.png';
-import behindthedesign from '../img/behindthedesign.png';
+import tas1groupred from '../img/1) Litchi Pattern Pillow Handbag/1 LPPH RED (Cover).svg';
+import tas1groupblack from '../img/1) Litchi Pattern Pillow Handbag/2 LPPH BLACK.svg';
+import tas1groupmint from '../img/1) Litchi Pattern Pillow Handbag/3 LPPH MINT.svg';
+import tas1grouppink from '../img/1) Litchi Pattern Pillow Handbag/4 LPPH PINK.svg';
+import tas2groupblackgrey from '../img/2 ) Retro Small Square Handbag/2 RSSH CHARCOAL.svg';
+import tas2groupbrown from '../img/2 ) Retro Small Square Handbag/1 RSSH BROWN (Cover).svg';
+import tas2groupijo from '../img/2 ) Retro Small Square Handbag/3 RSSH MATCHA.svg';
+import tas2groupbeige from '../img/2 ) Retro Small Square Handbag/4 RSSH CREAM.svg';
+import tas3groupa from '../img/3) Autumn Pearl Handbag/1 APH CREAM (Cover).svg';
+import tas3groupb from '../img/3) Autumn Pearl Handbag/2 APH BLACK.svg';
+import tas3groupc from '../img/3) Autumn Pearl Handbag/3 APH GREY.svg';
+import tas3groupd from '../img/3) Autumn Pearl Handbag/4 APH PINK.svg';
+import tas4groupblack from '../img/4) Frosted Bowling Handbag/1 FBH BLACK (Cover).svg'
+import tas4groupbrown from '../img/4) Frosted Bowling Handbag/2 FBH BROWN.svg'
+import tas4groupgrey from '../img/4) Frosted Bowling Handbag/3 FBH GREY.svg'
+import tas4grouporange from '../img/4) Frosted Bowling Handbag/4 FBH  BUTTERSCOTCH.svg'
+import tas5groupblack from '../img/5) Versatile Shoulder Bag/2 VSB BLACK.svg'
+import tas5groupbrown from '../img/5) Versatile Shoulder Bag/1 VSB DESERT (Cover).svg'
+import tas5grouppink from '../img/5) Versatile Shoulder Bag/3 VSB OAT.svg'
+import tas5groupbeige from '../img/5) Versatile Shoulder Bag/4 VSB LEMONADE.svg'
+import tas6groupblack from '../img/6) Rhombus Shoulder Bag/2 RSB BLACK.svg'
+import tas6groupnavy from '../img/6) Rhombus Shoulder Bag/1 RSB BOLD DENIM (Cover).svg'
+import tas6groupdenim from '../img/6) Rhombus Shoulder Bag/3 RSB LIGHT DENIM.svg'
+import tas7groupblack from '../img/7) Diamond Chain Shoulder Bag/1 DCSB BLACK (Cover).svg'
+import tas7groupsalmon from '../img/7) Diamond Chain Shoulder Bag/2 DCSB SALMON.svg'
+import tas7groupseafoam from '../img/7) Diamond Chain Shoulder Bag/3 DCSB SEAFOAM.svg'
+import tas7groupbone from '../img/7) Diamond Chain Shoulder Bag/4 DCSB BONE.svg'
+import tas8grouplightdenim from '../img/8) American Shoulder Bag/1 ASB LIGHT DENIM (Cover).svg'
+import tas8groupashgrey from '../img/8) American Shoulder Bag/2 ASB GREY.svg'
+import tas8groupbrown from '../img/8) American Shoulder Bag/3 ASB BROWN.svg'
+import tas8grouplightgrey from '../img/8) American Shoulder Bag/4 ASB LIGHT GREY.svg'
 import befooter from '../img/befooter.png';
 import cartIcon from '../img/Tote.svg';
 import accountIcon from '../img/UserCircle.svg'
-import tas1 from '../img/tas1.png';
-import tas2 from '../img/tas2.png';
-import tas3 from '../img/tas3.png';
-import tas4 from '../img/tas4.png';
-import tas5 from '../img/tas5.png';
-import tas6 from '../img/tas6.png';
-import tas7 from '../img/tas7.png';
-import tas8 from '../img/tas8.png';
 import './productpage.css';
 
 const ProductPage = () => {
     const navigate = useNavigate();
+    const [mainImage1, setMainImage1] = createSignal(tas1groupred);
+    const [mainImage2, setMainImage2] = createSignal(tas2groupbrown);
+    const [mainImage3, setMainImage3] = createSignal(tas3groupa);
+    const [mainImage4, setMainImage4] = createSignal(tas4groupblack);
+    const [mainImage5, setMainImage5] = createSignal(tas5groupbrown);
+    const [mainImage6, setMainImage6] = createSignal(tas6groupnavy);
+    const [mainImage7, setMainImage7] = createSignal(tas7groupblack);
+    const [mainImage8, setMainImage8] = createSignal(tas8grouplightdenim);
 
     // Fungsi untuk navigasi ke halaman Cart
     const goToCart = () => {
@@ -81,231 +103,146 @@ const ProductPage = () => {
             </section>
 
             {/* Fresh Drops Section */}
-            <section class="fresh-drops">
+            <section class="product">
                 <div class="section-header">
                     <h2>Fresh Drops for You</h2>
-                    <a href="/view-all" class="view-all">View More</a>
+                    <div class="search-container">
+                        <input type="text" class="search-box" placeholder="Search..." />
+                        <button class="search-button">Search</button>
+                    </div>
                 </div>
-                <div class="products-grid">
+
+                <div class="products-grid2">
                     {/* Row 1 */}
                     <div class="product-card">
-                        <img src={tas1} alt="Lady Pattern Pillow Handbag" />
+                        <div class="product-image" style="background-color: rgba(242, 242, 242, 1); padding: 30px;">
+                            <img src={mainImage1()} alt="Litchi Pattern Pillow Handbag" class="main-image" />
+                        </div>
                         <h3>Lady Pattern Pillow Handbag</h3>
-                        <p class="price">$89,500.00</p>
-                        <div class="color-options">
-                            <span class="color black"></span>
-                            <span class="color red"></span>
-                            <span class="color brown"></span>
-                            <span class="color pink"></span>
+                        <p class="price">285.300 IDR</p>
+                        <div class="color-options" onMouseLeave={() => setMainImage1(tas1groupblack)}>
+                            <span class="color black" onMouseOver={() => setMainImage1(tas1groupblack)}></span>
+                            <span class="color red" onMouseOver={() => setMainImage1(tas1groupred)}></span>
+                            <span class="color mint" onMouseOver={() => setMainImage1(tas1groupmint)}></span>
+                            <span class="color pink" onMouseOver={() => setMainImage1(tas1grouppink)}></span>
                         </div>
                     </div>
                     <div class="product-card">
-                        <img src={tas2} alt="Retro Small Square Handbag" />
+                        <div class="product-image" style="background-color: rgba(242, 242, 242, 1); padding: 30px;">
+                            <img src={mainImage2()} alt="Litchi Pattern Pillow Handbag" class="main-image" />
+                        </div>
                         <h3>Retro Small Square Handbag</h3>
-                        <p class="price">$49,500.00</p>
-                        <div class="color-options">
-                            <span class="color black"></span>
-                            <span class="color brown"></span>
-                            <span class="color beige"></span>
-                            <span class="color gold"></span>
+                        <p class="price">174.000 IDR</p>
+                        <div class="color-options" onMouseLeave={() => setMainImage2(tas2groupbrown)}>
+                            <span class="color black" onMouseOver={() => setMainImage2(tas2groupblackgrey)}></span>
+                            <span class="color brown" onMouseOver={() => setMainImage2(tas2groupbrown)}></span>
+                            <span class="color ijo" onMouseOver={() => setMainImage2(tas2groupijo)}></span>
+                            <span class="color beige" onMouseOver={() => setMainImage2(tas2groupbeige)}></span>
                         </div>
                     </div>
                     <div class="product-card">
-                        <img src={tas3} alt="Autumn Pearl Handbag" />
+                        <div class="product-image" style="background-color: rgba(242, 242, 242, 1); padding: 30px;">
+                            <img src={mainImage3()} alt="Litchi Pattern Pillow Handbag" class="main-image" />
+                        </div>
                         <h3>Autumn Pearl Handbag</h3>
-                        <p class="price">$75,000.00</p>
-                        <div class="color-options">
-                            <span class="color beige"></span>
-                            <span class="color orange"></span>
-                            <span class="color brown"></span>
-                            <span class="color cream"></span>
+                        <p class="price">250.000 IDR</p>
+                        <div class="color-options" onMouseLeave={() => setMainImage3(tas3groupa)}>
+                            <span class="color gradient1" onMouseOver={() => setMainImage3(tas3groupb)}></span>
+                            <span class="color gradient2" onMouseOver={() => setMainImage3(tas3groupc)}></span>
+                            <span class="color gradient3" onMouseOver={() => setMainImage3(tas3groupd)}></span>
+                            <span class="color gradient4" onMouseOver={() => setMainImage3(tas3groupa)}></span>
                         </div>
                     </div>
                     <div class="product-card">
-                        <img src={tas4} alt="Focused Bowling Handbag" />
-                        <h3>Focused Bowling Handbag</h3>
-                        <p class="price">$67,900.00</p>
-                        <div class="color-options">
-                            <span class="color black"></span>
-                            <span class="color brown"></span>
-                            <span class="color red"></span>
+                        <div class="product-image" style="background-color: rgba(242, 242, 242, 1); padding: 30px;">
+                            <img src={mainImage4()} alt="Litchi Pattern Pillow Handbag" class="main-image" />
+                        </div>
+                        <h3>Frosted Bowling Handbag</h3>
+                        <p class="price">192.000 IDR</p>
+                        <div class="color-options" onMouseLeave={() => setMainImage4(tas4groupblack)}>
+                            <span class="color black" onMouseOver={() => setMainImage4(tas4groupblack)}></span>
+                            <span class="color brown" onMouseOver={() => setMainImage4(tas4groupbrown)}></span>
+                            <span class="color grey" onMouseOver={() => setMainImage4(tas4groupgrey)}></span>
+                            <span class="color orange" onMouseOver={() => setMainImage4(tas4grouporange)}></span>
                         </div>
                     </div>
 
                     {/* Row 2 */}
                     <div class="product-card">
-                        <img src={tas5} alt="Versatile Shoulder Bag" />
+                        <div class="product-image" style="background-color: rgba(242, 242, 242, 1); padding: 30px;">
+                            <img src={mainImage5()} alt="Litchi Pattern Pillow Handbag" class="main-image" />
+                        </div>
                         <h3>Versatile Shoulder Bag</h3>
-                        <p class="price">$21,000.00</p>
-                        <div class="color-options">
-                            <span class="color brown"></span>
-                            <span class="color beige"></span>
-                            <span class="color black"></span>
-                            <span class="color cream"></span>
+                        <p class="price">221.000 IDR</p>
+                        <div class="color-options" onMouseLeave={() => setMainImage5(tas5groupblack)}>
+                            <span class="color black" onMouseOver={() => setMainImage5(tas5groupblack)}></span>
+                            <span class="color brownlight" onMouseOver={() => setMainImage5(tas5groupbrown)}></span>
+                            <span class="color pinkmuda" onMouseOver={() => setMainImage5(tas5grouppink)}></span>
+                            <span class="color beige2" onMouseOver={() => setMainImage4(tas5groupbeige)}></span>
                         </div>
                     </div>
                     <div class="product-card">
-                        <img src={tas6} alt="Shamrock Shoulder Bag" />
-                        <h3>Shamrock Shoulder Bag</h3>
-                        <p class="price">$45,000.00</p>
-                        <div class="color-options">
-                            <span class="color navy"></span>
-                            <span class="color black"></span>
-                            <span class="color brown"></span>
-                            <span class="color beige"></span>
+                        <div class="product-image" style="background-color: rgba(242, 242, 242, 1); padding: 30px;">
+                            <img src={mainImage6()} alt="Litchi Pattern Pillow Handbag" class="main-image" />
+                        </div>
+                        <h3>Rhombus Shoulder Bag</h3>
+                        <p class="price">134.000 IDR</p>
+                        <div class="color-options" onMouseLeave={() => setMainImage6(tas6groupnavy)}>
+                            <span class="color blacky" onMouseOver={() => setMainImage6(tas6groupblack)}></span>
+                            <span class="color navy" onMouseOver={() => setMainImage6(tas6groupnavy)}></span>
+                            <span class="color denim" onMouseOver={() => setMainImage6(tas6groupdenim)}></span>
                         </div>
                     </div>
                     <div class="product-card">
-                        <img src={tas7} alt="Diamond Chain Circular Bag" />
-                        <h3>Diamond Chain Circular Bag</h3>
-                        <p class="price">$95,000.00</p>
-                        <div class="color-options">
-                            <span class="color black"></span>
-                            <span class="color brown"></span>
-                            <span class="color mint"></span>
+                        <div class="product-image" style="background-color: rgba(242, 242, 242, 1); padding: 30px;">
+                            <img src={mainImage7()} alt="Litchi Pattern Pillow Handbag" class="main-image" />
+                        </div>
+                        <h3>Diamond Chain Shoulder Bag</h3>
+                        <p class="price">⁠160.000 IDR</p>
+                        <div class="color-options" onMouseLeave={() => setMainImage7(tas7groupblack)}>
+                            <span class="color black" onMouseOver={() => setMainImage7(tas7groupblack)}></span>
+                            <span class="color pink" onMouseOver={() => setMainImage7(tas7groupsalmon)}></span>
+                            <span class="color mint" onMouseOver={() => setMainImage7(tas7groupseafoam)}></span>
+                            <span class="color beige3" onMouseOver={() => setMainImage7(tas7groupbone)}></span>
                         </div>
                     </div>
                     <div class="product-card">
-                        <img src={tas8} alt="American Shoulder Bag" />
+                        <div class="product-image" style="background-color: rgba(242, 242, 242, 1); padding: 30px;">
+                            <img src={mainImage8()} alt="Litchi Pattern Pillow Handbag" class="main-image" />
+                        </div>
                         <h3>American Shoulder Bag</h3>
-                        <p class="price">$89,900.00</p>
-                        <div class="color-options">
-                            <span class="color blue"></span>
-                            <span class="color black"></span>
-                            <span class="color beige"></span>
-                            <span class="color pink"></span>
+                        <p class="price">256.000 IDR</p>
+                        <div class="color-options" onMouseLeave={() => setMainImage8(tas8grouplightdenim)}>
+                            <span class="color domgrey" onMouseOver={() => setMainImage8(tas8groupashgrey)}></span>
+                            <span class="color brown2" onMouseOver={() => setMainImage8(tas8groupbrown)}></span>
+                            <span class="color denim2" onMouseOver={() => setMainImage8(tas8grouplightdenim)}></span>
+                            <span class="color grey2" onMouseOver={() => setMainImage8(tas8grouplightgrey)}></span>
                         </div>
                     </div>
-                </div>
-            </section>
+                    <div class="product-card">
+                        <div class="product-image" style="background-color: rgba(242, 242, 242, 1); padding: 30px;">
+                            <img src={mainImage5()} alt="Litchi Pattern Pillow Handbag" class="main-image" />
+                        </div>
+                        <h3>Versatile Shoulder Bag</h3>
+                        <p class="price">221.000 IDR</p>
+                        <div class="color-options" onMouseLeave={() => setMainImage5(tas5groupblack)}>
+                            <span class="color black" onMouseOver={() => setMainImage5(tas5groupblack)}></span>
+                            <span class="color brownlight" onMouseOver={() => setMainImage5(tas5groupbrown)}></span>
+                            <span class="color pinkmuda" onMouseOver={() => setMainImage5(tas5grouppink)}></span>
+                            <span class="color beige2" onMouseOver={() => setMainImage4(tas5groupbeige)}></span>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image" style="background-color: rgba(242, 242, 242, 1); padding: 30px;">
+                            <img src={mainImage6()} alt="Litchi Pattern Pillow Handbag" class="main-image" />
+                        </div>
+                        <h3>Rhombus Shoulder Bag</h3>
+                        <p class="price">134.000 IDR</p>
+                        <div class="color-options" onMouseLeave={() => setMainImage6(tas6groupnavy)}>
+                            <span class="color blacky" onMouseOver={() => setMainImage6(tas6groupblack)}></span>
+                            <span class="color navy" onMouseOver={() => setMainImage6(tas6groupnavy)}></span>
+                            <span class="color denim" onMouseOver={() => setMainImage6(tas6groupdenim)}></span>
 
-            {/* Categories Section */}
-            <section class="categories">
-                <div class="category-card clothes">
-                    <h2>Clothes</h2>
-                    <button class="shop-now-btn">Shop Now</button>
-                </div>
-                <div class="category-card accessories">
-                    <h2>Accessories</h2>
-                    <button class="shop-now-btn">Shop Now</button>
-                </div>
-            </section>
-            <div class="limited-offer">
-                <span>Be Bold, Be Different – Fashion is an Expression!</span>
-                <span>Be Bold, Be Different – Fashion is an Expression!</span>
-                <span>Be Bold, Be Different – Fashion is an Expression!</span>
-                <span>Be Bold, Be Different – Fashion is an Expression!</span>
-                <span>Be Bold, Be Different – Fashion is an Expression!</span>
-            </div>
-            {/* Lifestyle Banner */}
-            <section class="lifestyle-banner">
-                <div class="banner-text">
-                    <h2>Beyond Fashion, It's a Lifestyle</h2>
-                    <a href="/about-us" class="view-all">About Us</a>
-                </div>
-                <div class="features">
-                    <div class="feature">
-                        <div class="icon">
-                            <img src={trendy} alt="Trendy Icon" />
-                        </div>
-                        <h3>Trendy & Timeless</h3>
-                        <p>Stay at the edge of what's hot while maintaining timeless elegance</p>
-                    </div>
-                    <div class="feature">
-                        <div class="icon">
-                            <img src={totebag} alt="Premium Icon" />
-                        </div>
-                        <h3>Premium Quality</h3>
-                        <p>High quality materials and impeccable craftsmanship in every piece</p>
-                    </div>
-                    <div class="feature">
-                        <div class="icon">
-                            <img src={truck} alt="Shipping Icon" />
-                        </div>
-                        <h3>Express Shipping</h3>
-                        <p>Fast and reliable delivery across the world at your convenience</p>
-                    </div>
-                    <div class="feature">
-                        <div class="icon">
-                            <img src={returns} alt="Returns Icon" />
-                        </div>
-                        <h3>Easy Returns</h3>
-                        <p>Hassle-free returns within 30 days if you're not satisfied</p>
-                    </div>
-                </div>
-            </section>
-
-            {/* Style in Motion Section */}
-            <section class="style-motion">
-                <div class="section-header">
-                    <h2>Style in Motion</h2>
-                    <a href="/viewmore" class="view-all">View More</a>
-                </div>
-                <div class="motion-grid">
-                    <div class="motion-item">
-                        <img src={styleinmotion} alt="Style in Motion" />
-                        <p>Lorem ipsum dolor sit amet</p>
-                    </div>
-                    <div class="motion-item">
-                        <img src={styleinmotion} alt="Style in Motion" />
-                        <p>Lorem ipsum dolor sit amet</p>
-                    </div>
-                    <div class="motion-item">
-                        <img src={styleinmotion} alt="Style in Motion" />
-                        <p>Lorem ipsum dolor sit amet</p>
-                    </div>
-                    <div class="motion-item">
-                        <img src={styleinmotion} alt="Style in Motion" />
-                        <p>Lorem ipsum dolor sit amet</p>
-                    </div>
-                    <div class="motion-item">
-                        <img src={styleinmotion} alt="Style in Motion" />
-                        <p>Lorem ipsum dolor sit amet</p>
-                    </div>
-                    <div class="motion-item">
-                        <img src={styleinmotion} alt="Style in Motion" />
-                        <p>Lorem ipsum dolor sit amet</p>
-                    </div>
-                    <div class="motion-item">
-                        <img src={styleinmotion} alt="Style in Motion" />
-                        <p>Lorem ipsum dolor sit amet</p>
-                    </div>
-                    <div class="motion-item">
-                        <img src={styleinmotion} alt="Style in Motion" />
-                        <p>Lorem ipsum dolor sit amet</p>
-                    </div>
-                </div>
-            </section>
-
-            {/* Style Talks Section */}
-            <section class="style-talks">
-                <div class="section-header">
-                    <h2>Style Talks & Trends</h2>
-                    <a href="/blogpage" class="blog">Blog</a>
-                </div>
-                <div class="blog-posts">
-                    <div class="blog-post">
-                        <img src={fashiontips} alt="Fashion Tips" />
-                        <div class="blog-content">
-                            <h3>5 Fashion Tips to Instantly Elevate Your Look</h3>
-                            <p>Want to level up your style effortlessly? Fashion is more than just clothes—it’s about confidence, attitude, and knowing how to put the right pieces together. In this article, we’ll explore five expert-approved fashion tips that will help you transform your everyday outfits into stunning, head-turning ensembles. From understanding color coordination to choosing the right accessories, these simple yet effective tricks will make a significant difference in your personal style.</p>
-                            <a href="#" class="read-more">Read More</a>
-                        </div>
-                    </div>
-                    <div class="blog-post">
-                        <img src={mixnmatch} alt="Mix & Match" />
-                        <div class="blog-content">
-                            <h3>Mix & Match: The Art of Pairing Bags & Outfits</h3>
-                            <p>A great outfit isn’t complete without the perfect bag. But how do you choose the right one? Whether you’re going for a chic, casual, or elegant look, the way you pair your bag with your outfit can elevate your style effortlessly. This article will guide you through the essentials of bag-outfit coordination, including color harmony, texture balance, and occasion-based selections. Learn how to make a statement with the perfect mix-and-match combinations!</p>
-                            <a href="#" class="read-more">Read More</a>
-                        </div>
-                    </div>
-                    <div class="blog-post">
-                        <img src={behindthedesign} alt="Behind the Design" />
-                        <div class="blog-content">
-                            <h3>Behind the Design: The Inspiration Behind Our Collection</h3>
-                            <p>Every piece in our collection has a story. From concept to creation, our design process is driven by inspiration from global fashion trends, cultural influences, and timeless style. In this exclusive behind-the-scenes look, we’ll walk you through the journey of how our latest collection came to life—starting from mood boards, fabric selection, to the final product. Get an insider’s perspective on the creative process, and discover the passion behind every stitch and detail.</p>
-                            <a href="#" class="read-more">Read More</a>
                         </div>
                     </div>
                 </div>

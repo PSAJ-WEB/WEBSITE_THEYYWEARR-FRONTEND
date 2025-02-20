@@ -9,6 +9,7 @@ import BlogPage from './pages/blogpage';
 import BlogPage5Fashion from './pages/BlogPageMore';
 import VerificationPage from './pages/verify';
 import ProductPage from './pages/productpage';
+import ProductPage2 from './pages/ProductPage2';
 
 export const routes: RouteDefinition[] = [
   {
@@ -42,5 +43,9 @@ export const routes: RouteDefinition[] = [
   {
     path: '/verifyotp',
     component: VerificationPage,
+  },
+  {
+    path: '/ProductPage2',
+    component: ProductPage2,
   }
 ];

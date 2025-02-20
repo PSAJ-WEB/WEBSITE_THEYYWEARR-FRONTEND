@@ -45,12 +45,15 @@ const BlogPageMore: Component = () => {
       <div class={styles.heroblog5}>
         <div class={styles.heroContentblog5}>
           <div class={styles.marquee}>
-            <span>Wear Confidence, Own the Moment</span>
-            <span>Wear Confidence, Own the Moment</span>
-            <span>Wear Confidence, Own the Moment</span>
-            <span>Wear Confidence, Own the Moment</span>
-            <span>Wear Confidence, Own the Moment</span>
-            <span>Wear Confidence, Own the Moment</span>
+          <span>Wear Confidence, Own the Moment</span>
+          <span>Wear Confidence, Own the Moment</span>
+          <span>Wear Confidence, Own the Moment</span>
+          <span>Wear Confidence, Own the Moment</span>
+          <span>Wear Confidence, Own the Moment</span>
+          <span>Wear Confidence, Own the Moment</span>
+          <span>Wear Confidence, Own the Moment</span>
+          <span>Wear Confidence, Own the Moment</span>
+          <span>Wear Confidence, Own the Moment</span>
           </div>
         </div>
       </div>

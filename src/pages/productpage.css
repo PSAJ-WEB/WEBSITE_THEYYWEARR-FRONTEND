@@ -190,7 +190,7 @@ header {
 .heroproduct {
     position: relative;
     height: 840px;
-    background: url('../img/productpage.png') no-repeat center/cover;
+    background: url('../img/productpagekedua.png') no-repeat center/cover;
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -340,29 +340,67 @@ header {
 }
 
 /* Fresh Drops section */
-.fresh-drops {
+.product {
     padding: 4rem;
 }
 
 .section-header {
+    margin-bottom: 50px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: 2rem;
+    justify-content: space-between;
 }
+
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Beri jarak antara input dan button */
+}
+
+.search-box {
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    outline: none; /* Menghilangkan outline saat klik */
+    font-size: 16px;
+    width: 250px; /* Sesuaikan ukuran */
+}
+
+.search-box:focus {
+    border-color: none; /* Opsional: Ubah warna border saat fokus */
+    box-shadow: none; /* Pastikan tidak ada efek bayangan */
+}
+
+
+.search-button {
+    width: 100px;
+    padding: 8px 15px;
+    border: none;
+    background-color: #0E0E0E;
+    color: white;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #0E0E0E;
+}
+
 
 .section-header h2 {
     font-size: 1.8rem;
     font-weight: 600;
 }
 
-.products-grid {
+.products-grid2 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 0px; /* Pastikan gap 0px */
-    margin: 0;
+    row-gap: 50px; /* Jarak antar baris */
+    column-gap: 15px; /* Jarak antar kolom */
+    margin: 0 auto; /* Otomatis menengahkan jika ada width */
     padding: 0;
-  }
+    width: 100%; /* Sesuaikan lebar grid agar tidak terlalu ke kiri */
+    max-width: 100vw; /* Batasi lebar agar tetap rapi */
+}
 
 
 .product-card {
@@ -402,32 +440,6 @@ header {
     border-radius: 50%;
 }
 
-
-
-/* Categories section */
-.categories {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    padding: 0 4rem 4rem;
-}
-
-.category-card {
-    width: 600px;
-    height: 380px;
-    display: flex;
-    flex-direction: column;
-    /* Menyusun elemen dalam column */
-    align-items: center;
-    justify-content: center;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 2rem;
-    font-weight: 600;
-    background-position: center;
-    background-size: cover;
-    position: relative;
-    text-align: center;
-}
 
 /* .category-card:hover {
   transform: translateY(-5px);
@@ -823,7 +835,7 @@ footer {
 /* Responsive styles */
 @media (max-width: 1200px) {
 
-    .products-grid,
+    .products-grid2,
     .features,
     .motion-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -848,7 +860,7 @@ footer {
         padding: 3rem 2rem;
     }
 
-    .products-grid,
+    .products-grid2,
     .features,
     .motion-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -887,7 +899,7 @@ footer {
 
 @media (max-width: 576px) {
 
-    .products-grid,
+    .products-grid2,
     .features,
     .motion-grid {
         grid-template-columns: 1fr;

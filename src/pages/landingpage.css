@@ -326,26 +326,17 @@ header {
 }
 
 
-/* .product-card {
-  transition: transform 0.3s;
-} */
-
-/* .product-card:hover {
-  transform: translateY(-5px);
-} */
 .product-image:hover {
   transform: scale(1.05); /* Efek zoom ketika di-hover */
 }
 .product-image {
-  width: 255px;
-  height: 308px;
+  width: 290px;
+  height: 358px;
   background-color: rgba(242, 242, 242, 1);
   padding: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  /* Animasi untuk product-image */
 }
 
 .product-card img {
@@ -380,16 +371,28 @@ header {
   cursor: pointer;
 }
 
+.color.beige3 { background-color: #F5ECE1; }
 .color.black { background-color: #000; }
+.color.grey2 {background-color: #B8ABA3;}
+.color.denim2 { background-color: #798999;}
+.color.domgrey { background-color: #413F41; }
 .color.blackgrey { background-color: #212129; }
 .color.red { background-color: #8A191F; }
 .color.brown { background-color: #704324; }
+.color.brown2 { background-color: #8C6446; }
+.color.brownlight { background-color: #A88B63; }
+.color.beige2 { background-color: #DDD1B2; }
 .color.pink { background-color: #E6B0B6 ; }
+.color.pinkmuda { background-color: #E4BABB ; }
 .color.beige { background-color: #E5D2B2; }
 .color.ijo { background-color: #594D0F; }
 .color.orange { background-color: #CC7633; }
+.color.lightgrey { background-color: #CC7633; }
+.color.ashgrey { background-color: #CC7633; }
 .color.cream { background-color: #FFFDD0; }
-.color.navy { background-color: #1A237E; }
+.color.navy { background-color: #1F2A39; }
+.color.blacky { background-color: #222427; }
+.color.denim { background-color: #7F90A1; }
 .color.mint { background-color: #7C9AA3; }
 .color.blue { background-color: #2196F3; }
 .color.grey { background-color: rgba(100, 89, 87, 1); }
