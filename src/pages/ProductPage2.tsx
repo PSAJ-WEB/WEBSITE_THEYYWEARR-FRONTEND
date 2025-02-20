@@ -3,8 +3,9 @@ import styles from './ProductPage2.module.css';
 import { useNavigate } from "@solidjs/router";
 import logo from '../img/logo.png';
 import logowhite from '../img/logowhite.png';
+import befooter from '../img/befooter.png';
 import cartIcon from '../img/Tote.svg';
-import accountIcon from '../img/UserCircle.svg'
+import accountIcon from '../img/UserCircle.svg';
 import tas1groupred from '../img/1) Litchi Pattern Pillow Handbag/1 LPPH RED (Cover).svg';
 import tas2groupblackgrey from '../img/2 ) Retro Small Square Handbag/2 RSSH CHARCOAL.svg';
 
@@ -128,6 +129,7 @@ const ProductPage: Component = () => {
                     ))}
                 </div>
             </section>
+            <img src={befooter} alt="Banner" class="full-width-image" />
 
             {/* Footer */}
             <footer class={styles.footer}>
