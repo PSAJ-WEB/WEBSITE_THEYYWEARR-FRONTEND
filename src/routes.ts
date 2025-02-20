@@ -10,6 +10,9 @@ import BlogPage5Fashion from './pages/BlogPageMore';
 import VerificationPage from './pages/verify';
 import ProductPage from './pages/productpage';
 import ProductPage2 from './pages/ProductPage2';
+import ProductPage3 from './pages/ProductPage3';
+import Profile from './pages/Profile';
+import Profile2 from './pages/Profile2';
 
 export const routes: RouteDefinition[] = [
   {
@@ -47,5 +50,17 @@ export const routes: RouteDefinition[] = [
   {
     path: '/ProductPage2',
     component: ProductPage2,
+  },
+  {
+    path: '/ProductPage3',
+    component: ProductPage3,
+  },
+  {
+    path: '/Profile',
+    component: Profile,
+  },
+  {
+    path: '/profile2',
+    component: Profile2,
   }
 ];
