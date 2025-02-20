@@ -9,6 +9,7 @@ import BlogPage from './pages/blogpage';
 import BlogPage5Fashion from './pages/BlogPageMore';
 import VerificationPage from './pages/verify';
 import ProductPage2 from './pages/ProductPage2';
+import ProductPage3 from './pages/ProductPage3';
 
 export const routes: RouteDefinition[] = [
   {
@@ -42,5 +43,9 @@ export const routes: RouteDefinition[] = [
   {
     path: '/ProductPage2',
     component: ProductPage2,
+  },
+  {
+    path: '/ProductPage3',
+    component: ProductPage3,
   }
 ];

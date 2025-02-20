@@ -1,12 +1,18 @@
 import { Component, createSignal } from 'solid-js';
-import styles from './ProductPage2.module.css';
+import styles from './ProductPage3.module.css';
 import { useNavigate } from "@solidjs/router";
 import logo from '../img/logo.png';
 import logowhite from '../img/logowhite.png';
 import cartIcon from '../img/Tote.svg';
 import accountIcon from '../img/UserCircle.svg'
 import tas1groupred from '../img/1) Litchi Pattern Pillow Handbag/1 LPPH RED (Cover).svg';
-import tas2groupblackgrey from '../img/2 ) Retro Small Square Handbag/2 RSSH CHARCOAL.svg';
+import tas2groupbrown from '../img/2 ) Retro Small Square Handbag/1 RSSH BROWN (Cover).svg';
+import tas3groupa from '../img/3) Autumn Pearl Handbag/1 APH CREAM (Cover).svg';
+import tas4groupblack from '../img/4) Frosted Bowling Handbag/1 FBH BLACK (Cover).svg';
+import tas5groupbrown from '../img/5) Versatile Shoulder Bag/1 VSB DESERT (Cover).svg';
+import tas6groupdarkblue from '../img/6) Rhombus Shoulder Bag/1 RSB BOLD DENIM (Cover).svg';
+import tas7groupblack from '../img/7) Diamond Chain Shoulder Bag/1 DCSB BLACK (Cover).svg';
+import tas8grouplightblue from '../img/8) American Shoulder Bag/1 ASB LIGHT DENIM (Cover).svg';
 
 interface Product {
     id: number;
@@ -45,8 +51,56 @@ const ProductPage: Component = () => {
             name: 'Retro Small Square Handbag',
             price: '174.000 IDR',
             category: 'Category',
-            colors: ['#000000', '#8B4513', '#DAA520', '#F5DEB3'],
-            image: tas2groupblackgrey
+            colors: ['#000000', '#8B4513', '#DAA520'],
+            image: tas2groupbrown
+        },
+        {
+            id: 3,
+            name: 'Autumn Pearl Handbag',
+            price: '250.000 IDR',
+            category: 'Category',
+            colors: ['#000000', '#8B4513', '#DAA520', '#FFB6C1'],
+            image: tas3groupa
+        },
+        {
+            id: 4,
+            name: 'Frosted Bowling Handbag',
+            price: '192.000 IDR',
+            category: 'Category',
+            colors: ['#000000', '#8B4513', '#DAA520'],
+            image: tas4groupblack
+        },
+        {
+            id: 5,
+            name: 'Versatile Shoulder Bag',
+            price: '221.000 IDR',
+            category: 'Category',
+            colors: ['#8B4513', '#000000', '#FFB6C1', '#F5DEB3'],
+            image: tas5groupbrown
+        },
+        {
+            id: 6,
+            name: 'Rhombus Shoulder Bag',
+            price: '134.000 IDR',
+            category: 'Category',
+            colors: ['#000000', '#000080', '#4682B4'],
+            image: tas6groupdarkblue
+        },
+        {
+            id: 7,
+            name: 'Diamond Chain Shoulder Bag',
+            price: '160.000 IDR',
+            category: 'Category',
+            colors: ['#000000', '#98FB98', '#FFB6C1'],
+            image: tas7groupblack
+        },
+        {
+            id: 8,
+            name: 'American Shoulder Bag',
+            price: '256.000 IDR',
+            category: 'Category',
+            colors: ['#808080', '#8B4513', '#D2B48C', '#F5DEB3'],
+            image: tas8grouplightblue
         }
     ];
 
@@ -87,13 +141,14 @@ const ProductPage: Component = () => {
                     <span>Handpicked Styles Premium Quality Trend-Forward Fashion Elevate Your Wardrobe Today</span>
                     <span>Handpicked Styles Premium Quality Trend-Forward Fashion Elevate Your Wardrobe Today</span>
                     <span>Handpicked Styles Premium Quality Trend-Forward Fashion Elevate Your Wardrobe Today</span>
+                    <span>Handpicked Styles Premium Quality Trend-Forward Fashion Elevate Your Wardrobe Today</span>
                 </div>
             </div>
 
             {/* Products Section */}
             <section class={styles.productsSection}>
                 <div class={styles.sectionHeader}>
-                    <h2>Clothes</h2>
+                    <h2>Accessories</h2>
                     <div class={styles.searchBox}>
                         <input
                             type="text"
@@ -132,7 +187,7 @@ const ProductPage: Component = () => {
             {/* Footer */}
             <footer class={styles.footer}>
                 <div class={styles.footerContent}>
-                    <img src= {logowhite} alt="Theyy" class={styles.footerLogo} />
+                    <img src={logowhite} alt="Theyy" class={styles.footerLogo} />
                     <div class={styles.newsletter}>
                         <p>Stay updated with our latest drops & exclusive deals</p>
                         <div class={styles.subscribeForm}>
