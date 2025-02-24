@@ -107,7 +107,7 @@ const ProductPage = () => {
                 <div class="section-header">
                     <h2>Fresh Drops for You</h2>
                     <div class="search-container">
-                        <input type="text" class="search-box" placeholder="Search..." />
+                        <input type="text" class="search-box" placeholder="Type something here" />
                         <button class="search-button">Search</button>
                     </div>
                 </div>

@@ -1,10 +1,12 @@
 import { Component, createSignal } from 'solid-js';
 import styles from './Profile.module.css';
+import './Profile.module.css'
 import accountIcon from '../img/UserCircle.svg';
 import { useNavigate } from "@solidjs/router";
 import logo from '../img/logo.png';
 import logowhite from '../img/logowhite.png';
 import befooter from '../img/befooter.png';
+import translate from '../img/Translate.svg';
 import cartIcon from '../img/Tote.svg';
 
 const Profile: Component = () => {
@@ -54,7 +56,7 @@ const Profile: Component = () => {
                     </button>
                     {/* Tombol Account dengan Navigasi */}
                     <button class="dash-account-btn" onClick={goToAccount}>
-                        <img src={accountIcon} class="active" alt="Profile" />
+                        <img src={accountIcon} alt="Account" />
                     </button>
                 </div>
             </header>
@@ -139,47 +141,68 @@ const Profile: Component = () => {
             <img src={befooter} alt="Banner" class="full-width-image" />
 
             {/* Footer */}
-            <footer class={styles.footer}>
-                <div class={styles.footerContent}>
-                    <img src={logowhite} alt="Theyy" class={styles.footerLogo} />
-                    <div class={styles.newsletter}>
+            <footer>
+                <div class="footer-top">
+                    <div class="store-image">
+                        <img src={logowhite} alt="Our Store" />
+                    </div>
+                    <div class="newsletter">
                         <p>Stay updated with our latest drops & exclusive deals</p>
-                        <div class={styles.subscribeForm}>
+                        <div class="subscribe-form">
                             <input type="email" placeholder="Enter your email" />
-                            <button type="submit">Submit</button>
-                        </div>
-                    </div>
-                    <div class={styles.footerLinks}>
-                        <div class={styles.linkColumn}>
-                            <h4>Theyy Wear</h4>
-                            <a href="#">Home</a>
-                            <a href="#">Product</a>
-                            <a href="#">About Us</a>
-                            <a href="#">Blog</a>
-                        </div>
-                        <div class={styles.linkColumn}>
-                            <h4>About Us</h4>
-                            <a href="#">Company</a>
-                            <a href="#">Community</a>
-                            <a href="#">Careers</a>
-                            <a href="#">Investors</a>
-                        </div>
-                        <div class={styles.linkColumn}>
-                            <h4>Connect with Us</h4>
-                            <a href="#">TikTok</a>
-                            <a href="#">Instagram</a>
-                        </div>
-                    </div>
-                    <div class={styles.footerBottom}>
-                        <p>© 2025 Theyy Wear Inc</p>
-                        <div class={styles.legal}>
-                            <a href="#">Terms and Conditions</a>
-                            <select class={styles.language}>
-                                <option value="en">English</option>
-                            </select>
+                            <button>Submit</button>
                         </div>
                     </div>
                 </div>
+
+                <div class="footer-links">
+                    <div class="link-column">
+                        <h4>Theyy Wearr.</h4>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Product</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="#">Company</a></li>
+                            <li><a href="#">Community</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Investors</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4>Get More</h4>
+                        <ul>
+                            <li><a href="#">Upgrade Premium</a></li>
+                            <li><a href="#">Personal Plan</a></li>
+                            <li><a href="#">Business Plan</a></li>
+                            <li><a href="#">Enterprise Plan</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4>Connect With Us</h4>
+                        <ul>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Youtube</a></li>
+                            <li><a href="#">Instagram</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>@ 2025 Theyy Wearr. Inc</p>
+                    <p>Terms and privacy</p>
+                    <div class="translate-section">
+                        <img src={translate} alt="Translate Icon" />
+                        <span>English</span>
+                    </div>
+                </div>
+
             </footer>
         </div>
     );

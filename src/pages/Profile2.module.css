@@ -1,11 +1,11 @@
 .container {
-    width: 100%;
-    padding: 2rem;
+    max-width: 100vw;
 }
 
 /* Header styles */
 .header {
-    width: 100%;
+    margin-left: 40px;
+    width: 100vw;
     margin-bottom: 1rem;
     margin-top: 40px;
     background-color: #fff;
@@ -19,6 +19,8 @@
 }
 
 .tabs {
+    width: 100vw;
+    margin-left: 40px;
     display: flex;
     gap: 2rem;
     border-bottom: 1px solid #e5e5e5;
@@ -33,27 +35,30 @@
     font-weight: 500;
 }
 
+
 .activeTab {
     color: #000;
     border-bottom: 2px solid #000;
 }
 
 .addressSection {
+    margin-left: 40px;
     width: 100%;
 }
 
 .addressHeader {
     display: flex;
-    justify-content: flex-end;
+    margin-left: 1050px;
     margin-bottom: 2rem;
 }
+
 
 .addAddressButton {
     background-color: #000;
     color: #fff;
     padding: 0.75rem 1.5rem;
     border: none;
-    border-radius: 4px;
+    width: 188px;
     font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
@@ -71,9 +76,10 @@
 }
 
 .addressCard {
-    border: 1px solid #e5e5e5;
-    border-radius: 4px;
+    border: 1px solid #0E0E0E;
+    background-color: rgba(18, 18, 18, 0.06);
     padding: 1.5rem;
+    width: 1240px;
     margin-bottom: 70px;
 }
 
@@ -111,123 +117,4 @@
 
 .changeAddressButton:hover {
     color: #000;
-}
-
-/* Footer styles */
-.footer {
-    background-color: black;
-    color: white;
-    padding: 4rem 0 2rem;
-    width: 100%;
-}
-
-.footerContent {
-    width: 100%;
-    padding: 0 2rem;
-}
-
-/* Untuk konten di dalam footer tetap terbatas lebarnya dan center */
-.newsletter,
-.footerLinks,
-.footerBottom {
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.footerLogo {
-    width: 120px;
-    margin-bottom: 2rem;
-}
-
-.newsletter {
-    text-align: center;
-    margin-bottom: 4rem;
-}
-
-.subscribeForm {
-    display: flex;
-    gap: 1rem;
-    max-width: 500px;
-    margin: 1rem auto;
-}
-
-.subscribeForm input {
-    flex: 1;
-    padding: 0.8rem;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 4px;
-    color: white;
-}
-
-.subscribeForm button {
-    padding: 0.8rem 2rem;
-    background-color: white;
-    color: black;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-}
-
-.subscribeForm button:hover {
-    background-color: #f0f0f0;
-}
-
-.footerLinks {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-bottom: 4rem;
-}
-
-.linkColumn h4 {
-    margin-bottom: 1rem;
-    font-weight: 600;
-    color: white;
-}
-
-.linkColumn a {
-    display: block;
-    color: #999;
-    margin-bottom: 0.5rem;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.linkColumn a:hover {
-    color: white;
-}
-
-.footerBottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.legal {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-}
-
-.language {
-    background: transparent;
-    color: white;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-}
-
-@media (max-width: 768px) {
-    .container {
-        padding: 1rem;
-    }
-
-    .addressCard {
-        padding: 1rem;
-    }
 }

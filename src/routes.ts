@@ -56,7 +56,7 @@ export const routes: RouteDefinition[] = [
     component: ProductPage3,
   },
   {
-    path: '/Profile',
+    path: '/account',
     component: Profile,
   },
   {
