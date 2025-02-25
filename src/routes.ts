@@ -11,8 +11,8 @@ import VerificationPage from './pages/verify';
 import ProductPage from './pages/productpage';
 import ProductPage2 from './pages/ProductPage2';
 import ProductPage3 from './pages/ProductPage3';
-import Profile from './pages/Profile';
-import Profile2 from './pages/Profile2';
+import Account from './pages/account';
+import Address from './pages/address';
 
 export const routes: RouteDefinition[] = [
   {
@@ -57,10 +57,10 @@ export const routes: RouteDefinition[] = [
   },
   {
     path: '/account',
-    component: Profile,
+    component: Account,
   },
   {
-    path: '/profile2',
-    component: Profile2,
+    path: '/address',
+    component: Address,
   }
 ];

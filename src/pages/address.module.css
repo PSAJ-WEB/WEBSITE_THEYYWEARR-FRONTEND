@@ -33,6 +33,11 @@
     text-decoration: none;
     color: #666;
     font-weight: 500;
+    cursor: pointer;
+}
+
+.activeTab {
+    pointer-events: auto;
 }
 
 

@@ -1,15 +1,17 @@
 import { Component, createSignal } from 'solid-js';
-import styles from './Profile.module.css';
-import './Profile.module.css'
+import { A } from "@solidjs/router";
+import styles from './account.module.css';
+import './account.module.css';
 import accountIcon from '../img/UserCircle.svg';
 import { useNavigate } from "@solidjs/router";
 import logo from '../img/logo.png';
+import profile from '../img/UserCircle (2).svg';
 import logowhite from '../img/logowhite.png';
 import befooter from '../img/befooter.png';
 import translate from '../img/Translate.svg';
 import cartIcon from '../img/Tote.svg';
 
-const Profile: Component = () => {
+const Account: Component = () => {
     const navigate = useNavigate();
 
     // Fungsi untuk navigasi ke halaman Cart
@@ -19,7 +21,7 @@ const Profile: Component = () => {
 
     // Fungsi untuk navigasi ke halaman Account
     const goToAccount = () => {
-        navigate("/profile");
+        navigate("/account");
     };
 
 
@@ -56,7 +58,7 @@ const Profile: Component = () => {
                     </button>
                     {/* Tombol Account dengan Navigasi */}
                     <button class="dash-account-btn" onClick={goToAccount}>
-                        <img src={accountIcon} alt="Account" />
+                        <img src={profile} alt="Account" />
                     </button>
                 </div>
             </header>
@@ -67,10 +69,9 @@ const Profile: Component = () => {
 
             <div class={styles.content}>
                 <nav class={styles.tabs}>
-                    <a href="#" class={styles.activeTab}>My Profile</a>
-                    <a href="profile2" class={styles.tab}>Address</a>
+                    <a href="/account" class={styles.activeTab}>My Profile</a>
+                    <a href="/address" class={styles.tab}>Address</a>
                 </nav>
-
                 <div class={styles.profileSection}>
                     <div class={styles.avatarSection}>
                         <div class={styles.avatar}>
@@ -208,4 +209,4 @@ const Profile: Component = () => {
     );
 };
 
-export default Profile;
+export default Account;

@@ -1,6 +1,6 @@
 import { Component, createSignal } from 'solid-js';
-import styles from './Profile2.module.css';
-import './Profile2.module.css'
+import styles from './address.module.css';
+import './address.module.css'
 import accountIcon from '../img/UserCircle.svg';
 import { useNavigate } from "@solidjs/router";
 import logo from '../img/logo.png';
@@ -16,7 +16,7 @@ interface Address {
     type: string;
 }
 
-const Profile: Component = () => {
+const Address: Component = () => {
     const navigate = useNavigate();
 
     // Fungsi untuk navigasi ke halaman Cart
@@ -26,7 +26,7 @@ const Profile: Component = () => {
 
     // Fungsi untuk navigasi ke halaman Account
     const goToAccount = () => {
-        navigate("/profile");
+        navigate("/account");
     };
 
     const [addresses, setAddresses] = createSignal<Address[]>([
@@ -79,8 +79,8 @@ const Profile: Component = () => {
 
             <div class={styles.content}>
                 <nav class={styles.tabs}>
-                    <a href="account" class={styles.tab}>My Profile</a>
-                    <a href="#" class={styles.activeTab}>Address</a>
+                    <a href="/account" class={styles.tab}>My Profile</a>
+                    <a href="/address" class={styles.activeTab}>Address</a>
                 </nav>
 
                 <div class={styles.addressSection}>
@@ -182,4 +182,4 @@ const Profile: Component = () => {
     );
 };
 
-export default Profile;
+export default Address;
