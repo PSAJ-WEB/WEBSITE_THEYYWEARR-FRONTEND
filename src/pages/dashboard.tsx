@@ -14,14 +14,18 @@ import mixnmatch from '../img/mixnmatch.png';
 import behindthedesign from '../img/behindthedesign.png';
 import befooter from '../img/befooter.png';
 import cartIcon from '../img/Tote.svg';
-import accountIcon from '../img/UserCircle.svg'
-import tas1 from '../img/tas1.png';
-import tas2 from '../img/tas2.png';
-import tas3 from '../img/tas3.png';
-import tas4 from '../img/tas4.png';
+import accountIcon from '../img/UserCircle (2).svg'
 import tas5 from '../img/tas5.png';
 import tas6 from '../img/tas6.png';
 import tas7 from '../img/tas7.png';
+import cover1 from '../img/cover1.png';
+import cover2 from '../img/cover2.png';
+import cover3 from '../img/cover3.png';
+import cover4 from '../img/cover4.png';
+import video1 from '../img/1.mp4';
+import video2 from '../img/2.mp4';
+import video3 from '../img/3.mp4';
+import video4 from '../img/4.mp4';
 import tas8 from '../img/tas8.png';
 import './dashboard.css';
 import tas1groupred from '../img/1) Litchi Pattern Pillow Handbag/1 LPPH RED (Cover).svg';
@@ -46,6 +50,12 @@ const Dashboard = () => {
     const [mainImage2, setMainImage2] = createSignal(tas2groupbrown);
     const [mainImage3, setMainImage3] = createSignal(tas3groupa);
     const [mainImage4, setMainImage4] = createSignal(tas4groupblack);
+    const videoData = [
+        { src: video1, cover: cover1, title: "Exclusive Designs,  Timeless, and Effortlessly Stylish", date: "2024-03-30" },
+        { src: video2, cover: cover2, title: "Best-Selling Bags You Can’t Miss!", date: "2024-01-17" },
+        { src: video3, cover: cover3, title: "Theyy Wearr's Kebaya Kutu Baru Collection", date: "2024-01-12" },
+        { src: video4, cover: cover4, title: "Elevate Your Look with Our Signature Bags", date: "2024-01-11" }
+    ];
     const navigate = useNavigate();
 
     // Fungsi untuk navigasi ke halaman Cart
@@ -232,11 +242,16 @@ const Dashboard = () => {
             <section class="categories">
                 <div class="category-card clothes">
                     <h2>Clothes</h2>
-                    <button class="shop-now-btn">Shop Now</button>
+                    <button
+                        class="shop-now-btn"
+                        onClick={() => navigate("/clothes")}
+                    >
+                        Shop Now
+                    </button>
                 </div>
                 <div class="category-card accessories">
                     <h2>Accessories</h2>
-                    <button class="shop-now-btn">Shop Now</button>
+                    <button class="shop-now-btn" onClick={() => navigate("/accessories")}>Shop Now</button>
                 </div>
             </section>
             <div class="limited-offer">
@@ -291,38 +306,41 @@ const Dashboard = () => {
                     <a href="/viewmore" class="view-all">View More</a>
                 </div>
                 <div class="motion-grid">
-                    <div class="motion-item">
-                        <img src={styleinmotion} alt="Style in Motion" />
-                        <p>Lorem ipsum dolor sit amet</p>
-                    </div>
-                    <div class="motion-item">
-                        <img src={styleinmotion} alt="Style in Motion" />
-                        <p>Lorem ipsum dolor sit amet</p>
-                    </div>
-                    <div class="motion-item">
-                        <img src={styleinmotion} alt="Style in Motion" />
-                        <p>Lorem ipsum dolor sit amet</p>
-                    </div>
-                    <div class="motion-item">
-                        <img src={styleinmotion} alt="Style in Motion" />
-                        <p>Lorem ipsum dolor sit amet</p>
-                    </div>
-                    <div class="motion-item">
-                        <img src={styleinmotion} alt="Style in Motion" />
-                        <p>Lorem ipsum dolor sit amet</p>
-                    </div>
-                    <div class="motion-item">
-                        <img src={styleinmotion} alt="Style in Motion" />
-                        <p>Lorem ipsum dolor sit amet</p>
-                    </div>
-                    <div class="motion-item">
-                        <img src={styleinmotion} alt="Style in Motion" />
-                        <p>Lorem ipsum dolor sit amet</p>
-                    </div>
-                    <div class="motion-item">
-                        <img src={styleinmotion} alt="Style in Motion" />
-                        <p>Lorem ipsum dolor sit amet</p>
-                    </div>
+                    {videoData.map((video) => {
+                        const [isHovered, setIsHovered] = createSignal(false);
+
+                        return (
+                            <div
+                                class="motion-item"
+                                onMouseEnter={() => setIsHovered(true)}
+                                onMouseLeave={() => setIsHovered(false)}
+                            >
+                                <div class="video-container">
+                                    {isHovered() ? (
+                                        <video
+                                            src={video.src}
+                                            class="motion-video"
+                                            muted
+                                            loop
+                                            preload="metadata"
+                                            playsinline
+                                            autoplay
+                                        />
+                                    ) : (
+                                        <img
+                                            src={video.cover}
+                                            alt="Video Cover"
+                                            class="video-cover"
+                                        />
+                                    )}
+                                </div>
+                                <div class="video-info">
+                                    <p>{video.date}</p>
+                                    <h3>{video.title}</h3>
+                                </div>
+                            </div>
+                        );
+                    })}
                 </div>
             </section>
 

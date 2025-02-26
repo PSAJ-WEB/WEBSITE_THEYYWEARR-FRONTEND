@@ -36,7 +36,7 @@ import tas8groupbrown from '../img/8) American Shoulder Bag/3 ASB BROWN.svg'
 import tas8grouplightgrey from '../img/8) American Shoulder Bag/4 ASB LIGHT GREY.svg'
 import befooter from '../img/befooter.png';
 import cartIcon from '../img/Tote.svg';
-import accountIcon from '../img/UserCircle.svg'
+import accountIcon from '../img/UserCircle (2).svg'
 import './productpage.css';
 
 const ProductPage = () => {

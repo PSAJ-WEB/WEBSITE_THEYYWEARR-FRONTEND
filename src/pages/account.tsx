@@ -1,5 +1,4 @@
 import { Component, createSignal } from 'solid-js';
-import { A } from "@solidjs/router";
 import styles from './account.module.css';
 import './account.module.css';
 import accountIcon from '../img/UserCircle.svg';

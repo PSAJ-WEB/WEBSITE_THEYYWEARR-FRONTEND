@@ -529,45 +529,6 @@ header {
   padding: 4rem;
 }
 
-.motion-grid {
-  display: flex; /* Menggunakan flexbox agar bisa di-scroll horizontal */
-  gap: 1.5rem;
-  overflow-x: auto; /* Scroll horizontal jika lebih dari 4 */
-  scroll-snap-type: x mandatory; /* Smooth scrolling */
-  padding-bottom: 40px; /* Tambahkan jarak 20px antara item dan scrollbar */
-}
-
-/* Batasi jumlah item yang terlihat */
-.motion-item {
-  flex: 0 0 calc(25% - 1.5rem); /* Maksimal 4 item per baris */
-  scroll-snap-align: start;
-}
-.motion-item p {
-  font-size: 18px;
-}
-
-
-.motion-item img {
-  margin-bottom: 0.5rem;
-  aspect-ratio: 1/1.2;
-  object-fit: cover;
-}
-
-/* Custom scrollbar */
-.motion-grid::-webkit-scrollbar {
-  height: 8px; /* Bisa diubah ke 3px atau 5px */
-}
-
-.motion-grid::-webkit-scrollbar-track {
-  background: transparent;
-  border-radius: 10px;
-  margin-top: 20px; /* Tambahkan jarak 20px antara scrollbar dan atas */
-}
-
-.motion-grid::-webkit-scrollbar-thumb {
-  background: black;
-  border-radius: 10px;
-}
 
 
 /* Style Talks */

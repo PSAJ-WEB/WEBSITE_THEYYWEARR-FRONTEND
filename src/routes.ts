@@ -9,10 +9,11 @@ import BlogPage from './pages/blogpage';
 import BlogPage5Fashion from './pages/BlogPageMore';
 import VerificationPage from './pages/verify';
 import ProductPage from './pages/productpage';
-import ProductPage2 from './pages/ProductPage2';
-import ProductPage3 from './pages/ProductPage3';
 import Account from './pages/account';
 import Address from './pages/address';
+import AboutUs from './pages/aboutus';
+import Clothes from './pages/clothes';
+import Accessories from './pages/accessories';
 
 export const routes: RouteDefinition[] = [
   {
@@ -48,12 +49,12 @@ export const routes: RouteDefinition[] = [
     component: VerificationPage,
   },
   {
-    path: '/ProductPage2',
-    component: ProductPage2,
+    path: '/clothes',
+    component: Clothes,
   },
   {
-    path: '/ProductPage3',
-    component: ProductPage3,
+    path: '/accessories',
+    component: Accessories,
   },
   {
     path: '/account',
@@ -62,5 +63,9 @@ export const routes: RouteDefinition[] = [
   {
     path: '/address',
     component: Address,
+  },
+  {
+    path: '/about-us',
+    component: AboutUs,
   }
 ];

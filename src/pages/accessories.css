@@ -1,0 +1,867 @@
+@import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+* {
+    box-sizing: border-box; /* Terapkan ke semua elemen */
+  }
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'SF Pro Display';
+    overflow-x: hidden;
+    /* Prevents horizontal scrolling */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.view-all {
+    width: 137px;
+    height: 44px;
+    background-color: black;
+    color: white;
+    display: flex;
+    /* Menggunakan flexbox */
+    align-items: center;
+    /* Pusatkan teks secara vertikal */
+    justify-content: center;
+    /* Pusatkan teks secara horizontal */
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+    border: none;
+    /* Jika ini tombol */
+    cursor: pointer;
+}
+
+.blog {
+    width: 86px;
+    height: 44px;
+    background-color: black;
+    color: white;
+    display: flex;
+    /* Menggunakan flexbox */
+    align-items: center;
+    /* Pusatkan teks secara vertikal */
+    justify-content: center;
+    /* Pusatkan teks secara horizontal */
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+    border: none;
+    /* Jika ini tombol */
+    cursor: pointer;
+}
+
+
+.view-all:hover {
+    background-color: #333;
+    /* Warna sedikit lebih terang saat hover */
+}
+
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 4rem;
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    height: 50px;
+    /* Sesuaikan antara 50-80px */
+    image-rendering: crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    /* Membuat konten di tengah secara horizontal */
+}
+
+.navbar ul {
+    font-size: 16px;
+    font-weight: 400;
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    /* Menghilangkan bullet points pada list */
+    padding: 0;
+    /* Menghilangkan padding default */
+    margin: 0;
+    /* Menghilangkan margin default */
+}
+
+.navbar a {
+    font-weight: 500;
+    position: relative;
+    text-decoration: none;
+    /* Menghilangkan underline default pada link */
+    color: rgba(90, 90, 90, 1);
+    /* Warna default untuk link yang tidak aktif */
+    transition: color 0.3s ease;
+    /* Animasi perubahan warna */
+}
+
+.navbar a.active {
+    color: #000;
+    /* Warna untuk link yang aktif */
+}
+
+.navbar a.active:after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+}
+
+.navbar a:hover {
+    color: #000;
+    /* Warna saat hover */
+}
+
+
+.auth-buttons {
+    margin-right: -30px;
+    display: flex;
+    gap: 1rem;
+}
+
+.login-btn {
+    width: 106px;
+    height: 44px;
+    padding: 0.5rem 1.5rem;
+    color: #333;
+    border: 1px solid rgba(18, 18, 18, 0.2);
+    background-color: transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+.login-btn:hover {
+    background-color: #0E0E0E;
+    color: #fff;
+    border-color: #0E0E0E;
+}
+
+.signup-btn {
+    width: 106px;
+    height: 44px;
+    padding: 0.5rem 1.5rem;
+    background-color: #0E0E0E;
+    color: #fff;
+    border-radius: 0px;
+    transition: all 0.3s ease-in-out;
+}
+
+.signup-btn:hover {
+    background-color: #444;
+}
+
+
+/* Hero section */
+.heroproduct {
+    position: relative;
+    height: 840px;
+    background: url('../img/productpagekedua.png') no-repeat center/cover;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.heroproduct:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content-product {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    margin-left: 4rem;
+}
+
+.heroproduct h1 {
+    margin-top: 325px;
+    line-height: 1.2;
+    font-size: 60px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.heroproduct p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 32px;
+    margin-bottom: 2rem;
+    width: 644px;
+}
+
+.overlay-lines {
+    position: absolute;
+    left: 71%;
+    /* Center horizontally */
+    top: 13%;
+    /* Center vertically */
+    transform: translate(-50%, -50%);
+    /* Perfect centering */
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: auto;
+    /* Let it adjust based on content */
+    max-width: 80vw;
+    /* Limit width on larger screens */
+    z-index: 2;
+    /* Ensure it's above the hero background */
+}
+
+.overlay-lines img {
+    width: 198px;
+    /* Sesuaikan ukuran gambar */
+    height: 100px;
+}
+
+.overlay-lines .desc {
+    text-align: left;
+    /* Pastikan teks rata kiri */
+}
+
+.desc {
+    margin-top: 227px;
+    margin-left: -145px;
+    width: 248px;
+    height: 127px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.overlay-lines h3 {
+    margin-left: 12px;
+    margin-top: 14px;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'SF Pro Display';
+    color: rgba(255, 255, 255, 1);
+    margin-bottom: 4px;
+}
+
+.overlay-lines h2 {
+    margin-left: 12px;
+    font-size: 24px;
+    font-weight: 500;
+    font-family: 'SF Pro Display';
+    color: rgba(255, 255, 255, 1);
+    margin-bottom: 4px;
+}
+
+.overlay-lines p {
+    margin-left: 12px;
+    font-size: 24px;
+    font-family: 'SF Pro Display';
+    color: rgba(255, 255, 255, 1);
+    font-weight: 800;
+}
+
+
+
+.shpnow {
+    width: 144px;
+    padding: 0.8rem 2rem;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 1);
+    font-weight: 500;
+    border-radius: 0px;
+    font-family: 'SF Pro Display';
+    transition: all 0.3s;
+    margin-bottom: 118px;
+}
+
+.shpnow:hover {
+    background-color: #f0f0f0;
+}
+
+.productpage {
+    height: 60px;
+    position: relative;
+    background-color: #000;
+    color: #fff;
+    padding: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.productpage span {
+    display: inline-block;
+    padding-right: 2rem;
+    animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Fresh Drops section */
+.product {
+    padding: 4rem;
+}
+
+.section-header {
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Beri jarak antara input dan button */
+}
+
+.search-box {
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    outline: none; /* Menghilangkan outline saat klik */
+    width: 300px; /* Sesuaikan ukuran */
+}
+
+.search-box input::placeholder {
+    font-size: 10px;
+}
+
+.search-box:focus {
+    border-color: none; /* Opsional: Ubah warna border saat fokus */
+    box-shadow: none; /* Pastikan tidak ada efek bayangan */
+}
+
+
+.search-button {
+    width: 90px;
+    padding: 8px 15px;
+    border: none;
+    background-color: #0E0E0E;
+    color: white;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #0E0E0E;
+}
+
+
+.section-header h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.products-grid2 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 50px; /* Jarak antar baris */
+    column-gap: 15px; /* Jarak antar kolom */
+    margin: 0 auto; /* Otomatis menengahkan jika ada width */
+    padding: 0;
+    width: 100%; /* Sesuaikan lebar grid agar tidak terlalu ke kiri */
+    max-width: 100vw; /* Batasi lebar agar tetap rapi */
+}
+
+
+.product-card {
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+.product-card h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.color-options {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.color {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+}
+
+
+/* .category-card:hover {
+  transform: translateY(-5px);
+} */
+
+.category-card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+
+.category-card h2 {
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 8px;
+    /* Menambahkan jarak antara h2 dan tombol */
+}
+
+.clothes {
+    background-image: url('../img/clotes.png');
+}
+
+.accessories {
+    background-image: url('../img/acessories.png');
+}
+
+.shop-now-btn {
+    position: relative;
+    z-index: 1;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    /* Warna background transparan */
+    color: white;
+    width: 136px;
+    font-weight: 400;
+    height: 44px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.shop-now-btn:hover {
+    background-color: white;
+    color: black;
+}
+
+/* Lifestyle Banner */
+.lifestyle-banner {
+    padding: 4rem;
+    background-color: #f9f9f9;
+}
+
+.banner-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.banner-text h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.feature {
+    text-align: left;
+    /* Mengubah rata kiri */
+}
+
+.icon {
+    width: 56px;
+    height: 56px;
+    background-color: rgba(242, 242, 242, 1);
+    /* Background icon */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    /* Jarak ke elemen di bawahnya */
+}
+
+.icon img {
+    width: 28px;
+    /* Ukuran icon */
+    height: 28px;
+}
+
+.feature h3 {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.feature p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Style in Motion */
+.style-motion {
+    padding: 4rem;
+}
+
+
+/* Style Talks */
+.style-talks {
+    padding: 4rem;
+    background-color: #f9f9f9;
+}
+
+.blog-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.blog-post {
+    display: grid;
+    grid-template-columns: 500px 1fr;
+    /* Sesuaikan dengan ukuran gambar */
+    gap: 2rem;
+}
+
+.blog-post img {
+    width: 500px;
+    height: 267px;
+    object-fit: cover;
+}
+
+.blog-content h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.blog-content p {
+    margin-bottom: 1rem;
+    color: rgba(182, 183, 186, 1);
+}
+
+
+.read-more {
+    font-weight: 500;
+    color: #000;
+    display: inline-block;
+    position: relative;
+}
+
+.read-more:after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+    transition: width 0.3s;
+}
+
+.read-more:hover:after {
+    width: 0;
+}
+
+
+
+/* Footer */
+footer {
+    background-color: rgba(20, 20, 20, 1);
+    color: #fff;
+    padding: 4rem;
+}
+
+.footer-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.store-image img {
+    width: 134px;
+    height: 84px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.newsletter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.newsletter p {
+    color: rgba(136, 136, 136, 1);
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.subscribe-form {
+    display: flex;
+    gap: 1rem;
+}
+
+.subscribe-form input {
+    background-color: rgba(42, 43, 45, 1);
+    flex: 1;
+    padding: 0.8rem;
+    border: none;
+}
+
+.subscribe-form input:focus {
+    outline: none;
+    /* Menghilangkan outline saat input diklik */
+    border: none;
+    /* Menghilangkan border saat input diklik */
+}
+
+.subscribe-form ::placeholder {
+    color: rgba(255, 255, 255, 1);
+}
+
+.subscribe-form button {
+    padding: 0.8rem 1.5rem;
+    background-color: #fff;
+    color: #000;
+    font-weight: 500;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.link-column h4 {
+    font-weight: 200;
+    margin-bottom: 1.5rem;
+    color: rgba(255, 255, 255, 1);
+    letter-spacing: 0.2px;
+}
+
+.link-column ul {
+    font-weight: 200;
+    display: flex;
+    flex-direction: column;
+    color: rgba(136, 136, 136, 1);
+    gap: 0.8rem;
+}
+
+.link-column a {
+    color: #ccc;
+    transition: color 0.3s;
+}
+
+.link-column a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    background-color: #2A2B2D;
+    margin-left: -75px;
+    width: 100vw;
+    height: 72px;
+    margin-bottom: -80px;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid #444;
+    font-size: 0.9rem;
+    color: #bbb;
+}
+
+.translate-section {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #ddd;
+}
+
+.translate-section img {
+    width: 18px;
+    height: auto;
+}
+
+.dash-auth-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.dash-cart-btn,
+.dash-account-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /* Animasi transisi halus */
+    padding: 8px;
+    /* Tambahkan padding agar tombol lebih responsif */
+    border-radius: 50%;
+    /* Membuat tombol berbentuk lingkaran */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dash-cart-btn:hover,
+.dash-account-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Background semi-transparan saat hover */
+    transform: scale(1.1);
+    /* Memperbesar tombol sedikit saat hover */
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    /* Menambahkan bayangan halus */
+}
+
+.dash-cart-btn img,
+.dash-account-btn img {
+    width: 32px;
+    /* Ukuran ikon */
+    height: 32px;
+    transition: all 0.3s ease;
+    /* Animasi transisi untuk ikon */
+}
+
+.dash-cart-btn:hover img,
+.dash-account-btn:hover img {
+    filter: brightness(1.2);
+    /* Meningkatkan kecerahan ikon saat hover */
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+
+    .products-grid2,
+    .features,
+    .motion-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    header {
+        padding: 1rem 2rem;
+    }
+
+    .hero-content {
+        margin-left: 2rem;
+    }
+
+    .fresh-drops,
+    .categories,
+    .lifestyle-banner,
+    .style-motion,
+    .style-talks,
+    footer {
+        padding: 3rem 2rem;
+    }
+
+    .products-grid2,
+    .features,
+    .motion-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-links {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .categories {
+        grid-template-columns: 1fr;
+    }
+
+    .blog-post {
+        grid-template-columns: 1fr;
+    }
+
+    .blog-post img {
+        height: 200px;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .products-grid2,
+    .features,
+    .motion-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-links {
+        grid-template-columns: 1fr;
+    }
+}

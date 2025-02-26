@@ -1,7 +1,8 @@
 import { Component, createSignal } from 'solid-js';
 import styles from './address.module.css';
-import './address.module.css'
-import accountIcon from '../img/UserCircle.svg';
+import './address.module.css';
+import PopupAddress from './popupaddress';
+import accountIcon from '../img/UserCircle (2).svg';
 import { useNavigate } from "@solidjs/router";
 import logo from '../img/logo.png';
 import logowhite from '../img/logowhite.png';
@@ -14,10 +15,33 @@ interface Address {
     phone: string;
     address: string;
     type: string;
+    isDefault?: boolean;
+}
+
+// Interface untuk data alamat yang dibutuhkan oleh PopupAddress
+interface AddressData {
+    name: string;
+    phone: string;
+    address: string;
+    isDefault: boolean;
 }
 
 const Address: Component = () => {
     const navigate = useNavigate();
+
+    // State management
+    const [addresses, setAddresses] = createSignal<Address[]>([
+        {
+            name: 'Diva Faizah Dwiyanti - Home (Main)',
+            phone: '0813xxxxxxxx',
+            address: 'Jalan Abc No. 1 RT 4 RW 1, Purwokerto',
+            type: 'Home',
+            isDefault: true
+        }
+    ]);
+    
+    const [isPopupOpen, setIsPopupOpen] = createSignal(false);
+    const [editingAddress, setEditingAddress] = createSignal<Address | null>(null);
 
     // Fungsi untuk navigasi ke halaman Cart
     const goToCart = () => {
@@ -29,23 +53,31 @@ const Address: Component = () => {
         navigate("/account");
     };
 
-    const [addresses, setAddresses] = createSignal<Address[]>([
-        {
-            name: 'Diva Faizah Dwiyanti - Home (Main)',
-            phone: '0813xxxxxxxx',
-            address: 'Jalan Abc No. 1 RT 4 RW 1, Purwokerto',
-            type: 'Home'
-        }
-    ]);
-
+    // Fungsi untuk menambah alamat baru
     const handleAddNewAddress = () => {
-        // Handle add new address logic here
-        console.log('Adding new address');
+        setEditingAddress(null);
+        setIsPopupOpen(true);
     };
 
+    // Fungsi untuk mengubah alamat
     const handleChangeAddress = (index: number) => {
-        // Handle change address logic here
-        console.log('Changing address at index:', index);
+        setEditingAddress(addresses()[index]);
+        setIsPopupOpen(true);
+    };
+
+    // Fungsi untuk menyimpan alamat (baru atau edit)
+    const handleSaveAddress = (addressData: AddressData) => {
+        if (editingAddress()) {
+            // Edit alamat yang sudah ada
+            const updatedAddresses = addresses().map((addr, i) =>
+                i === addresses().findIndex(a => a.name === editingAddress()?.name) ?
+                    { ...addressData, type: addr.type } : addr
+            );
+            setAddresses(updatedAddresses);
+        } else {
+            // Tambah alamat baru
+            setAddresses([...addresses(), { ...addressData, type: 'Home' }]);
+        }
     };
 
     return (
@@ -176,8 +208,15 @@ const Address: Component = () => {
                         <span>English</span>
                     </div>
                 </div>
-
             </footer>
+            
+            {/* Popup Address Component */}
+            <PopupAddress
+                isOpen={isPopupOpen()}
+                onClose={() => setIsPopupOpen(false)}
+                onSave={handleSaveAddress}
+                editAddress={editingAddress()}
+            />
         </div>
     );
 };
