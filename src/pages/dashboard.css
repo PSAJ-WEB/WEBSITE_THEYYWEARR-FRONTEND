@@ -391,18 +391,6 @@ header {
     margin-bottom: 0.5rem;
 }
 
-.color-options {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.color {
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-}
-
-
 
 /* Categories section */
 .categories {

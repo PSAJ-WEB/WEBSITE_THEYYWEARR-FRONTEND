@@ -406,42 +406,6 @@ header {
 }
 
 
-.product-card {
-    transition: transform 0.3s;
-}
-
-.product-card:hover {
-    transform: translateY(-5px);
-}
-
-.product-card img {
-    border-radius: 4px;
-    margin-bottom: 1rem;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-}
-
-.product-card h3 {
-    font-size: 1rem;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-}
-
-.price {
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-}
-
-.color-options {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.color {
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-}
 
 
 /* .category-card:hover {

@@ -1,5 +1,7 @@
 import { createSignal } from "solid-js";
 import { useNavigate } from "@solidjs/router";
+import { createEffect, onCleanup } from "solid-js";
+import { useLocation } from "@solidjs/router";
 import logo from '../img/logo.png';
 import logowhite from '../img/logowhite.png';
 import translate from '../img/Translate.svg';
@@ -8,7 +10,7 @@ import mixnmatch from '../img/mixnmatch.png';
 import behindthedesign from '../img/behindthedesign.png';
 import befooter from '../img/befooter.png';
 import cartIcon from '../img/Tote.svg';
-import accountIcon from '../img/UserCircle.svg'
+import accountIcon from '../img/UserCircle (2).svg'
 import './blogpage.css';
 
 const BlogPage = () => {
@@ -19,10 +21,25 @@ const BlogPage = () => {
         navigate("/cart");
     };
 
+    const location = useLocation();
+
+    createEffect(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+    
+
     // Fungsi untuk navigasi ke halaman Account
     const goToAccount = () => {
         navigate("/account");
     };
+    const goToReadMore = () => {
+        navigate("/blogpage/readmore5fahion");
+        setTimeout(() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }, 100); // Memberi jeda agar navigasi selesai dulu
+    };
+
+
     return (
         <div class="blog-page">
             {/* Header */}
@@ -79,7 +96,9 @@ const BlogPage = () => {
                         <div class="blog-content-blog">
                             <h3>5 Fashion Tips to Instantly Elevate Your Look</h3>
                             <p>Want to level up your style effortlessly? Fashion is more than just clothes—it’s about confidence, attitude, and knowing how to put the right pieces together. In this article, we’ll explore five expert-approved fashion tips that will help you transform your everyday outfits into stunning, head-turning ensembles. From understanding color coordination to choosing the right accessories, these simple yet effective tricks will make a significant difference in your personal style.</p>
-                            <a href="/blogpage/readmore5fahion" class="read-more">Read More</a>
+                            <button onClick={goToReadMore} class="read-more">
+                                Read More
+                            </button>
                         </div>
                     </div>
                     <div class="blog-post-blog">

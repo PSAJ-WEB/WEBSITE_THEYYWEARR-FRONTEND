@@ -359,17 +359,9 @@ header {
   margin-bottom: 0.5rem;
 }
 
-.color-options {
-  display: flex;
-  gap: 0.5rem;
-}
 
-.color {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  cursor: pointer;
-}
+.color.glasses {background-color: #D8CDBD;}
+.color.belt2 {background-color: #4E3433;}
 .color.clothes1 {background-color: #D2CFC5;}
 .color.clothes2 {background-color: #A79686;}
 .color.clothes3 {background-color: #C1997D;}
@@ -395,7 +387,7 @@ header {
 .color.navy { background-color: #1F2A39; }
 .color.blacky { background-color: #222427; }
 .color.denim { background-color: #7F90A1; }
-.color.mint { background-color: #7C9AA3; }
+.color.mint { background-color: #A1BEAB; }
 .color.blue { background-color: #2196F3; }
 .color.grey { background-color: rgba(100, 89, 87, 1); }
 .color.gradient1 { background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(221, 176, 104, 1));}

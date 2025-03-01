@@ -174,13 +174,14 @@ const AboutUs = () => {
                     <div class="store-info">
                         <div class="social-media">
                             <div class="social-item">
-                                <h1>Instagram</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
+                                <h1>Tiktok</h1>
+                                <p>Lorem ipsum dolor sit amet</p>
                                 <button class="visit-btn">Visit</button>
                             </div>
                             <div class="social-item">
-                                <h1>Tiktok</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae.</p>
+                                <h1>Shipping &  Return Address</h1>
+                                <p>Apartemen Patra Lomanis Residence, Pasiran, Tegalreja,
+                                Central Cilacap, Cilacap Regency, Central Java 53213</p>
                                 <button class="visit-btn">Visit</button>
                             </div>
                         </div>

@@ -1,7 +1,10 @@
 @import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+
 * {
-    box-sizing: border-box; /* Terapkan ke semua elemen */
-  }
+    box-sizing: border-box;
+    /* Terapkan ke semua elemen */
+}
+
 html,
 body {
     width: 100vw;
@@ -354,15 +357,18 @@ header {
 .search-container {
     display: flex;
     align-items: center;
-    gap: 10px; /* Beri jarak antara input dan button */
+    gap: 10px;
+    /* Beri jarak antara input dan button */
 }
 
 .search-box {
     height: 40px;
     padding: 10px;
     border: 1px solid #ccc;
-    outline: none; /* Menghilangkan outline saat klik */
-    width: 300px; /* Sesuaikan ukuran */
+    outline: none;
+    /* Menghilangkan outline saat klik */
+    width: 300px;
+    /* Sesuaikan ukuran */
 }
 
 .search-box input::placeholder {
@@ -370,8 +376,10 @@ header {
 }
 
 .search-box:focus {
-    border-color: none; /* Opsional: Ubah warna border saat fokus */
-    box-shadow: none; /* Pastikan tidak ada efek bayangan */
+    border-color: none;
+    /* Opsional: Ubah warna border saat fokus */
+    box-shadow: none;
+    /* Pastikan tidak ada efek bayangan */
 }
 
 
@@ -397,12 +405,17 @@ header {
 .products-grid2 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    row-gap: 50px; /* Jarak antar baris */
-    column-gap: 15px; /* Jarak antar kolom */
-    margin: 0 auto; /* Otomatis menengahkan jika ada width */
+    row-gap: 50px;
+    /* Jarak antar baris */
+    column-gap: 15px;
+    /* Jarak antar kolom */
+    margin: 0 auto;
+    /* Otomatis menengahkan jika ada width */
     padding: 0;
-    width: 100%; /* Sesuaikan lebar grid agar tidak terlalu ke kiri */
-    max-width: 100vw; /* Batasi lebar agar tetap rapi */
+    width: 100%;
+    /* Sesuaikan lebar grid agar tidak terlalu ke kiri */
+    max-width: 100vw;
+    /* Batasi lebar agar tetap rapi */
 }
 
 
@@ -421,28 +434,185 @@ header {
     object-fit: cover;
 }
 
+.section-product {
+    margin-top: 20px;
+    color: #B6B7BA;
+}
+
 .product-card h3 {
-    font-size: 1rem;
+    font-size: 18px;
     font-weight: 500;
-    margin-bottom: 0.5rem;
+    margin-top: 7px;
 }
 
 .price {
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+    font-weight: 400;
+    color: #0E0E0E;
+    margin-top: 10px;
 }
 
+.highlight {
+    background-color: yellow;
+    /* Warna stabilo kuning */
+    color: black;
+    /* Warna teks */
+    padding: 0px;
+}
+
+
 .color-options {
+    margin-top: 10px;
     display: flex;
-    gap: 0.5rem;
+    gap: 2px;
 }
 
 .color {
-    width: 16px;
-    height: 16px;
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
     border-radius: 50%;
+    border: 0.1px solid #B6B7BA;
+    box-shadow: inset 0 0 0 1px white; /* Efek border dalam */
 }
 
+
+
+.color.glasses {
+    background-color: #D8CDBD;
+}
+
+.color.belt2 {
+    background-color: #4E3433;
+}
+
+.color.clothes1 {
+    background-color: #D2CFC5;
+}
+
+.color.clothes2 {
+    background-color: #A79686;
+}
+
+.color.clothes3 {
+    background-color: #C1997D;
+}
+
+.color.beige3 {
+    background-color: #F5ECE1;
+}
+
+.color.black {
+    background-color: #000;
+}
+
+.color.grey2 {
+    background-color: #B8ABA3;
+}
+
+.color.denim2 {
+    background-color: #798999;
+}
+
+.color.domgrey {
+    background-color: #413F41;
+}
+
+.color.blackgrey {
+    background-color: #212129;
+}
+
+.color.red {
+    background-color: #8A191F;
+}
+
+.color.brown {
+    background-color: #704324;
+}
+
+.color.brown2 {
+    background-color: #8C6446;
+}
+
+.color.brownlight {
+    background-color: #A88B63;
+}
+
+.color.beige2 {
+    background-color: #DDD1B2;
+}
+
+.color.pink {
+    background-color: #E0A091;
+}
+
+.color.pinkmuda {
+    background-color: #E4BABB;
+}
+
+.color.beige {
+    background-color: #E5D2B2;
+}
+
+.color.ijo {
+    background-color: #594D0F;
+}
+
+.color.orange {
+    background-color: #CC7633;
+}
+
+.color.lightgrey {
+    background-color: #CC7633;
+}
+
+.color.ashgrey {
+    background-color: #CC7633;
+}
+
+.color.cream {
+    background-color: #FFFDD0;
+}
+
+.color.navy {
+    background-color: #1F2A39;
+}
+
+.color.blacky {
+    background-color: #222427;
+}
+
+.color.denim {
+    background-color: #7F90A1;
+}
+
+.color.mint {
+    background-color: #A1BEAB;
+}
+
+.color.blue {
+    background-color: #2196F3;
+}
+
+.color.grey {
+    background-color: rgba(100, 89, 87, 1);
+}
+
+.color.gradient1 {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(221, 176, 104, 1));
+}
+
+.color.gradient2 {
+    background: linear-gradient(to bottom, rgba(123, 110, 106, 1), rgba(221, 176, 104, 1));
+}
+
+.color.gradient3 {
+    background: linear-gradient(to bottom, rgba(190, 128, 114, 1), rgba(221, 176, 104, 1));
+}
+
+.color.gradient4 {
+    background: linear-gradient(to bottom, rgba(233, 217, 197, 1), rgba(221, 176, 104, 1));
+}
 
 /* .category-card:hover {
   transform: translateY(-5px);

@@ -59,12 +59,14 @@ const Dashboard = () => {
     const navigate = useNavigate();
 
     // Fungsi untuk navigasi ke halaman Cart
+    // Modify these functions in both files
     const goToCart = () => {
+        window.scrollTo(0, 0); // Add this line
         navigate("/cart");
     };
 
-    // Fungsi untuk navigasi ke halaman Account
     const goToAccount = () => {
+        window.scrollTo(0, 0); // Add this line
         navigate("/account");
     };
     return (

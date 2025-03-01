@@ -1,59 +1,74 @@
-import { Component } from 'solid-js';
+import { Component, onMount } from 'solid-js';
 import { useNavigate } from "@solidjs/router";
+import { createEffect, onCleanup } from "solid-js";
+import { useLocation } from "@solidjs/router";
 import logo from '../img/logo.png';
 import styles from './BlogPageMore.module.css';
 import cartIcon from '../img/Tote.svg';
-import accountIcon from '../img/UserCircle.svg'
+import logowhite from '../img/logowhite.png';
+import befooter from '../img/befooter.png';
+import translate from '../img/Translate.svg';
+import accountIcon from '../img/UserCircle (2).svg'
 
 const BlogPageMore: Component = () => {
-      const navigate = useNavigate();
-  
-      // Fungsi untuk navigasi ke halaman Cart
-      const goToCart = () => {
-          navigate("/cart");
-      };
-  
-      // Fungsi untuk navigasi ke halaman Account
-      const goToAccount = () => {
-          navigate("/account");
-      };
+  const location = useLocation();
+
+  createEffect(() => {
+    const scrollToTop = () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+
+    scrollToTop();
+    onCleanup(() => scrollToTop()); // Pastikan reset scroll saat unmount halaman
+  });
+  const navigate = useNavigate();
+
+  // Fungsi untuk navigasi ke halaman Cart
+  const goToCart = () => {
+    navigate("/cart");
+  };
+
+  // Fungsi untuk navigasi ke halaman Account
+  const goToAccount = () => {
+    navigate("/account");
+  };
   return (
     <div class={styles.container}>
       <header>
-                <div class="logo">
-                    <img src={logo} alt="Logo" />
-                </div>
-                <nav class="navbar-blog">
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/products">Products</a></li>
-                        <li><a href="/about-us">About Us</a></li>
-                        <li><a href="/blogpage" class="active">Blog</a></li>
-                    </ul>
-                </nav>
-                <div class="dash-auth-buttons">
-                    <button class="dash-cart-btn" onClick={goToCart}>
-                        <img src={cartIcon} alt="Cart" />
-                    </button>
-                    {/* Tombol Account dengan Navigasi */}
-                    <button class="dash-account-btn" onClick={goToAccount}>
-                        <img src={accountIcon} alt="Account" />
-                    </button>
-                </div>
-            </header>
+        <div class="logo">
+          <img src={logo} alt="Logo" />
+        </div>
+        <nav class="navbar-blog">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/products">Products</a></li>
+            <li><a href="/about-us">About Us</a></li>
+            <li><a href="/blogpage" class="active">Blog</a></li>
+          </ul>
+        </nav>
+        <div class="dash-auth-buttons">
+          <button class="dash-cart-btn" onClick={goToCart}>
+            <img src={cartIcon} alt="Cart" />
+          </button>
+          {/* Tombol Account dengan Navigasi */}
+          <button class="dash-account-btn" onClick={goToAccount}>
+            <img src={accountIcon} alt="Account" />
+          </button>
+        </div>
+      </header>
       {/* Hero Section */}
       <div class={styles.heroblog5}>
         <div class={styles.heroContentblog5}>
           <div class={styles.marquee}>
-          <span>Wear Confidence, Own the Moment</span>
-          <span>Wear Confidence, Own the Moment</span>
-          <span>Wear Confidence, Own the Moment</span>
-          <span>Wear Confidence, Own the Moment</span>
-          <span>Wear Confidence, Own the Moment</span>
-          <span>Wear Confidence, Own the Moment</span>
-          <span>Wear Confidence, Own the Moment</span>
-          <span>Wear Confidence, Own the Moment</span>
-          <span>Wear Confidence, Own the Moment</span>
+            <span>Wear Confidence, Own the Moment</span>
+            <span>Wear Confidence, Own the Moment</span>
+            <span>Wear Confidence, Own the Moment</span>
+            <span>Wear Confidence, Own the Moment</span>
+            <span>Wear Confidence, Own the Moment</span>
+            <span>Wear Confidence, Own the Moment</span>
+            <span>Wear Confidence, Own the Moment</span>
+            <span>Wear Confidence, Own the Moment</span>
+            <span>Wear Confidence, Own the Moment</span>
           </div>
         </div>
       </div>
@@ -145,18 +160,70 @@ const BlogPageMore: Component = () => {
           <a href="#" class={styles.nextArticle}>Read Next Article</a>
         </div>
       </article>
-
+      <img src={befooter} alt="Banner" class="full-width-image" />
       {/* Footer */}
-      <footer class={styles.footer}>
-        <div class={styles.footerContent}>
-          <div class={styles.newsletter}>
+      <footer>
+        <div class="footer-top">
+          <div class="store-image">
+            <img src={logowhite} alt="Our Store" />
+          </div>
+          <div class="newsletter">
             <p>Stay updated with our latest drops & exclusive deals</p>
-            <div class={styles.subscribeForm}>
+            <div class="subscribe-form">
               <input type="email" placeholder="Enter your email" />
-              <button type="submit">Submit</button>
+              <button>Submit</button>
             </div>
           </div>
         </div>
+
+        <div class="footer-links">
+          <div class="link-column">
+            <h4>Theyy Wearr.</h4>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Product</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </div>
+          <div class="link-column">
+            <h4>About Us</h4>
+            <ul>
+              <li><a href="#">Company</a></li>
+              <li><a href="#">Community</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Investors</a></li>
+            </ul>
+          </div>
+          <div class="link-column">
+            <h4>Get More</h4>
+            <ul>
+              <li><a href="#">Upgrade Premium</a></li>
+              <li><a href="#">Personal Plan</a></li>
+              <li><a href="#">Business Plan</a></li>
+              <li><a href="#">Enterprise Plan</a></li>
+            </ul>
+          </div>
+          <div class="link-column">
+            <h4>Connect With Us</h4>
+            <ul>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Youtube</a></li>
+              <li><a href="#">Instagram</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>@ 2025 Theyy Wearr. Inc</p>
+          <p>Terms and privacy</p>
+          <div class="translate-section">
+            <img src={translate} alt="Translate Icon" />
+            <span>English</span>
+          </div>
+        </div>
+
       </footer>
     </div>
   );

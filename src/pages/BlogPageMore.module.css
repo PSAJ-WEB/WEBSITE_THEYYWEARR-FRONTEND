@@ -96,7 +96,18 @@
     position: absolute;
     left: -1rem;
   }
-  
+  .prevArticle {
+    border : 1px solid rgba(18, 18, 18, 0.2);
+    width: 187px;
+    height: 44px;
+    padding: 10px 20px;
+  }
+  .nextArticle {
+    border : 1px solid rgba(18, 18, 18, 0.2);
+    width: 187px;
+    height: 44px;
+    padding: 10px 34px;
+  }
   .pagination {
     display: flex;
     justify-content: space-between;

@@ -1,4 +1,4 @@
-import { createSignal } from "solid-js";
+import { createSignal, createEffect } from "solid-js";
 import { useNavigate } from "@solidjs/router";
 import logo from '../img/logo.png';
 import logowhite from '../img/logowhite.png';
@@ -15,50 +15,244 @@ import tas3groupa from '../img/3) Autumn Pearl Handbag/1 APH CREAM (Cover).svg';
 import tas3groupb from '../img/3) Autumn Pearl Handbag/2 APH BLACK.svg';
 import tas3groupc from '../img/3) Autumn Pearl Handbag/3 APH GREY.svg';
 import tas3groupd from '../img/3) Autumn Pearl Handbag/4 APH PINK.svg';
-import tas4groupblack from '../img/4) Frosted Bowling Handbag/1 FBH BLACK (Cover).svg'
-import tas4groupbrown from '../img/4) Frosted Bowling Handbag/2 FBH BROWN.svg'
-import tas4groupgrey from '../img/4) Frosted Bowling Handbag/3 FBH GREY.svg'
-import tas4grouporange from '../img/4) Frosted Bowling Handbag/4 FBH  BUTTERSCOTCH.svg'
-import tas5groupblack from '../img/5) Versatile Shoulder Bag/2 VSB BLACK.svg'
-import tas5groupbrown from '../img/5) Versatile Shoulder Bag/1 VSB DESERT (Cover).svg'
-import tas5grouppink from '../img/5) Versatile Shoulder Bag/3 VSB OAT.svg'
-import tas5groupbeige from '../img/5) Versatile Shoulder Bag/4 VSB LEMONADE.svg'
-import tas6groupblack from '../img/6) Rhombus Shoulder Bag/2 RSB BLACK.svg'
-import tas6groupnavy from '../img/6) Rhombus Shoulder Bag/1 RSB BOLD DENIM (Cover).svg'
-import tas6groupdenim from '../img/6) Rhombus Shoulder Bag/3 RSB LIGHT DENIM.svg'
-import tas7groupblack from '../img/7) Diamond Chain Shoulder Bag/1 DCSB BLACK (Cover).svg'
-import tas7groupsalmon from '../img/7) Diamond Chain Shoulder Bag/2 DCSB SALMON.svg'
-import tas7groupseafoam from '../img/7) Diamond Chain Shoulder Bag/3 DCSB SEAFOAM.svg'
-import tas7groupbone from '../img/7) Diamond Chain Shoulder Bag/4 DCSB BONE.svg'
-import tas8grouplightdenim from '../img/8) American Shoulder Bag/1 ASB LIGHT DENIM (Cover).svg'
-import tas8groupashgrey from '../img/8) American Shoulder Bag/2 ASB GREY.svg'
-import tas8groupbrown from '../img/8) American Shoulder Bag/3 ASB BROWN.svg'
-import tas8grouplightgrey from '../img/8) American Shoulder Bag/4 ASB LIGHT GREY.svg'
+import tas4groupblack from '../img/4) Frosted Bowling Handbag/1 FBH BLACK (Cover).svg';
+import tas4groupbrown from '../img/4) Frosted Bowling Handbag/2 FBH BROWN.svg';
+import tas4groupgrey from '../img/4) Frosted Bowling Handbag/3 FBH GREY.svg';
+import tas4grouporange from '../img/4) Frosted Bowling Handbag/4 FBH  BUTTERSCOTCH.svg';
+import tas5groupblack from '../img/5) Versatile Shoulder Bag/2 VSB BLACK.svg';
+import tas5groupbrown from '../img/5) Versatile Shoulder Bag/1 VSB DESERT (Cover).svg';
+import tas5groupbeige from '../img/5) Versatile Shoulder Bag/3 VSB OAT.svg';
+import tas5grouppink from '../img/5) Versatile Shoulder Bag/4 VSB LEMONADE.svg';
+import tas6groupblack from '../img/6) Rhombus Shoulder Bag/2 RSB BLACK.svg';
+import tas6groupnavy from '../img/6) Rhombus Shoulder Bag/1 RSB BOLD DENIM (Cover).svg';
+import tas6groupdenim from '../img/6) Rhombus Shoulder Bag/3 RSB LIGHT DENIM.svg';
+import tas7groupblack from '../img/7) Diamond Chain Shoulder Bag/1 DCSB BLACK (Cover).svg';
+import tas7groupsalmon from '../img/7) Diamond Chain Shoulder Bag/2 DCSB SALMON.svg';
+import tas7groupseafoam from '../img/7) Diamond Chain Shoulder Bag/3 DCSB SEAFOAM.svg';
+import tas7groupbone from '../img/7) Diamond Chain Shoulder Bag/4 DCSB BONE.svg';
+import tas8grouplightdenim from '../img/8) American Shoulder Bag/1 ASB LIGHT DENIM (Cover).svg';
+import tas8groupashgrey from '../img/8) American Shoulder Bag/2 ASB GREY.svg';
+import tas8groupbrown from '../img/8) American Shoulder Bag/3 ASB BROWN.svg';
+import tas8grouplightgrey from '../img/8) American Shoulder Bag/4 ASB LIGHT GREY.svg';
+import clothes1 from '../img/Theyy Wearr Blouses Catalogue/Line Drawing Floral Pattern Blouse.svg';
+import clothes2 from '../img/Theyy Wearr Blouses Catalogue/Ruffle Collar Design Blouse.svg';
+import glasses from '../img/Hippie  Mod Glasses.svg';
+import belt1 from '../img/Theyy Wearr Belts Catalogue/Black Double O-Ring Belt.svg';
+import belt2 from '../img/Theyy Wearr Belts Catalogue/Almond Belt Leather.svg';
 import befooter from '../img/befooter.png';
 import cartIcon from '../img/Tote.svg';
-import accountIcon from '../img/UserCircle (2).svg'
+import accountIcon from '../img/UserCircle (2).svg';
 import './productpage.css';
 
 const ProductPage = () => {
     const navigate = useNavigate();
-    const [mainImage1, setMainImage1] = createSignal(tas1groupred);
-    const [mainImage2, setMainImage2] = createSignal(tas2groupbrown);
-    const [mainImage3, setMainImage3] = createSignal(tas3groupa);
-    const [mainImage4, setMainImage4] = createSignal(tas4groupblack);
-    const [mainImage5, setMainImage5] = createSignal(tas5groupbrown);
-    const [mainImage6, setMainImage6] = createSignal(tas6groupnavy);
-    const [mainImage7, setMainImage7] = createSignal(tas7groupblack);
-    const [mainImage8, setMainImage8] = createSignal(tas8grouplightdenim);
+    const [searchQuery, setSearchQuery] = createSignal("");
+    const [products, setProducts] = createSignal([
+        {
+            name: "Lady Pattern Pillow Handbag",
+            category: "Handbag",
+            price: "285.300 IDR",
+            image: tas1groupred,
+            defaultImage: tas1groupred,
+            colors: [
+                { color: "black", image: tas1groupblack },
+                { color: "red", image: tas1groupred },
+                { color: "mint", image: tas1groupmint },
+                { color: "pink", image: tas1grouppink },
+            ],
+        },
+        {
+            name: "Retro Small Square Handbag",
+            category: "Handbag",
+            price: "174.000 IDR",
+            image: tas2groupbrown,
+            defaultImage: tas2groupbrown,
+            colors: [
+                { color: "black", image: tas2groupblackgrey },
+                { color: "brown", image: tas2groupbrown },
+                { color: "ijo", image: tas2groupijo },
+                { color: "beige", image: tas2groupbeige },
+            ],
+        },
+        {
+            name: "Autumn Pearl Handbag",
+            category: "Handbag",
+            price: "250.000 IDR",
+            image: tas3groupa,
+            defaultImage: tas3groupa,
+            colors: [
+                { color: "gradient1", image: tas3groupb },
+                { color: "gradient2", image: tas3groupc },
+                { color: "gradient3", image: tas3groupd },
+                { color: "gradient4", image: tas3groupa },
+            ],
+        },
+        {
+            name: "Frosted Bowling Handbag",
+            category: "Handbag",
+            price: "⁠192.000 IDR",
+            image: tas4groupblack,
+            defaultImage: tas4groupblack,
+            colors: [
+                { color: "black", image: tas4groupblack },
+                { color: "brown", image: tas4groupbrown },
+                { color: "grey", image: tas4groupgrey },
+                { color: "orange", image: tas4grouporange },
+            ],
+        },
+        {
+            name: "Versatile Shoulder Bag",
+            category: "Handbag",
+            price: "221.000 IDR",
+            image: tas5groupbrown,
+            defaultImage: tas5groupbrown,
+            colors: [
+                { color: "black", image: tas5groupblack },
+                { color: "brown", image: tas5groupbrown },
+                { color: "pinkmuda", image: tas5grouppink },
+                { color: "beige2", image: tas5groupbeige },
+            ],
+        },
+        {
+            name: "Rhombus Shoulder Bag",
+            category: "Handbag",
+            price: "134.000 IDR",
+            image: tas6groupnavy,
+            defaultImage: tas6groupnavy,
+            colors: [
+                { color: "blacky", image: tas6groupblack },
+                { color: "navy", image: tas6groupnavy },
+                { color: "denim", image: tas6groupdenim },
+            ],
+        },
+        {
+            name: "Diamond Chain Shoulder Bag",
+            category: "Handbag",
+            price: "⁠160.000 IDR",
+            image: tas7groupblack,
+            defaultImage: tas7groupblack,
+            colors: [
+                { color: "black", image: tas7groupblack },
+                { color: "pink", image: tas7groupsalmon },
+                { color: "mint", image: tas7groupseafoam },
+                { color: "beige3", image: tas7groupbone },
+            ],
+        },
+        {
+            name: "American Shoulder Bag",
+            category: "Handbag",
+            price: "256.000 IDR",
+            image: tas8grouplightdenim,
+            defaultImage: tas8grouplightdenim,
+            colors: [
+                { color: "domgrey", image: tas8groupashgrey },
+                { color: "brown2", image: tas8groupbrown },
+                { color: "denim2", image: tas8grouplightdenim },
+                { color: "grey2", image: tas8grouplightgrey },
+            ],
+        },
+        {
+            name: "Drawing Floral Pattern Blouse",
+            category: "Clothes",
+            price: "300.000 IDR",
+            image: clothes1,
+            defaultImage: clothes1,
+            colors: [
+                { color: "clothes1", image: clothes1 },
+            ],
+        },
+        {
+            name: "Ruffle Collar Design Blouse",
+            category: "CLothes",
+            price: "220.000 IDR",
+            image: clothes2,
+            defaultImage: clothes2,
+            colors: [
+                { color: "clothes2", image: clothes2 },
+            ],
+        },
+        {
+            name: "Hippie Mod Glasses",
+            category: "Accessories",
+            price: "67.300 IDR",
+            image: glasses,
+            defaultImage: glasses,
+            colors: [
+                { color: "glasses", image: glasses },
+            ],
+        },
+        {
+            name: "Black Double O-Ring Belt",
+            category: "Accessories",
+            price: "129.000 IDR",
+            image: belt1,
+            defaultImage: belt1,
+            colors: [
+                { color: "black", image: belt1 },
+            ],
+        },
+        {
+            name: "Almond Belt Leather",
+            category: "Handbag",
+            price: "110.500 IDR",
+            image: belt2,
+            defaultImage: belt2,
+            colors: [
+                { color: "belt2", image: belt2 },
+            ],
+        },
+    ]);
 
-    // Fungsi untuk navigasi ke halaman Cart
-    const goToCart = () => {
-        navigate("/cart");
+    // Fungsi untuk menyorot huruf yang cocok
+    const highlightText = (text, query) => {
+        if (!query) return text;
+        const regex = new RegExp(`(${query})`, "gi");
+        return text.replace(regex, "<span class='highlight'>$1</span>");
     };
 
-    // Fungsi untuk navigasi ke halaman Account
-    const goToAccount = () => {
-        navigate("/account");
+    createEffect(() => {
+        const query = searchQuery().toLowerCase();
+        if (query) {
+            const matchedProduct = products().find(product =>
+                product.name.toLowerCase().includes(query)
+            );
+            if (matchedProduct) {
+                const productElement = document.getElementById(matchedProduct.name);
+                if (productElement) {
+                    // Scroll ke produk dengan animasi smooth
+                    productElement.scrollIntoView({ behavior: "smooth", block: "center" });
+
+                    // Tambahkan class highlight sementara
+                    productElement.classList.add("highlight-product");
+                    setTimeout(() => {
+                        productElement.classList.remove("highlight-product");
+                    }, 1000); // Hapus highlight setelah 1 detik
+                }
+            }
+        }
+    });
+
+    const filteredProducts = () => {
+        const query = searchQuery().toLowerCase();
+        if (!query) return products();
+        return products().filter(product =>
+            product.name.toLowerCase().includes(query)
+        );
     };
+
+    const setMainImage = (index, image) => {
+        const updatedProducts = products().map((product, i) => {
+            if (i === index) {
+                return { ...product, image };
+            }
+            return product;
+        });
+        setProducts(updatedProducts);
+    };
+
+    const goToCart = () => navigate("/cart");
+    const goToAccount = () => navigate("/account");
+
     return (
         <div class="landing-page">
             {/* Header */}
@@ -78,7 +272,6 @@ const ProductPage = () => {
                     <button class="dash-cart-btn" onClick={goToCart}>
                         <img src={cartIcon} alt="Cart" />
                     </button>
-                    {/* Tombol Account dengan Navigasi */}
                     <button class="dash-account-btn" onClick={goToAccount}>
                         <img src={accountIcon} alt="Account" />
                     </button>
@@ -107,146 +300,40 @@ const ProductPage = () => {
                 <div class="section-header">
                     <h2>Fresh Drops for You</h2>
                     <div class="search-container">
-                        <input type="text" class="search-box" placeholder="Type something here" />
+                        <input
+                            type="text"
+                            class="search-box"
+                            placeholder="Type something here"
+                            value={searchQuery()}
+                            onInput={(e) => setSearchQuery(e.target.value)}
+                        />
                         <button class="search-button">Search</button>
                     </div>
                 </div>
 
                 <div class="products-grid2">
-                    {/* Row 1 */}
-                    <div class="product-card">
-                        <div class="product-image" style="background-color: rgba(242, 242, 242, 1); padding: 30px;">
-                            <img src={mainImage1()} alt="Litchi Pattern Pillow Handbag" class="main-image" />
+                    {filteredProducts().map((product, index) => (
+                        <div class="product-card" key={product.name} id={product.name}>
+                            <div class="product-image" style={{ "background-color": "rgba(242, 242, 242, 1)", padding: "30px" }}>
+                                <img src={product.image} alt={product.name} class="main-image" />
+                            </div>
+                            <p class="section-product">{product.category}</p>
+                            <h3 innerHTML={highlightText(product.name, searchQuery())}></h3>
+                            <p class="price">{product.price}</p>
+                            <div class="color-options" onMouseLeave={() => setMainImage(index, product.defaultImage)}>
+                                {product.colors.map((color, colorIndex) => (
+                                    <span
+                                        class={`color ${color.color}`}
+                                        onMouseOver={() => setMainImage(index, color.image)}
+                                        key={colorIndex}
+                                    ></span>
+                                ))}
+                            </div>
                         </div>
-                        <h3>Lady Pattern Pillow Handbag</h3>
-                        <p class="price">285.300 IDR</p>
-                        <div class="color-options" onMouseLeave={() => setMainImage1(tas1groupblack)}>
-                            <span class="color black" onMouseOver={() => setMainImage1(tas1groupblack)}></span>
-                            <span class="color red" onMouseOver={() => setMainImage1(tas1groupred)}></span>
-                            <span class="color mint" onMouseOver={() => setMainImage1(tas1groupmint)}></span>
-                            <span class="color pink" onMouseOver={() => setMainImage1(tas1grouppink)}></span>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-image" style="background-color: rgba(242, 242, 242, 1); padding: 30px;">
-                            <img src={mainImage2()} alt="Litchi Pattern Pillow Handbag" class="main-image" />
-                        </div>
-                        <h3>Retro Small Square Handbag</h3>
-                        <p class="price">174.000 IDR</p>
-                        <div class="color-options" onMouseLeave={() => setMainImage2(tas2groupbrown)}>
-                            <span class="color black" onMouseOver={() => setMainImage2(tas2groupblackgrey)}></span>
-                            <span class="color brown" onMouseOver={() => setMainImage2(tas2groupbrown)}></span>
-                            <span class="color ijo" onMouseOver={() => setMainImage2(tas2groupijo)}></span>
-                            <span class="color beige" onMouseOver={() => setMainImage2(tas2groupbeige)}></span>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-image" style="background-color: rgba(242, 242, 242, 1); padding: 30px;">
-                            <img src={mainImage3()} alt="Litchi Pattern Pillow Handbag" class="main-image" />
-                        </div>
-                        <h3>Autumn Pearl Handbag</h3>
-                        <p class="price">250.000 IDR</p>
-                        <div class="color-options" onMouseLeave={() => setMainImage3(tas3groupa)}>
-                            <span class="color gradient1" onMouseOver={() => setMainImage3(tas3groupb)}></span>
-                            <span class="color gradient2" onMouseOver={() => setMainImage3(tas3groupc)}></span>
-                            <span class="color gradient3" onMouseOver={() => setMainImage3(tas3groupd)}></span>
-                            <span class="color gradient4" onMouseOver={() => setMainImage3(tas3groupa)}></span>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-image" style="background-color: rgba(242, 242, 242, 1); padding: 30px;">
-                            <img src={mainImage4()} alt="Litchi Pattern Pillow Handbag" class="main-image" />
-                        </div>
-                        <h3>Frosted Bowling Handbag</h3>
-                        <p class="price">192.000 IDR</p>
-                        <div class="color-options" onMouseLeave={() => setMainImage4(tas4groupblack)}>
-                            <span class="color black" onMouseOver={() => setMainImage4(tas4groupblack)}></span>
-                            <span class="color brown" onMouseOver={() => setMainImage4(tas4groupbrown)}></span>
-                            <span class="color grey" onMouseOver={() => setMainImage4(tas4groupgrey)}></span>
-                            <span class="color orange" onMouseOver={() => setMainImage4(tas4grouporange)}></span>
-                        </div>
-                    </div>
-
-                    {/* Row 2 */}
-                    <div class="product-card">
-                        <div class="product-image" style="background-color: rgba(242, 242, 242, 1); padding: 30px;">
-                            <img src={mainImage5()} alt="Litchi Pattern Pillow Handbag" class="main-image" />
-                        </div>
-                        <h3>Versatile Shoulder Bag</h3>
-                        <p class="price">221.000 IDR</p>
-                        <div class="color-options" onMouseLeave={() => setMainImage5(tas5groupblack)}>
-                            <span class="color black" onMouseOver={() => setMainImage5(tas5groupblack)}></span>
-                            <span class="color brownlight" onMouseOver={() => setMainImage5(tas5groupbrown)}></span>
-                            <span class="color pinkmuda" onMouseOver={() => setMainImage5(tas5grouppink)}></span>
-                            <span class="color beige2" onMouseOver={() => setMainImage4(tas5groupbeige)}></span>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-image" style="background-color: rgba(242, 242, 242, 1); padding: 30px;">
-                            <img src={mainImage6()} alt="Litchi Pattern Pillow Handbag" class="main-image" />
-                        </div>
-                        <h3>Rhombus Shoulder Bag</h3>
-                        <p class="price">134.000 IDR</p>
-                        <div class="color-options" onMouseLeave={() => setMainImage6(tas6groupnavy)}>
-                            <span class="color blacky" onMouseOver={() => setMainImage6(tas6groupblack)}></span>
-                            <span class="color navy" onMouseOver={() => setMainImage6(tas6groupnavy)}></span>
-                            <span class="color denim" onMouseOver={() => setMainImage6(tas6groupdenim)}></span>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-image" style="background-color: rgba(242, 242, 242, 1); padding: 30px;">
-                            <img src={mainImage7()} alt="Litchi Pattern Pillow Handbag" class="main-image" />
-                        </div>
-                        <h3>Diamond Chain Shoulder Bag</h3>
-                        <p class="price">⁠160.000 IDR</p>
-                        <div class="color-options" onMouseLeave={() => setMainImage7(tas7groupblack)}>
-                            <span class="color black" onMouseOver={() => setMainImage7(tas7groupblack)}></span>
-                            <span class="color pink" onMouseOver={() => setMainImage7(tas7groupsalmon)}></span>
-                            <span class="color mint" onMouseOver={() => setMainImage7(tas7groupseafoam)}></span>
-                            <span class="color beige3" onMouseOver={() => setMainImage7(tas7groupbone)}></span>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-image" style="background-color: rgba(242, 242, 242, 1); padding: 30px;">
-                            <img src={mainImage8()} alt="Litchi Pattern Pillow Handbag" class="main-image" />
-                        </div>
-                        <h3>American Shoulder Bag</h3>
-                        <p class="price">256.000 IDR</p>
-                        <div class="color-options" onMouseLeave={() => setMainImage8(tas8grouplightdenim)}>
-                            <span class="color domgrey" onMouseOver={() => setMainImage8(tas8groupashgrey)}></span>
-                            <span class="color brown2" onMouseOver={() => setMainImage8(tas8groupbrown)}></span>
-                            <span class="color denim2" onMouseOver={() => setMainImage8(tas8grouplightdenim)}></span>
-                            <span class="color grey2" onMouseOver={() => setMainImage8(tas8grouplightgrey)}></span>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-image" style="background-color: rgba(242, 242, 242, 1); padding: 30px;">
-                            <img src={mainImage5()} alt="Litchi Pattern Pillow Handbag" class="main-image" />
-                        </div>
-                        <h3>Versatile Shoulder Bag</h3>
-                        <p class="price">221.000 IDR</p>
-                        <div class="color-options" onMouseLeave={() => setMainImage5(tas5groupblack)}>
-                            <span class="color black" onMouseOver={() => setMainImage5(tas5groupblack)}></span>
-                            <span class="color brownlight" onMouseOver={() => setMainImage5(tas5groupbrown)}></span>
-                            <span class="color pinkmuda" onMouseOver={() => setMainImage5(tas5grouppink)}></span>
-                            <span class="color beige2" onMouseOver={() => setMainImage4(tas5groupbeige)}></span>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-image" style="background-color: rgba(242, 242, 242, 1); padding: 30px;">
-                            <img src={mainImage6()} alt="Litchi Pattern Pillow Handbag" class="main-image" />
-                        </div>
-                        <h3>Rhombus Shoulder Bag</h3>
-                        <p class="price">134.000 IDR</p>
-                        <div class="color-options" onMouseLeave={() => setMainImage6(tas6groupnavy)}>
-                            <span class="color blacky" onMouseOver={() => setMainImage6(tas6groupblack)}></span>
-                            <span class="color navy" onMouseOver={() => setMainImage6(tas6groupnavy)}></span>
-                            <span class="color denim" onMouseOver={() => setMainImage6(tas6groupdenim)}></span>
-
-                        </div>
-                    </div>
+                    ))}
                 </div>
             </section>
+
             <img src={befooter} alt="Banner" class="full-width-image" />
 
             {/* Footer */}
@@ -311,7 +398,6 @@ const ProductPage = () => {
                         <span>English</span>
                     </div>
                 </div>
-
             </footer>
         </div>
     );

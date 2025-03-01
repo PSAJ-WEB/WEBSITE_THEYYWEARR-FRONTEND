@@ -8,7 +8,7 @@ import clothes2 from '../img/Theyy Wearr Blouses Catalogue/Ruffle Collar Design 
 import clothes3 from '../img/Theyy Wearr Blouses Catalogue/Blouse With Gold Buttons.svg';
 import befooter from '../img/befooter.png';
 import cartIcon from '../img/Tote.svg';
-import accountIcon from '../img/UserCircle.svg'
+import accountIcon from '../img/UserCircle (2).svg'
 import './clothes.css';
 
 const Clothes = () => {
