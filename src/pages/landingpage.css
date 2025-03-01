@@ -370,7 +370,9 @@ header {
   border-radius: 50%;
   cursor: pointer;
 }
-
+.color.clothes1 {background-color: #D2CFC5;}
+.color.clothes2 {background-color: #A79686;}
+.color.clothes3 {background-color: #C1997D;}
 .color.beige3 { background-color: #F5ECE1; }
 .color.black { background-color: #000; }
 .color.grey2 {background-color: #B8ABA3;}

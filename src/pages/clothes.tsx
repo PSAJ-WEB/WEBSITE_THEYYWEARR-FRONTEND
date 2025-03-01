@@ -3,37 +3,9 @@ import { useNavigate } from "@solidjs/router";
 import logo from '../img/logo.png';
 import logowhite from '../img/logowhite.png';
 import translate from '../img/Translate.svg';
-import tas1groupred from '../img/1) Litchi Pattern Pillow Handbag/1 LPPH RED (Cover).svg';
-import tas1groupblack from '../img/1) Litchi Pattern Pillow Handbag/2 LPPH BLACK.svg';
-import tas1groupmint from '../img/1) Litchi Pattern Pillow Handbag/3 LPPH MINT.svg';
-import tas1grouppink from '../img/1) Litchi Pattern Pillow Handbag/4 LPPH PINK.svg';
-import tas2groupblackgrey from '../img/2 ) Retro Small Square Handbag/2 RSSH CHARCOAL.svg';
-import tas2groupbrown from '../img/2 ) Retro Small Square Handbag/1 RSSH BROWN (Cover).svg';
-import tas2groupijo from '../img/2 ) Retro Small Square Handbag/3 RSSH MATCHA.svg';
-import tas2groupbeige from '../img/2 ) Retro Small Square Handbag/4 RSSH CREAM.svg';
-import tas3groupa from '../img/3) Autumn Pearl Handbag/1 APH CREAM (Cover).svg';
-import tas3groupb from '../img/3) Autumn Pearl Handbag/2 APH BLACK.svg';
-import tas3groupc from '../img/3) Autumn Pearl Handbag/3 APH GREY.svg';
-import tas3groupd from '../img/3) Autumn Pearl Handbag/4 APH PINK.svg';
-import tas4groupblack from '../img/4) Frosted Bowling Handbag/1 FBH BLACK (Cover).svg'
-import tas4groupbrown from '../img/4) Frosted Bowling Handbag/2 FBH BROWN.svg'
-import tas4groupgrey from '../img/4) Frosted Bowling Handbag/3 FBH GREY.svg'
-import tas4grouporange from '../img/4) Frosted Bowling Handbag/4 FBH  BUTTERSCOTCH.svg'
-import tas5groupblack from '../img/5) Versatile Shoulder Bag/2 VSB BLACK.svg'
-import tas5groupbrown from '../img/5) Versatile Shoulder Bag/1 VSB DESERT (Cover).svg'
-import tas5grouppink from '../img/5) Versatile Shoulder Bag/3 VSB OAT.svg'
-import tas5groupbeige from '../img/5) Versatile Shoulder Bag/4 VSB LEMONADE.svg'
-import tas6groupblack from '../img/6) Rhombus Shoulder Bag/2 RSB BLACK.svg'
-import tas6groupnavy from '../img/6) Rhombus Shoulder Bag/1 RSB BOLD DENIM (Cover).svg'
-import tas6groupdenim from '../img/6) Rhombus Shoulder Bag/3 RSB LIGHT DENIM.svg'
-import tas7groupblack from '../img/7) Diamond Chain Shoulder Bag/1 DCSB BLACK (Cover).svg'
-import tas7groupsalmon from '../img/7) Diamond Chain Shoulder Bag/2 DCSB SALMON.svg'
-import tas7groupseafoam from '../img/7) Diamond Chain Shoulder Bag/3 DCSB SEAFOAM.svg'
-import tas7groupbone from '../img/7) Diamond Chain Shoulder Bag/4 DCSB BONE.svg'
-import tas8grouplightdenim from '../img/8) American Shoulder Bag/1 ASB LIGHT DENIM (Cover).svg'
-import tas8groupashgrey from '../img/8) American Shoulder Bag/2 ASB GREY.svg'
-import tas8groupbrown from '../img/8) American Shoulder Bag/3 ASB BROWN.svg'
-import tas8grouplightgrey from '../img/8) American Shoulder Bag/4 ASB LIGHT GREY.svg'
+import clothes1 from '../img/Theyy Wearr Blouses Catalogue/Line Drawing Floral Pattern Blouse.svg';
+import clothes2 from '../img/Theyy Wearr Blouses Catalogue/Ruffle Collar Design Blouse.svg';
+import clothes3 from '../img/Theyy Wearr Blouses Catalogue/Blouse With Gold Buttons.svg';
 import befooter from '../img/befooter.png';
 import cartIcon from '../img/Tote.svg';
 import accountIcon from '../img/UserCircle.svg'
@@ -41,14 +13,9 @@ import './clothes.css';
 
 const Clothes = () => {
     const navigate = useNavigate();
-    const [mainImage1, setMainImage1] = createSignal(tas1groupred);
-    const [mainImage2, setMainImage2] = createSignal(tas2groupbrown);
-    const [mainImage3, setMainImage3] = createSignal(tas3groupa);
-    const [mainImage4, setMainImage4] = createSignal(tas4groupblack);
-    const [mainImage5, setMainImage5] = createSignal(tas5groupbrown);
-    const [mainImage6, setMainImage6] = createSignal(tas6groupnavy);
-    const [mainImage7, setMainImage7] = createSignal(tas7groupblack);
-    const [mainImage8, setMainImage8] = createSignal(tas8grouplightdenim);
+    const [mainImage1, setMainImage1] = createSignal(clothes1);
+    const [mainImage2, setMainImage2] = createSignal(clothes2);
+    const [mainImage3, setMainImage3] = createSignal(clothes3);
 
     // Fungsi untuk navigasi ke halaman Cart
     const goToCart = () => {
@@ -118,26 +85,30 @@ const Clothes = () => {
                         <div class="product-image" style="background-color: rgba(242, 242, 242, 1); padding: 30px;">
                             <img src={mainImage1()} alt="Litchi Pattern Pillow Handbag" class="main-image" />
                         </div>
-                        <h3>Lady Pattern Pillow Handbag</h3>
-                        <p class="price">285.300 IDR</p>
-                        <div class="color-options" onMouseLeave={() => setMainImage1(tas1groupblack)}>
-                            <span class="color black" onMouseOver={() => setMainImage1(tas1groupblack)}></span>
-                            <span class="color red" onMouseOver={() => setMainImage1(tas1groupred)}></span>
-                            <span class="color mint" onMouseOver={() => setMainImage1(tas1groupmint)}></span>
-                            <span class="color pink" onMouseOver={() => setMainImage1(tas1grouppink)}></span>
+                        <h3>Drawing Floral Pattern Blouse</h3>
+                        <p class="price">300.000 IDR</p>
+                        <div class="color-options" onMouseLeave={() => setMainImage1(clothes1)}>
+                            <span class="color clothes1" onMouseOver={() => setMainImage1(clothes1)}></span>
                         </div>
                     </div>
                     <div class="product-card">
                         <div class="product-image" style="background-color: rgba(242, 242, 242, 1); padding: 30px;">
                             <img src={mainImage2()} alt="Litchi Pattern Pillow Handbag" class="main-image" />
                         </div>
-                        <h3>Retro Small Square Handbag</h3>
-                        <p class="price">174.000 IDR</p>
-                        <div class="color-options" onMouseLeave={() => setMainImage2(tas2groupbrown)}>
-                            <span class="color black" onMouseOver={() => setMainImage2(tas2groupblackgrey)}></span>
-                            <span class="color brown" onMouseOver={() => setMainImage2(tas2groupbrown)}></span>
-                            <span class="color ijo" onMouseOver={() => setMainImage2(tas2groupijo)}></span>
-                            <span class="color beige" onMouseOver={() => setMainImage2(tas2groupbeige)}></span>
+                        <h3>Ruffle Collar Design Blouse</h3>
+                        <p class="price">220.000 IDR</p>
+                        <div class="color-options" onMouseLeave={() => setMainImage2(clothes2)}>
+                            <span class="color clothes2" onMouseOver={() => setMainImage2(clothes2)}></span>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image" style="background-color: rgba(242, 242, 242, 1); padding: 30px;">
+                            <img src={mainImage3()} alt="Litchi Pattern Pillow Handbag" class="main-image" />
+                        </div>
+                        <h3>Gold Buttons Blouse</h3>
+                        <p class="price">153.000 IDR</p>
+                        <div class="color-options" onMouseLeave={() => setMainImage3(clothes3)}>
+                            <span class="color clothes3" onMouseOver={() => setMainImage2(clothes3)}></span>
                         </div>
                     </div>
                 </div>
