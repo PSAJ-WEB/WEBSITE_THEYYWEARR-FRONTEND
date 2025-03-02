@@ -113,6 +113,7 @@ const Address: Component = () => {
                 <nav class={styles.tabs}>
                     <a href="/account" class={styles.tab}>My Profile</a>
                     <a href="/address" class={styles.activeTab}>Address</a>
+                    <a href="/history" class={styles.tab}>History</a>
                 </nav>
 
                 <div class={styles.addressSection}>

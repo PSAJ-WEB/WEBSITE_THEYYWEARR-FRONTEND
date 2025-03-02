@@ -1,7 +1,5 @@
-import { Component, createSignal } from 'solid-js';
-import styles from './account.module.css';
-import './account.module.css';
-import accountIcon from '../img/UserCircle.svg';
+import { createSignal } from "solid-js";
+import styles from "./history.module.css";
 import { useNavigate } from "@solidjs/router";
 import logo from '../img/logo.png';
 import profile from '../img/UserCircle (2).svg';
@@ -9,8 +7,23 @@ import logowhite from '../img/logowhite.png';
 import befooter from '../img/befooter.png';
 import translate from '../img/Translate.svg';
 import cartIcon from '../img/Tote.svg';
+import tas1groupred from '../img/1) Litchi Pattern Pillow Handbag/1 LPPH RED (Cover).svg';
+import tas2groupbrown from '../img/2 ) Retro Small Square Handbag/1 RSSH BROWN (Cover).svg';
 
-const Account: Component = () => {
+
+interface OrderItem {
+    id: string;
+    name: string;
+    color: string;
+    colorCode: string;
+    quantity: number;
+    price: number;
+    date: string;
+    time: string;
+    image: string;
+}
+
+export default function History() {
     const navigate = useNavigate();
 
     // Fungsi untuk navigasi ke halaman Cart
@@ -23,22 +36,37 @@ const Account: Component = () => {
         navigate("/account");
     };
 
+    const [orderHistory] = createSignal<OrderItem[]>([
+        {
+            id: "1",
+            name: "Litchi Pattern Pillow Handbag",
+            color: "Red",
+            colorCode: "#9E1F25",
+            quantity: 1,
+            price: 285300,
+            date: "28-02-2025",
+            time: "02:26 PM",
+            image: tas1groupred
+        },
+        {
+            id: "2",
+            name: "Retro Small Square Handbag",
+            color: "Brown",
+            colorCode: "#89644B",
+            quantity: 1,
+            price: 174000,
+            date: "05-01-2025",
+            time: "07:30 AM",
+            image: tas2groupbrown
+        }
+    ]);
 
-    const [profileData, setProfileData] = createSignal({
-        fullName: 'Diva Faizah Dwiyanti',
-        email: 'xxxxx@gmail.com',
-        birthday: 'January 19, 2007',
-        gender: 'Female'
-    });
-
-    const handleSave = (e: Event) => {
-        e.preventDefault();
-        // Handle save logic here
-        console.log('Profile saved:', profileData());
+    const formatCurrency = (amount: number) => {
+        return new Intl.NumberFormat("id-ID").format(amount);
     };
 
     return (
-        <div class={styles.container}>
+        <div class={styles.Container}>
             <header>
                 <div class="logo">
                     <img src={logo} alt="Logo" />
@@ -61,82 +89,46 @@ const Account: Component = () => {
                     </button>
                 </div>
             </header>
-
             <div class={styles.header}>
                 <h1 class={styles.title}>Profile</h1>
             </div>
 
             <div class={styles.content}>
                 <nav class={styles.tabs}>
-                    <a href="/account" class={styles.activeTab}>My Profile</a>
+                    <a href="/account" class={styles.tab}>My Profile</a>
                     <a href="/address" class={styles.tab}>Address</a>
-                    <a href="/history" class={styles.tab}>History</a>
+                    <a href="/history" class={styles.activeTab}>History</a>
                 </nav>
-                <div class={styles.profileSection}>
-                    <div class={styles.avatarSection}>
-                        <div class={styles.avatar}>
-                            <img src={accountIcon} alt="Profile" />
-                        </div>
-                    </div>
 
-                    <form class={styles.form} onSubmit={handleSave}>
-                        <div class={styles.formGroup}>
-                            <label>Full Name</label>
-                            <input
-                                type="text"
-                                value={profileData().fullName}
-                                onChange={(e) => setProfileData({ ...profileData(), fullName: e.currentTarget.value })}
-                            />
-                        </div>
+                <div class={styles.orderHistory}>
+                    {orderHistory().map((order) => (
+                        <div class={styles.orderItem}>
+                            <div class={styles.orderImageContainer}>
+                                <img src={order.image} alt={order.name} class={styles.orderImage} />
+                            </div>
 
-                        <div class={styles.formGroup}>
-                            <label>Email</label>
-                            <input
-                                type="email"
-                                value={profileData().email}
-                                onChange={(e) => setProfileData({ ...profileData(), email: e.currentTarget.value })}
-                            />
-                        </div>
+                            <div class={styles.orderDetails}>
+                                <h3 class={styles.productName}>{order.name}</h3>
+                                <div class={styles.colorInfo}>
+                                    <span
+                                        class={styles.colorDot}
+                                        style={{ "background-color": order.colorCode }}
+                                    ></span>
+                                    <span class={styles.colorName}>{order.color}</span>
+                                </div>
+                                <div class={styles.quantity}>Qty: {order.quantity}</div>
+                                <div class={styles.orderDate}>
+                                    Order Completed at {order.date} {order.time}
+                                </div>
+                            </div>
 
-                        <div class={styles.formGroup}>
-                            <label>Birthday</label>
-                            <input
-                                type="text"
-                                value={profileData().birthday}
-                                onChange={(e) => setProfileData({ ...profileData(), birthday: e.currentTarget.value })}
-                            />
-                        </div>
-
-                        <div class={styles.formGroup}>
-                            <label>Gender</label>
-                            <div class={styles.radioGroup}>
-                                <label>
-                                    <input
-                                        type="radio"
-                                        name="gender"
-                                        value="Female"
-                                        checked={profileData().gender === 'Female'}
-                                        onChange={(e) => setProfileData({ ...profileData(), gender: e.currentTarget.value })}
-                                    />
-                                    Female
-                                </label>
-                                <label>
-                                    <input
-                                        type="radio"
-                                        name="gender"
-                                        value="Male"
-                                        checked={profileData().gender === 'Male'}
-                                        onChange={(e) => setProfileData({ ...profileData(), gender: e.currentTarget.value })}
-                                    />
-                                    Male
-                                </label>
+                            <div class={styles.orderPriceSection}>
+                                <div class={styles.orderPriceLabel}>Total Orders</div>
+                                <div class={styles.orderPrice}>{formatCurrency(order.price)} IDR</div>
+                                <button class={styles.buyAgainButton}>Buy Again</button>
                             </div>
                         </div>
-
-                        <div class={styles.buttonSection}>
-                            <button type="submit" class={styles.saveButton}>Save</button>
-                        </div>
-                    </form>
+                    ))}
                 </div>
             </div>
             <img src={befooter} alt="Banner" class="full-width-image" />
@@ -207,6 +199,4 @@ const Account: Component = () => {
             </footer>
         </div>
     );
-};
-
-export default Account;
+}
