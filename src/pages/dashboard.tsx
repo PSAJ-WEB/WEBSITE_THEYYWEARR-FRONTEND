@@ -1,4 +1,4 @@
-import { createSignal } from "solid-js";
+import { createSignal, createEffect } from "solid-js";
 import { useNavigate } from "@solidjs/router";
 import logo from '../img/logo.png';
 import logowhite from '../img/logowhite.png';
@@ -8,16 +8,13 @@ import totebag from '../img/Tote.svg';
 import truck from '../img/Truck.svg';
 import returns from '../img/ArrowsClockwise.svg'
 import line from '../img/Union.png';
+import cartIcon from '../img/Tote.svg';
+import accountIcon from '../img/UserCircle (2).svg'
 import styleinmotion from '../img/styleinmotion.png';
 import fashiontips from '../img/fashiontips.png';
 import mixnmatch from '../img/mixnmatch.png';
 import behindthedesign from '../img/behindthedesign.png';
 import befooter from '../img/befooter.png';
-import cartIcon from '../img/Tote.svg';
-import accountIcon from '../img/UserCircle (2).svg'
-import tas5 from '../img/tas5.png';
-import tas6 from '../img/tas6.png';
-import tas7 from '../img/tas7.png';
 import cover1 from '../img/cover1.png';
 import cover2 from '../img/cover2.png';
 import cover3 from '../img/cover3.png';
@@ -26,8 +23,6 @@ import video1 from '../img/1.mp4';
 import video2 from '../img/2.mp4';
 import video3 from '../img/3.mp4';
 import video4 from '../img/4.mp4';
-import tas8 from '../img/tas8.png';
-import './dashboard.css';
 import tas1groupred from '../img/1) Litchi Pattern Pillow Handbag/1 LPPH RED (Cover).svg';
 import tas1groupblack from '../img/1) Litchi Pattern Pillow Handbag/2 LPPH BLACK.svg';
 import tas1groupmint from '../img/1) Litchi Pattern Pillow Handbag/3 LPPH MINT.svg';
@@ -44,18 +39,9 @@ import tas4groupblack from '../img/4) Frosted Bowling Handbag/1 FBH BLACK (Cover
 import tas4groupbrown from '../img/4) Frosted Bowling Handbag/2 FBH BROWN.svg'
 import tas4groupgrey from '../img/4) Frosted Bowling Handbag/3 FBH GREY.svg'
 import tas4grouporange from '../img/4) Frosted Bowling Handbag/4 FBH  BUTTERSCOTCH.svg'
+import './dashboard.css';
 
 const Dashboard = () => {
-    const [mainImage1, setMainImage1] = createSignal(tas1groupred);
-    const [mainImage2, setMainImage2] = createSignal(tas2groupbrown);
-    const [mainImage3, setMainImage3] = createSignal(tas3groupa);
-    const [mainImage4, setMainImage4] = createSignal(tas4groupblack);
-    const videoData = [
-        { src: video1, cover: cover1, title: "Exclusive Designs,  Timeless, and Effortlessly Stylish", date: "2024-03-30" },
-        { src: video2, cover: cover2, title: "Best-Selling Bags You Can’t Miss!", date: "2024-01-17" },
-        { src: video3, cover: cover3, title: "Theyy Wearr's Kebaya Kutu Baru Collection", date: "2024-01-12" },
-        { src: video4, cover: cover4, title: "Elevate Your Look with Our Signature Bags", date: "2024-01-11" }
-    ];
     const navigate = useNavigate();
 
     // Fungsi untuk navigasi ke halaman Cart
@@ -69,6 +55,87 @@ const Dashboard = () => {
         window.scrollTo(0, 0); // Add this line
         navigate("/account");
     };
+    const [products, setProducts] = createSignal([
+        {
+            name: "Lady Pattern Pillow Handbag",
+            category: "Handbag",
+            price: "285.300 IDR",
+            image: tas1groupred,
+            defaultImage: tas1groupred,
+            colors: [
+                { color: "black", image: tas1groupblack },
+                { color: "red", image: tas1groupred },
+                { color: "mint", image: tas1groupmint },
+                { color: "pink", image: tas1grouppink },
+            ],
+        },
+        {
+            name: "Retro Small Square Handbag",
+            category: "Handbag",
+            price: "174.000 IDR",
+            image: tas2groupbrown,
+            defaultImage: tas2groupbrown,
+            colors: [
+                { color: "black", image: tas2groupblackgrey },
+                { color: "brown", image: tas2groupbrown },
+                { color: "ijo", image: tas2groupijo },
+                { color: "beige", image: tas2groupbeige },
+            ],
+        },
+        {
+            name: "Autumn Pearl Handbag",
+            category: "Handbag",
+            price: "250.000 IDR",
+            image: tas3groupa,
+            defaultImage: tas3groupa,
+            colors: [
+                { color: "gradient1", image: tas3groupb },
+                { color: "gradient2", image: tas3groupc },
+                { color: "gradient3", image: tas3groupd },
+                { color: "gradient4", image: tas3groupa },
+            ],
+        },
+        {
+            name: "Frosted Bowling Handbag",
+            category: "Handbag",
+            price: "⁠192.000 IDR",
+            image: tas4groupblack,
+            defaultImage: tas4groupblack,
+            colors: [
+                { color: "black", image: tas4groupblack },
+                { color: "brown", image: tas4groupbrown },
+                { color: "grey", image: tas4groupgrey },
+                { color: "orange", image: tas4grouporange },
+            ],
+        }
+    ]);
+
+    const [searchQuery, setSearchQuery] = createSignal("");
+
+    const highlightText = (text, query) => {
+        if (!query) return text;
+        const regex = new RegExp(`(${query})`, "gi");
+        return text.replace(regex, "<span class='highlight'>$1</span>");
+    };
+
+    const setMainImage = (index, image) => {
+        const updatedProducts = products().map((product, i) => {
+            if (i === index) {
+                return { ...product, image };
+            }
+            return product;
+        });
+        setProducts(updatedProducts);
+    };
+
+    const videoData = [
+        { src: video1, cover: cover1, title: "Exclusive Designs, Timeless, and Effortlessly Stylish", date: "2024-03-30" },
+        { src: video2, cover: cover2, title: "Best-Selling Bags You Can’t Miss!", date: "2024-01-17" },
+        { src: video3, cover: cover3, title: "Theyy Wearr's Kebaya Kutu Baru Collection", date: "2024-01-12" },
+        { src: video4, cover: cover4, title: "Elevate Your Look with Our Signature Bags", date: "2024-01-11" }
+    ];
+
+
     return (
         <div class="landing-page">
             {/* Header */}
@@ -78,7 +145,7 @@ const Dashboard = () => {
                 </div>
                 <nav class="navbar">
                     <ul>
-                        <li><a href="/" class="active">Home</a></li>
+                        <li><a href="/dashboard" class="active">Home</a></li>
                         <li><a href="/products">Products</a></li>
                         <li><a href="/about-us">About Us</a></li>
                         <li><a href="/blogpage">Blog</a></li>
@@ -96,13 +163,13 @@ const Dashboard = () => {
             </header>
 
             {/* Hero Section */}
-            <section class="hero">
+            <section class="herolan">
                 <div class="overlay-lines">
                     <img src={line} />
                     <div class="desc">
                         <h3>Accessoris</h3>
-                        <h2>Glasses</h2>
-                        <p>$20</p>
+                        <h2>Lunettes De Soleil M</h2>
+                        <p>112.300 IDR</p>
                     </div>
                 </div>
                 <div class="hero-content">
@@ -124,136 +191,50 @@ const Dashboard = () => {
             <section class="fresh-drops">
                 <div class="section-header">
                     <h2>Fresh Drops for You</h2>
-                    <a href="/view-all" class="view-all">View More</a>
+                    <a href="/products" class="view-all">View More</a>
                 </div>
-                <div class="products-grid">
-                    {/* Row 1 */}
-                    <div class="product-card">
-                        <div class="product-image" style="background-color: rgba(242, 242, 242, 1); padding: 30px;">
-                            <img src={mainImage1()} alt="Litchi Pattern Pillow Handbag" class="main-image" />
+                <div class="products-gridl">
+                    {products().map((product, index) => (
+                        <div class="product-card" key={product.name} id={product.name}>
+                            <div class="product-img" style={{ "background-color": "rgba(242, 242, 242, 1)", padding: "30px" }}>
+                                <img src={product.image} alt={product.name} class="main-image" />
+                            </div>
+                            <p class="section-product">{product.category}</p>
+                            <h3 innerHTML={highlightText(product.name, searchQuery())}></h3>
+                            <p class="price">{product.price}</p>
+                            <div class="color-options" onMouseLeave={() => setMainImage(index, product.defaultImage)}>
+                                {product.colors.map((color, colorIndex) => (
+                                    <span
+                                        class={`color ${color.color}`}
+                                        onMouseOver={() => setMainImage(index, color.image)}
+                                        key={colorIndex}
+                                    ></span>
+                                ))}
+                            </div>
                         </div>
-                        <h3>Lady Pattern Pillow Handbag</h3>
-                        <p class="price">285.300 IDR</p>
-                        <div class="color-options" onMouseLeave={() => setMainImage1(tas1groupred)}>
-                            <span
-                                class="color black"
-                                onMouseOver={() => setMainImage1(tas1groupblack)}
-                            ></span>
-                            <span
-                                class="color red"
-                                onMouseOver={() => setMainImage1(tas1groupred)}
-                            ></span>
-                            <span
-                                class="color mint"
-                                onMouseOver={() => setMainImage1(tas1groupmint)}
-                            ></span>
-                            <span
-                                class="color pink"
-                                onMouseOver={() => setMainImage1(tas1grouppink)}
-                            ></span>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-image" style="background-color: rgba(242, 242, 242, 1); padding: 30px;">
-                            <img src={mainImage2()} alt="Autumn Pearl Handbag" class="main-image" />
-                        </div>
-                        <h3>Retro Small Square Handbag</h3>
-                        <p class="price">174.000 IDR</p>
-                        <div class="color-options" onMouseLeave={() => setMainImage2(tas2groupbrown)}>
-                            <span class="color blackgrey" onMouseOver={() => setMainImage2(tas2groupblackgrey)}></span>
-                            <span class="color brown" onMouseOver={() => setMainImage2(tas2groupbrown)}></span>
-                            <span class="color ijo" onMouseOver={() => setMainImage2(tas2groupijo)}></span>
-                            <span class="color beige" onMouseOver={() => setMainImage2(tas2groupbeige)}></span>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-image" style="background-color: rgba(242, 242, 242, 1); padding: 30px;">
-                            <img src={mainImage3()} alt="Autumn Pearl Handbag" class="main-image" />
-                        </div>
-                        <h3>Autumn Pearl Handbag</h3>
-                        <p class="price">250.000 IDR</p>
-                        <div class="color-options" onMouseLeave={() => setMainImage3(tas3groupa)}>
-                            <span class="color gradient1" onMouseOver={() => setMainImage3(tas3groupb)}></span>
-                            <span class="color gradient2" onMouseOver={() => setMainImage3(tas3groupc)}></span>
-                            <span class="color gradient3" onMouseOver={() => setMainImage3(tas3groupd)}></span>
-                            <span class="color gradient4" onMouseOver={() => setMainImage3(tas3groupa)}></span>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-image" style="background-color: rgba(242, 242, 242, 1); padding: 30px;">
-                            <img src={mainImage4()} alt="Autumn Pearl Handbag" class="main-image" />
-                        </div>
-                        <h3>Focused Bowling Handbag</h3>
-                        <p class="price">⁠192.000 IDR</p>
-                        <div class="color-options" onMouseLeave={() => setMainImage4(tas4groupblack)}>
-                            <span class="color black" onMouseOver={() => setMainImage4(tas4groupblack)}></span>
-                            <span class="color brown" onMouseOver={() => setMainImage4(tas4groupbrown)}></span>
-                            <span class="color grey" onMouseOver={() => setMainImage4(tas4groupgrey)}></span>
-                            <span class="color orange" onMouseOver={() => setMainImage4(tas4grouporange)}></span>
-                        </div>
-                    </div>
-
-                    {/* Row 2 */}
-                    <div class="product-card">
-                        <img src={tas5} alt="Versatile Shoulder Bag" />
-                        <h3>Versatile Shoulder Bag</h3>
-                        <p class="price">$21,000.00</p>
-                        <div class="color-options">
-                            <span class="color brown"></span>
-                            <span class="color beige"></span>
-                            <span class="color black"></span>
-                            <span class="color cream"></span>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src={tas6} alt="Shamrock Shoulder Bag" />
-                        <h3>Shamrock Shoulder Bag</h3>
-                        <p class="price">$45,000.00</p>
-                        <div class="color-options">
-                            <span class="color navy"></span>
-                            <span class="color black"></span>
-                            <span class="color brown"></span>
-                            <span class="color beige"></span>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src={tas7} alt="Diamond Chain Circular Bag" />
-                        <h3>Diamond Chain Circular Bag</h3>
-                        <p class="price">$95,000.00</p>
-                        <div class="color-options">
-                            <span class="color black"></span>
-                            <span class="color brown"></span>
-                            <span class="color mint"></span>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src={tas8} alt="American Shoulder Bag" />
-                        <h3>American Shoulder Bag</h3>
-                        <p class="price">$89,900.00</p>
-                        <div class="color-options">
-                            <span class="color blue"></span>
-                            <span class="color black"></span>
-                            <span class="color beige"></span>
-                            <span class="color pink"></span>
-                        </div>
-                    </div>
+                    ))}
                 </div>
             </section>
 
             {/* Categories Section */}
-            <section class="categories">
-                <div class="category-card clothes">
-                    <h2>Clothes</h2>
-                    <button
-                        class="shop-now-btn"
-                        onClick={() => navigate("/clothes")}
-                    >
+            <section class="categories-sec">
+                <div class="category-card-sec handbag">
+                    <h2>Handbags</h2>
+                    <button class="shop-now-btn" onClick={() => navigate("/handbags")}>
                         Shop Now
                     </button>
                 </div>
-                <div class="category-card accessories">
+                <div class="category-card-sec clothes">
+                    <h2>Clothes</h2>
+                    <button class="shop-now-btn" onClick={() => navigate("/clothes")}>
+                        Shop Now
+                    </button>
+                </div>
+                <div class="category-card-sec accessories">
                     <h2>Accessories</h2>
-                    <button class="shop-now-btn" onClick={() => navigate("/accessories")}>Shop Now</button>
+                    <button class="shop-now-btn" onClick={() => navigate("/accessories")}>
+                        Shop Now
+                    </button>
                 </div>
             </section>
             <div class="limited-offer">
@@ -443,7 +424,6 @@ const Dashboard = () => {
                         <span>English</span>
                     </div>
                 </div>
-
             </footer>
         </div>
     );

@@ -170,7 +170,7 @@ header {
 
 
 /* Hero section */
-.hero {
+.herolan {
   position: relative;
   height: 840px;
   background: url('../img/image3.png') no-repeat center/cover;
@@ -180,7 +180,7 @@ header {
   justify-content: center;
 }
 
-.hero:before {
+.herolan:before {
   content: '';
   position: absolute;
   top: 0;
@@ -197,7 +197,7 @@ header {
   margin-left: 4rem;
 }
 
-.hero h1 {
+.herolan h1 {
   margin-top: 325px;
   line-height: 1.2; 
   font-size: 60px;
@@ -206,7 +206,7 @@ header {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.hero p {
+.herolan p {
   color: rgba(255, 255, 255, 0.7);
   font-size: 32px;
   margin-bottom: 2rem;
@@ -259,12 +259,12 @@ header {
   font-weight: 500;
   font-family: 'SF Pro Display';
   color: rgba(255, 255, 255, 1);
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
 
 .overlay-lines p {
   margin-left: 12px;
-  font-size: 24px;
+  font-size: 22px;
   font-family: 'SF Pro Display';
   color: rgba(255, 255, 255, 1);
   font-weight: 800;
@@ -330,8 +330,8 @@ header {
   transform: scale(1.05); /* Efek zoom ketika di-hover */
 }
 .product-image {
-  width: 290px;
-  height: 358px;
+  width: 293px;
+  height: 394px;
   background-color: rgba(242, 242, 242, 1);
   padding: 30px;
   display: flex;
@@ -395,19 +395,20 @@ header {
 .color.gradient3 { background: linear-gradient(to bottom, rgba(190, 128, 114, 1),rgba(221, 176, 104, 1));}
 .color.gradient4 { background: linear-gradient(to bottom, rgba(233, 217, 197, 1), rgba(221, 176, 104, 1));}
 
-/* Categories section */
-.categories {
+/* Container untuk kategori */
+.categories-sec {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  padding: 0 4rem 4rem;
+  grid-template-columns: 2fr 1fr; /* Handbag 2x lebar, Clothes dan Accessories 1x lebar */
+  grid-template-rows: auto; /* Tinggi otomatis */
+  gap: 20px; /* Jarak antara kategori */
 }
 
-.category-card {
+/* Gaya default untuk category-card-sec */
+.category-card-sec {
   width: 600px;
   height: 380px;
   display: flex;
-  flex-direction: column; /* Menyusun elemen dalam column */
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   color: rgba(255, 255, 255, 0.7);
@@ -418,11 +419,9 @@ header {
   position: relative;
   text-align: center;
 }
-/* .category-card:hover {
-  transform: translateY(-5px);
-} */
 
-.category-card:before {
+/* Overlay untuk category-card-sec */
+.category-card-sec:before {
   content: '';
   position: absolute;
   top: 0;
@@ -432,22 +431,15 @@ header {
   background: rgba(0, 0, 0, 0.3);
 }
 
-
-.category-card h2 {
+/* Gaya untuk judul kategori */
+.category-card-sec h2 {
   font-weight: 700;
   position: relative;
   z-index: 1;
-  margin-bottom: 8px; /* Menambahkan jarak antara h2 dan tombol */
+  margin-bottom: 8px; /* Jarak antara judul dan tombol */
 }
 
-.clothes {
-  background-image: url('../img/clotes.png');
-}
-
-.accessories {
-  background-image: url('../img/acessories.png');
-}
-
+/* Gaya untuk tombol Shop Now */
 .shop-now-btn {
   position: relative;
   z-index: 1;
@@ -461,9 +453,36 @@ header {
   cursor: pointer;
   transition: background 0.3s ease, color 0.3s ease;
 }
+
+/* Hover effect untuk tombol */
 .shop-now-btn:hover {
-  background-color: white;
-  color: black;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/* Background image untuk Handbag */
+.handbag {
+  margin-top: 35px;
+  width: 1220px;
+  margin-left: 60px;
+  background-image: url('../img/handbag.png'); 
+  background-position: 50% 30%; /* Posisi horizontal: tengah, vertikal: 30% dari atas */
+  background-size: cover; /* Gambar menutupi area elemen */
+  background-repeat: no-repeat; /* Gambar tidak diulang *//* Ganti dengan path gambar handbag Anda */
+}
+
+/* Background image untuk Clothes */
+.clothes {
+  margin-top: 435px;
+  margin-left: -1240px;
+  background-image: url('../img/clothes.png'); /* Ganti dengan path gambar clothes Anda */
+}
+
+/* Background image untuk Accessories */
+.accessories {
+  margin-top: -400px;
+  margin-left: 680px;
+  background-image: url('../img/accessories.png'); /* Ganti dengan path gambar accessories Anda */
 }
 /* Lifestyle Banner */
 .lifestyle-banner {
@@ -583,128 +602,14 @@ header {
   width: 0;
 }
 
-
-
-/* Footer */
-footer {
-  background-color: rgba(20, 20, 20, 1);
-  color: #fff;
-  padding: 4rem;
-}
-
-.footer-top {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  margin-bottom: 4rem;
-}
-
-.store-image img {
-  width: 134px;
-  height: 84px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.newsletter {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.newsletter p {
-  color: rgba(136, 136, 136, 1);
-  margin-bottom: 1.5rem;
-  font-size: 1.1rem;
-}
-
-.subscribe-form {
-  display: flex;
-  gap: 1rem;
-}
-
-.subscribe-form input {
-  background-color: rgba(42, 43, 45, 1);
-  flex: 1;
-  padding: 0.8rem;
-  border: none;
-  color: rgba(255, 255, 255, 1); /* Menambahkan warna teks putih */
-}
-
-.subscribe-form input:focus {
-  outline: none; /* Menghilangkan outline saat input diklik */
-  border: none; /* Menghilangkan border saat input diklik */
-}
-
-.subscribe-form ::placeholder {
-  color: rgba(255, 255, 255, 1);
-}
-.subscribe-form button {
-  padding: 0.8rem 1.5rem;
-  background-color: #fff;
-  color: #000;
-  font-weight: 500;
-}
-
-.footer-links {
+.products-gridl {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  margin-bottom: 3rem;
+  gap: 15px; /* Pastikan gap 0px */
+  margin: 0;
+  padding: 0;
 }
 
-.link-column h4 {
-  font-weight: 200;
-  margin-bottom: 1.5rem;
-  color: rgba(255, 255, 255, 1);
-  letter-spacing: 0.2px;
-}
-
-.link-column ul {
-  font-weight: 200;
-  display: flex;
-  flex-direction: column;
-  color: rgba(136, 136, 136, 1);
-  gap: 0.8rem;
-}
-
-.link-column a {
-  color: #ccc;
-  transition: color 0.3s;
-}
-
-.link-column a:hover {
-  color: #fff;
-}
-
-.footer-bottom {
-  background-color: #2A2B2D;
-  margin-left: -75px;
-  width: 100vw;
-  height: 72px;
-  margin-bottom: -80px;
-  padding: 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 1.5rem;
-  border-top: 1px solid #444;
-  font-size: 0.9rem;
-  color: #bbb;
-}
-
-.translate-section {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.9rem;
-  color: #ddd;
-}
-
-.translate-section img {
-  width: 18px;
-  height: auto;
-}
 
 /* Responsive styles */
 @media (max-width: 1200px) {

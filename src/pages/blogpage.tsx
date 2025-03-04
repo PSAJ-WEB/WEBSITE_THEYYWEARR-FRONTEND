@@ -8,6 +8,8 @@ import translate from '../img/Translate.svg';
 import fashiontips from '../img/fashiontips.png';
 import mixnmatch from '../img/mixnmatch.png';
 import behindthedesign from '../img/behindthedesign.png';
+import effrotless from '../img/effortles chic.png';
+import thepower from '../img/thepower.png'
 import befooter from '../img/befooter.png';
 import cartIcon from '../img/Tote.svg';
 import accountIcon from '../img/UserCircle (2).svg'
@@ -33,7 +35,31 @@ const BlogPage = () => {
         navigate("/account");
     };
     const goToReadMore = () => {
-        navigate("/blogpage/readmore5fahion");
+        navigate("/blogpage/25-fashion-tips-to-instantly-elevate-your-look/1");
+        setTimeout(() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }, 100); // Memberi jeda agar navigasi selesai dulu
+    };
+    const goToReadMore2 = () => {
+        navigate("/blogpage/mix-n-match-bags-outfits/1");
+        setTimeout(() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }, 100); // Memberi jeda agar navigasi selesai dulu
+    };
+    const goToReadMore3 = () => {
+        navigate("/blogpage/behind-the-design/1");
+        setTimeout(() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }, 100); // Memberi jeda agar navigasi selesai dulu
+    };
+    const goToReadMore4 = () => {
+        navigate("/blogpage/effortless-chic/1");
+        setTimeout(() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }, 100); // Memberi jeda agar navigasi selesai dulu
+    };
+    const goToReadMore5 = () => {
+        navigate("/blogpage/power-of-accessories/1");
         setTimeout(() => {
             window.scrollTo({ top: 0, behavior: "smooth" });
         }, 100); // Memberi jeda agar navigasi selesai dulu
@@ -49,7 +75,7 @@ const BlogPage = () => {
                 </div>
                 <nav class="navbar-blog">
                     <ul>
-                        <li><a href="/">Home</a></li>
+                        <li><a href="/dashboard">Home</a></li>
                         <li><a href="/products">Products</a></li>
                         <li><a href="/about-us">About Us</a></li>
                         <li><a href="/blogpage" class="active">Blog</a></li>
@@ -94,7 +120,7 @@ const BlogPage = () => {
                     <div class="blog-post-blog">
                         <img src={fashiontips} alt="Fashion Tips" />
                         <div class="blog-content-blog">
-                            <h3>5 Fashion Tips to Instantly Elevate Your Look</h3>
+                            <h3>25 Fashion Tips to Instantly Elevate Your Look</h3>
                             <p>Want to level up your style effortlessly? Fashion is more than just clothes—it’s about confidence, attitude, and knowing how to put the right pieces together. In this article, we’ll explore five expert-approved fashion tips that will help you transform your everyday outfits into stunning, head-turning ensembles. From understanding color coordination to choosing the right accessories, these simple yet effective tricks will make a significant difference in your personal style.</p>
                             <button onClick={goToReadMore} class="read-more">
                                 Read More
@@ -106,7 +132,9 @@ const BlogPage = () => {
                         <div class="blog-content-blog">
                             <h3>Mix & Match: The Art of Pairing Bags & Outfits</h3>
                             <p>A great outfit isn’t complete without the perfect bag. But how do you choose the right one? Whether you’re going for a chic, casual, or elegant look, the way you pair your bag with your outfit can elevate your style effortlessly. This article will guide you through the essentials of bag-outfit coordination, including color harmony, texture balance, and occasion-based selections. Learn how to make a statement with the perfect mix-and-match combinations!</p>
-                            <a href="#" class="read-more">Read More</a>
+                            <button onClick={goToReadMore2} class="read-more">
+                                Read More
+                            </button>
                         </div>
                     </div>
                     <div class="blog-post-blog">
@@ -114,7 +142,29 @@ const BlogPage = () => {
                         <div class="blog-content-blog">
                             <h3>Behind the Design: The Inspiration Behind Our Collection</h3>
                             <p>Every piece in our collection has a story. From concept to creation, our design process is driven by inspiration from global fashion trends, cultural influences, and timeless style. In this exclusive behind-the-scenes look, we’ll walk you through the journey of how our latest collection came to life—starting from mood boards, fabric selection, to the final product. Get an insider’s perspective on the creative process, and discover the passion behind every stitch and detail.</p>
-                            <a href="#" class="read-more">Read More</a>
+                            <button onClick={goToReadMore3} class="read-more">
+                                Read More
+                            </button>
+                        </div>
+                    </div>
+                    <div class="blog-post-blog">
+                        <img src={effrotless} alt="Behind the Design" />
+                        <div class="blog-content-blog">
+                            <h3>Effortless Chic: How to Achieve a Timeless Look Without Trying Too Hard</h3>
+                            <p>Looking stylish doesn’t mean following every new trend. A timeless, effortlessly chic look is all about understanding classic fashion elements and incorporating them into your wardrobe in a way that feels natural.</p>
+                            <button onClick={goToReadMore4} class="read-more">
+                                Read More
+                            </button>  
+                        </div>                      
+                    </div>
+                    <div class="blog-post-blog">
+                        <img src={thepower} alt="Behind the Design" />
+                        <div class="blog-content-blog">
+                            <h3>The Power of Accessories: How to Transform Any Outfit</h3>
+                            <p>Accessories have the ability to take a simple outfit from basic to extraordinary. Whether it’s a bold statement necklace, a structured handbag, or the perfect pair of sunglasses, the right accessories can redefine your entire look.</p>
+                            <button onClick={goToReadMore5} class="read-more">
+                                Read More
+                            </button>  
                         </div>
                     </div>
                 </div>

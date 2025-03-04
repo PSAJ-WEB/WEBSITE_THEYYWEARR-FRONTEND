@@ -39,6 +39,12 @@ import clothes2 from '../img/Theyy Wearr Blouses Catalogue/Ruffle Collar Design 
 import glasses from '../img/Hippie  Mod Glasses.svg';
 import belt1 from '../img/Theyy Wearr Belts Catalogue/Black Double O-Ring Belt.svg';
 import belt2 from '../img/Theyy Wearr Belts Catalogue/Almond Belt Leather.svg';
+import lunettesdesoleilm from '../img/Lunettes De Soleil M.svg';
+import metalsunglasses from '../img/Metal Sunglasses.svg';
+import aviatorsunglasses from '../img/Aviator Sunglasses.svg';
+import blackfauxbelt from '../img/Faux Leather Belt with buckle.svg';
+import thinbrownfauxbelt from '../img/Thin Brown Faux Leather Belt.svg'
+import thinbeltsquarebuckle from '../img/Thin Belt with Square Buckle.svg'
 import befooter from '../img/befooter.png';
 import cartIcon from '../img/Tote.svg';
 import accountIcon from '../img/UserCircle (2).svg';
@@ -172,33 +178,63 @@ const ProductPage = () => {
             ],
         },
         {
-            name: "Hippie Mod Glasses",
+            name: "Lunettes De Soleil M",
             category: "Accessories",
-            price: "67.300 IDR",
-            image: glasses,
-            defaultImage: glasses,
+            price: "112.300 IDR",
+            image: lunettesdesoleilm,
+            defaultImage: lunettesdesoleilm,
             colors: [
-                { color: "glasses", image: glasses },
+                { color: "glasses1", image: lunettesdesoleilm },
             ],
         },
         {
-            name: "Black Double O-Ring Belt",
+            name: "Metal Sunglasses",
             category: "Accessories",
-            price: "129.000 IDR",
-            image: belt1,
-            defaultImage: belt1,
+            price: "86.900 IDR",
+            image: metalsunglasses,
+            defaultImage: metalsunglasses,
             colors: [
-                { color: "black", image: belt1 },
+                { color: "glasses2", image: metalsunglasses },
             ],
         },
         {
-            name: "Almond Belt Leather",
+            name: "Aviator Sunglasses",
+            category: "Accessories",
+            price: "79.900 IDR",
+            image: aviatorsunglasses,
+            defaultImage: aviatorsunglasses,
+            colors: [
+                { color: "glasses3", image: aviatorsunglasses },
+            ],
+        },
+        {
+            name: "Black Faux Belt",
+            category: "Accessories",
+            price: "143.300 IDR",
+            image: blackfauxbelt,
+            defaultImage: blackfauxbelt,
+            colors: [
+                { color: "blackfaux", image: blackfauxbelt },
+            ],
+        },
+        {
+            name: "Thin Brown Faux Belt",
             category: "Handbag",
-            price: "110.500 IDR",
-            image: belt2,
-            defaultImage: belt2,
+            price: "96.200 IDR",
+            image: thinbrownfauxbelt,
+            defaultImage: thinbrownfauxbelt,
             colors: [
-                { color: "belt2", image: belt2 },
+                { color: "belt2", image: thinbeltsquarebuckle },
+            ],
+        },
+        {
+            name: "Thin Belt Square Buckle",
+            category: "Handbag",
+            price: "110.400 IDR",
+            image: thinbeltsquarebuckle,
+            defaultImage: thinbeltsquarebuckle,
+            colors: [
+                { color: "belt3", image: thinbeltsquarebuckle },
             ],
         },
     ]);
@@ -217,17 +253,20 @@ const ProductPage = () => {
                 product.name.toLowerCase().includes(query)
             );
             if (matchedProduct) {
-                const productElement = document.getElementById(matchedProduct.name);
-                if (productElement) {
-                    // Scroll ke produk dengan animasi smooth
-                    productElement.scrollIntoView({ behavior: "smooth", block: "center" });
+                // Gunakan setTimeout untuk memastikan DOM sudah di-render
+                setTimeout(() => {
+                    const productElement = document.getElementById(matchedProduct.name);
+                    if (productElement) {
+                        // Scroll ke produk dengan animasi smooth
+                        productElement.scrollIntoView({ behavior: "smooth", block: "center" });
 
-                    // Tambahkan class highlight sementara
-                    productElement.classList.add("highlight-product");
-                    setTimeout(() => {
-                        productElement.classList.remove("highlight-product");
-                    }, 1000); // Hapus highlight setelah 1 detik
-                }
+                        // Tambahkan class highlight sementara
+                        productElement.classList.add("highlight-product");
+                        setTimeout(() => {
+                            productElement.classList.remove("highlight-product");
+                        }, 1000); // Hapus highlight setelah 1 detik
+                    }
+                }, 0); 
             }
         }
     });
@@ -262,7 +301,7 @@ const ProductPage = () => {
                 </div>
                 <nav class="navbar">
                     <ul>
-                        <li><a href="/">Home</a></li>
+                        <li><a href="/dashboard">Home</a></li>
                         <li><a href="/products" class="active">Products</a></li>
                         <li><a href="/about-us">About Us</a></li>
                         <li><a href="/blogpage">Blog</a></li>
@@ -311,10 +350,10 @@ const ProductPage = () => {
                     </div>
                 </div>
 
-                <div class="products-grid2">
+                <div class="products-grid3">
                     {filteredProducts().map((product, index) => (
                         <div class="product-card" key={product.name} id={product.name}>
-                            <div class="product-image" style={{ "background-color": "rgba(242, 242, 242, 1)", padding: "30px" }}>
+                            <div class="product-img" style={{ "background-color": "rgba(242, 242, 242, 1)", padding: "30px" }}>
                                 <img src={product.image} alt={product.name} class="main-image" />
                             </div>
                             <p class="section-product">{product.category}</p>

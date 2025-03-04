@@ -233,72 +233,6 @@ header {
     width: 644px;
 }
 
-.overlay-lines {
-    position: absolute;
-    left: 71%;
-    /* Center horizontally */
-    top: 13%;
-    /* Center vertically */
-    transform: translate(-50%, -50%);
-    /* Perfect centering */
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    width: auto;
-    /* Let it adjust based on content */
-    max-width: 80vw;
-    /* Limit width on larger screens */
-    z-index: 2;
-    /* Ensure it's above the hero background */
-}
-
-.overlay-lines img {
-    width: 198px;
-    /* Sesuaikan ukuran gambar */
-    height: 100px;
-}
-
-.overlay-lines .desc {
-    text-align: left;
-    /* Pastikan teks rata kiri */
-}
-
-.desc {
-    margin-top: 227px;
-    margin-left: -145px;
-    width: 248px;
-    height: 127px;
-    background-color: rgba(255, 255, 255, 0.3);
-}
-
-.overlay-lines h3 {
-    margin-left: 12px;
-    margin-top: 14px;
-    font-size: 18px;
-    font-weight: 400;
-    font-family: 'SF Pro Display';
-    color: rgba(255, 255, 255, 1);
-    margin-bottom: 4px;
-}
-
-.overlay-lines h2 {
-    margin-left: 12px;
-    font-size: 24px;
-    font-weight: 500;
-    font-family: 'SF Pro Display';
-    color: rgba(255, 255, 255, 1);
-    margin-bottom: 4px;
-}
-
-.overlay-lines p {
-    margin-left: 12px;
-    font-size: 24px;
-    font-family: 'SF Pro Display';
-    color: rgba(255, 255, 255, 1);
-    font-weight: 800;
-}
-
-
 
 .shpnow {
     width: 144px;
@@ -343,7 +277,7 @@ header {
 }
 
 /* Fresh Drops section */
-.product-accesories {
+.product {
     padding: 4rem;
 }
 
@@ -402,9 +336,9 @@ header {
     font-weight: 600;
 }
 
-.products-grid-accessories {
+.products-grid3 {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     row-gap: 50px;
     /* Jarak antar baris */
     column-gap: 15px;
@@ -419,24 +353,43 @@ header {
 }
 
 
-.product-card-acc {
+.product-card {
     transition: transform 0.3s;
 }
 
-.product-card-acc:hover {
+.product-card:hover {
     transform: translateY(-5px);
 }
 
-.product-card-acc img {
+.product-card img {
     border-radius: 4px;
     margin-bottom: 1rem;
     aspect-ratio: 1/1;
     object-fit: cover;
 }
 
-.product-image-acc {
-    width: 395px;
-    height: 413px;
+.section-product {
+    margin-top: 20px;
+    color: #B6B7BA;
+}
+
+.product-card h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 7px;
+}
+
+.price {
+    font-weight: 500;
+    color: #0E0E0E;
+    margin-top: 10px;
+}
+
+
+
+.product-img {
+    width: 293px;
+    height: 394px;
     background-color: rgba(242, 242, 242, 1);
     padding: 30px;
     display: flex;
@@ -444,18 +397,191 @@ header {
     align-items: center;
 }
 
-.product-card-acc h3 {
-    font-size: 1rem;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
+.color-options {
+    margin-top: 10px;
+    display: flex;
+    gap: 2px;
 }
 
-.price {
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+.color {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 0.1px solid #B6B7BA;
+    box-shadow: inset 0 0 0 1px white;
+    /* Efek border dalam */
 }
 
 
+
+.color.glasses {
+    background-color: #D8CDBD;
+}
+
+.color.belt2 {
+    background-color: #493635;
+}
+.color.belt3 {
+    background-color: #302E2F;
+}
+
+.color.clothes1 {
+    background-color: #D2CFC5;
+}
+
+.color.clothes2 {
+    background-color: #A79686;
+}
+
+.color.clothes3 {
+    background-color: #C1997D;
+}
+
+.color.beige3 {
+    background-color: #F5ECE1;
+}
+
+.color.black {
+    background-color: #000;
+}
+
+.color.grey2 {
+    background-color: #B8ABA3;
+}
+
+.color.denim2 {
+    background-color: #798999;
+}
+
+.color.glasses1 {
+    background: radial-gradient(circle,
+            hsla(220, 15%, 24%, 1) 30%,
+            /* Warna tengah, dominan hingga 50% radius */
+            hsla(53, 4%, 82%, 1) 100%
+            /* Warna luar, mulai dari 50% hingga 100% radius */
+        );
+}
+
+.color.glasses2 {
+    background: radial-gradient(circle,
+            #717A71 30%,
+            /* Warna tengah, dominan hingga 50% radius */
+            #CDC6AA 100%
+            /* Warna luar, mulai dari 50% hingga 100% radius */
+        );
+}
+.color.glasses3 {
+    background: radial-gradient(circle,
+    #FFD16E 15%,
+            /* Warna tengah, dominan hingga 50% radius */
+            #2B1F1A 70%
+            /* Warna luar, mulai dari 50% hingga 100% radius */
+        );
+}
+.color.blackfaux{
+    background-color: #2C2430;
+} 
+.color.domgrey {
+    background-color: #413F41;
+}
+
+.color.blackgrey {
+    background-color: #212129;
+}
+
+.color.red {
+    background-color: #8A191F;
+}
+
+.color.brown {
+    background-color: #704324;
+}
+
+.color.brown2 {
+    background-color: #8C6446;
+}
+
+.color.brownlight {
+    background-color: #A88B63;
+}
+
+.color.beige2 {
+    background-color: #DDD1B2;
+}
+
+.color.pink {
+    background-color: #E0A091;
+}
+
+.color.pinkmuda {
+    background-color: #E4BABB;
+}
+
+.color.beige {
+    background-color: #E5D2B2;
+}
+
+.color.ijo {
+    background-color: #594D0F;
+}
+
+.color.orange {
+    background-color: #CC7633;
+}
+
+.color.lightgrey {
+    background-color: #CC7633;
+}
+
+.color.ashgrey {
+    background-color: #CC7633;
+}
+
+.color.cream {
+    background-color: #FFFDD0;
+}
+
+.color.navy {
+    background-color: #1F2A39;
+}
+
+.color.blacky {
+    background-color: #222427;
+}
+
+.color.denim {
+    background-color: #7F90A1;
+}
+
+.color.mint {
+    background-color: #A1BEAB;
+}
+
+.color.blue {
+    background-color: #2196F3;
+}
+
+.color.grey {
+    background-color: rgba(100, 89, 87, 1);
+}
+
+.color.gradient1 {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(221, 176, 104, 1));
+}
+
+.color.gradient2 {
+    background: linear-gradient(to bottom, rgba(123, 110, 106, 1), rgba(221, 176, 104, 1));
+}
+
+.color.gradient3 {
+    background: linear-gradient(to bottom, rgba(190, 128, 114, 1), rgba(221, 176, 104, 1));
+}
+
+.color.gradient4 {
+    background: linear-gradient(to bottom, rgba(233, 217, 197, 1), rgba(221, 176, 104, 1));
+}
 
 /* .category-card:hover {
   transform: translateY(-5px);
@@ -480,9 +606,7 @@ header {
     /* Menambahkan jarak antara h2 dan tombol */
 }
 
-.clothes {
-    background-image: url('../img/clotes.png');
-}
+
 
 .accessories {
     background-image: url('../img/acessories.png');
@@ -570,7 +694,6 @@ header {
     padding: 4rem;
 }
 
-
 /* Style Talks */
 .style-talks {
     padding: 4rem;
@@ -628,131 +751,6 @@ header {
 
 .read-more:hover:after {
     width: 0;
-}
-
-
-
-/* Footer */
-footer {
-    background-color: rgba(20, 20, 20, 1);
-    color: #fff;
-    padding: 4rem;
-}
-
-.footer-top {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin-bottom: 4rem;
-}
-
-.store-image img {
-    width: 134px;
-    height: 84px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-.newsletter {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.newsletter p {
-    color: rgba(136, 136, 136, 1);
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
-}
-
-.subscribe-form {
-    display: flex;
-    gap: 1rem;
-}
-
-.subscribe-form input {
-    background-color: rgba(42, 43, 45, 1);
-    flex: 1;
-    padding: 0.8rem;
-    border: none;
-}
-
-.subscribe-form input:focus {
-    outline: none;
-    /* Menghilangkan outline saat input diklik */
-    border: none;
-    /* Menghilangkan border saat input diklik */
-}
-
-.subscribe-form ::placeholder {
-    color: rgba(255, 255, 255, 1);
-}
-
-.subscribe-form button {
-    padding: 0.8rem 1.5rem;
-    background-color: #fff;
-    color: #000;
-    font-weight: 500;
-}
-
-.footer-links {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    margin-bottom: 3rem;
-}
-
-.link-column h4 {
-    font-weight: 200;
-    margin-bottom: 1.5rem;
-    color: rgba(255, 255, 255, 1);
-    letter-spacing: 0.2px;
-}
-
-.link-column ul {
-    font-weight: 200;
-    display: flex;
-    flex-direction: column;
-    color: rgba(136, 136, 136, 1);
-    gap: 0.8rem;
-}
-
-.link-column a {
-    color: #ccc;
-    transition: color 0.3s;
-}
-
-.link-column a:hover {
-    color: #fff;
-}
-
-.footer-bottom {
-    background-color: #2A2B2D;
-    margin-left: -75px;
-    width: 100vw;
-    height: 72px;
-    margin-bottom: -80px;
-    padding: 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 1.5rem;
-    border-top: 1px solid #444;
-    font-size: 0.9rem;
-    color: #bbb;
-}
-
-.translate-section {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.9rem;
-    color: #ddd;
-}
-
-.translate-section img {
-    width: 18px;
-    height: auto;
 }
 
 .dash-auth-buttons {
