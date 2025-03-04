@@ -262,7 +262,7 @@ const ProductPage = () => {
                 </div>
                 <nav class="navbar">
                     <ul>
-                        <li><a href="/">Home</a></li>
+                        <li><a href="/dashboard">Home</a></li>
                         <li><a href="/products" class="active">Products</a></li>
                         <li><a href="/about-us">About Us</a></li>
                         <li><a href="/blogpage">Blog</a></li>

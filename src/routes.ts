@@ -15,6 +15,7 @@ import AboutUs from './pages/aboutus';
 import Clothes from './pages/clothes';
 import Accessories from './pages/accessories';
 import History from './pages/history';
+import DetailPage from './pages/DetailPage';
 
 export const routes: RouteDefinition[] = [
   {
@@ -72,5 +73,9 @@ export const routes: RouteDefinition[] = [
   {
     path: '/history',
     component: History,
+  },
+  {
+    path: '/DetailPage',
+    component: DetailPage,
   }
 ];

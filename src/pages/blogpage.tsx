@@ -49,7 +49,7 @@ const BlogPage = () => {
                 </div>
                 <nav class="navbar-blog">
                     <ul>
-                        <li><a href="/">Home</a></li>
+                        <li><a href="/dashboard">Home</a></li>
                         <li><a href="/products">Products</a></li>
                         <li><a href="/about-us">About Us</a></li>
                         <li><a href="/blogpage" class="active">Blog</a></li>
