@@ -32,12 +32,9 @@ import AboutUs from './pages/aboutus';
 import Clothes from './pages/clothes';
 import Accessories from './pages/accessories';
 import History from './pages/history';
-<<<<<<< HEAD
 import Handbags from './pages/handbags';
 
-=======
 import DetailPage from './pages/DetailPage';
->>>>>>> 625f4f588f9b34ee6f1b2ffc88e6064d43d7161d
 
 export const routes: RouteDefinition[] = [
   {
