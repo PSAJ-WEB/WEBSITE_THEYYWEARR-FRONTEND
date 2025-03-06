@@ -103,7 +103,7 @@ const DetailPage = () => {
                 </div>
 
                 <div class="product-info">
-                    <div class="product-category">Handbag</div>
+                    <div class="product-category">Bags</div>
                     <h1 class="product-title">American Shoulder Bag</h1>
 
                     <div class="product-rating">

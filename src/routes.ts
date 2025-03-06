@@ -33,8 +33,12 @@ import Clothes from './pages/clothes';
 import Accessories from './pages/accessories';
 import History from './pages/history';
 import Handbags from './pages/handbags';
-
+import cart from './pages/cart';
 import DetailPage from './pages/DetailPage';
+import FavoritePage from './pages/FavoritePage';
+import Checkout from './pages/CheckoutPage';
+import PendingPayment from './pages/PendingPayment';
+import SuccesPayment from './pages/SuccesPayment';
 
 export const routes: RouteDefinition[] = [
   {
@@ -168,5 +172,25 @@ export const routes: RouteDefinition[] = [
   {
     path: '/DetailPage',
     component: DetailPage,
+  },
+  {
+    path: '/cart',
+    component: cart,
+  },
+  {
+    path: '/FavoritePage',
+    component: FavoritePage,
+  },
+  {
+    path: '/CheckoutPage',
+    component: Checkout,
+  },
+  {
+    path: '/PendingPayment',
+    component: PendingPayment,
+  },
+  {
+    path: '/SuccesPayment',
+    component: SuccesPayment,
   }
 ];
