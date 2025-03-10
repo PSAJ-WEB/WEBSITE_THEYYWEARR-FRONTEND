@@ -796,6 +796,29 @@ header {
     /* Meningkatkan kecerahan ikon saat hover */
 }
 
+.heart-icon {
+    position: absolute;/* Tetap absolute agar berada di dalam parent */
+    top: 430px;/* Beri jarak dari atas */
+    left: 370px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* Atur ukuran */
+    height: 40px;
+    z-index: 1000; /* Tetap di atas */
+}
+
+.heart-icon img {
+    width: 20px;
+    height: 20px;
+    transition: opacity 0.3s ease;
+}
+
+.heart-icon:hover img {
+    opacity: 0.7;
+}
+
 /* Responsive styles */
 @media (max-width: 1200px) {
 

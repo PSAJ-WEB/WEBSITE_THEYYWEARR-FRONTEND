@@ -3,6 +3,8 @@ import { useNavigate } from "@solidjs/router";
 import logo from '../img/logo.png';
 import logowhite from '../img/logowhite.png';
 import translate from '../img/Translate.svg';
+import heart from '../img/Heart.svg';
+import heartfull from '../img/Heart (1).svg';
 import tas1groupred from '../img/1) Litchi Pattern Pillow Handbag/1 LPPH RED (Cover).svg';
 import tas1groupblack from '../img/1) Litchi Pattern Pillow Handbag/2 LPPH BLACK.svg';
 import tas1groupmint from '../img/1) Litchi Pattern Pillow Handbag/3 LPPH MINT.svg';
@@ -51,6 +53,15 @@ import accountIcon from '../img/UserCircle (2).svg';
 import './handbags.css';
 
 const Handbags = () => {
+    const toggleLike = (index) => {
+        const updatedProducts = products().map((product, i) => {
+            if (i === index) {
+                return { ...product, liked: !product.liked };
+            }
+            return product;
+        });
+        setProducts(updatedProducts);
+    };
     const navigate = useNavigate();
     const [searchQuery, setSearchQuery] = createSignal("");
     const [products, setProducts] = createSignal([
@@ -66,6 +77,7 @@ const Handbags = () => {
                 { color: "mint", image: tas1groupmint },
                 { color: "pink", image: tas1grouppink },
             ],
+            liked: false
         },
         {
             name: "Retro Small Square Handbag",
@@ -79,6 +91,7 @@ const Handbags = () => {
                 { color: "ijo", image: tas2groupijo },
                 { color: "beige", image: tas2groupbeige },
             ],
+            liked: false
         },
         {
             name: "Autumn Pearl Handbag",
@@ -92,6 +105,7 @@ const Handbags = () => {
                 { color: "gradient3", image: tas3groupd },
                 { color: "gradient4", image: tas3groupa },
             ],
+            liked: false
         },
         {
             name: "Frosted Bowling Handbag",
@@ -105,6 +119,7 @@ const Handbags = () => {
                 { color: "grey", image: tas4groupgrey },
                 { color: "orange", image: tas4grouporange },
             ],
+            liked: false
         },
         {
             name: "Versatile Shoulder Bag",
@@ -118,6 +133,7 @@ const Handbags = () => {
                 { color: "pinkmuda", image: tas5grouppink },
                 { color: "beige2", image: tas5groupbeige },
             ],
+            liked: false
         },
         {
             name: "Rhombus Shoulder Bag",
@@ -130,6 +146,7 @@ const Handbags = () => {
                 { color: "navy", image: tas6groupnavy },
                 { color: "denim", image: tas6groupdenim },
             ],
+            liked: false
         },
         {
             name: "Diamond Chain Shoulder Bag",
@@ -143,6 +160,7 @@ const Handbags = () => {
                 { color: "mint", image: tas7groupseafoam },
                 { color: "beige3", image: tas7groupbone },
             ],
+            liked: false
         },
         {
             name: "American Shoulder Bag",
@@ -156,6 +174,7 @@ const Handbags = () => {
                 { color: "denim2", image: tas8grouplightdenim },
                 { color: "grey2", image: tas8grouplightgrey },
             ],
+            liked: false
         }
     ]);
 
@@ -186,7 +205,7 @@ const Handbags = () => {
                             productElement.classList.remove("highlight-product");
                         }, 1000); // Hapus highlight setelah 1 detik
                     }
-                }, 0); 
+                }, 0);
             }
         }
     });
@@ -276,6 +295,9 @@ const Handbags = () => {
                             <div class="product-img" style={{ "background-color": "rgba(242, 242, 242, 1)", padding: "30px" }}>
                                 <img src={product.image} alt={product.name} class="main-image" />
                             </div>
+                            <span class="heart-icon" onClick={() => toggleLike(index)}>
+                                <img src={product.liked ? heartfull : heart} alt="Like" />
+                            </span>
                             <p class="section-product">{product.category}</p>
                             <h3 innerHTML={highlightText(product.name, searchQuery())}></h3>
                             <p class="price">{product.price}</p>
