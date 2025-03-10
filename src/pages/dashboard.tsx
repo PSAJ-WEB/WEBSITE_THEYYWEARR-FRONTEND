@@ -94,19 +94,6 @@ const Dashboard = () => {
                 { color: "gradient3", image: tas3groupd },
                 { color: "gradient4", image: tas3groupa },
             ],
-        },
-        {
-            name: "Frosted Bowling Handbag",
-            category: "Handbag",
-            price: "⁠192.000 IDR",
-            image: tas4groupblack,
-            defaultImage: tas4groupblack,
-            colors: [
-                { color: "black", image: tas4groupblack },
-                { color: "brown", image: tas4groupbrown },
-                { color: "grey", image: tas4groupgrey },
-                { color: "orange", image: tas4grouporange },
-            ],
         }
     ]);
 

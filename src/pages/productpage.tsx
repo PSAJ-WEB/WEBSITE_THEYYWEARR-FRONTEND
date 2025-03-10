@@ -219,7 +219,7 @@ const ProductPage = () => {
         },
         {
             name: "Thin Brown Faux Belt",
-            category: "Handbag",
+            category: "Accessories",
             price: "96.200 IDR",
             image: thinbrownfauxbelt,
             defaultImage: thinbrownfauxbelt,
@@ -229,7 +229,7 @@ const ProductPage = () => {
         },
         {
             name: "Thin Belt Square Buckle",
-            category: "Handbag",
+            category: "Accessories",
             price: "110.400 IDR",
             image: thinbeltsquarebuckle,
             defaultImage: thinbeltsquarebuckle,

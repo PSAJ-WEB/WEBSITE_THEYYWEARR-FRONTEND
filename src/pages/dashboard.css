@@ -272,8 +272,8 @@ header {
   transform: scale(1.05); /* Efek zoom ketika di-hover */
 }
 .product-image {
-  width: 293px;
-  height: 394px;
+  width: 391px;
+  height: 408px;
   background-color: rgba(242, 242, 242, 1);
   padding: 30px;
   display: flex;
@@ -546,7 +546,7 @@ header {
 
 .products-gridl {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 15px; /* Pastikan gap 0px */
   margin: 0;
   padding: 0;

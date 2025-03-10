@@ -96,7 +96,7 @@ const Accessories = () => {
         },
         {
             name: "Thin Brown Faux Belt",
-            category: "Handbag",
+            category: "Accessories",
             price: "96.200 IDR",
             image: thinbrownfauxbelt,
             defaultImage: thinbrownfauxbelt,
@@ -106,7 +106,7 @@ const Accessories = () => {
         },
         {
             name: "Thin Belt Square Buckle",
-            category: "Handbag",
+            category: "Accessories",
             price: "110.400 IDR",
             image: thinbeltsquarebuckle,
             defaultImage: thinbeltsquarebuckle,
@@ -231,7 +231,7 @@ const Accessories = () => {
                     {filteredProducts().map((product, index) => (
                         <div class="product-card" key={product.name} id={product.name}>
                             <div class="product-img" >
-                                <img src={product.image} alt={product.name} class="main-image" />
+                                <img src={product.image} alt={product.name} class="main-images" />
                             </div>
                             <p class="section-product">{product.category}</p>
                             <h3 innerHTML={highlightText(product.name, searchQuery())}></h3>

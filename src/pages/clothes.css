@@ -393,9 +393,8 @@ header {
 }
 
 .product-img {
-    width: 413px;
-    height: 380px;
-    background-color: rgba(242, 242, 242, 1);
+    width: 392px;
+    height: 408px;
     padding: 30px;
     display: flex;
     justify-content: center;
