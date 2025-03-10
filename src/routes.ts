@@ -39,6 +39,9 @@ import FavoritePage from './pages/FavoritePage';
 import Checkout from './pages/CheckoutPage';
 import PendingPayment from './pages/PendingPayment';
 import SuccesPayment from './pages/SuccesPayment';
+import ForgotPassword1 from './pages/forgotpassword1';
+import ForgotVerify from './pages/forgotpasswordverify';
+import NewPassword from './pages/NewPassword';
 
 export const routes: RouteDefinition[] = [
   {
@@ -192,5 +195,17 @@ export const routes: RouteDefinition[] = [
   {
     path: '/SuccesPayment',
     component: SuccesPayment,
+  },
+  {
+    path: '/ForgotPassword1',
+    component: ForgotPassword1,
+  },
+  {
+    path: '/ForgotVerify',
+    component: ForgotVerify,
+  },
+  {
+    path: '/NewPassword',
+    component: NewPassword,
   }
 ];
