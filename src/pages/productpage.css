@@ -339,7 +339,7 @@ header {
 
 .products-grid3 {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     row-gap: 50px;
     /* Jarak antar baris */
     column-gap: 15px;
@@ -354,13 +354,9 @@ header {
 }
 
 
-.product-card {
-    transition: transform 0.3s;
-}
 
-.product-card:hover {
-    transform: translateY(-5px);
-}
+
+
 
 .product-card img {
     border-radius: 4px;
@@ -387,8 +383,8 @@ header {
 }
 
 .product-img {
-    width: 293px;
-    height: 394px;
+    width: 413px;
+    height: 380px;
     background-color: rgba(242, 242, 242, 1);
     padding: 30px;
     display: flex;
@@ -422,6 +418,7 @@ header {
 .color.belt2 {
     background-color: #493635;
 }
+
 .color.belt3 {
     background-color: #302E2F;
 }
@@ -471,17 +468,20 @@ header {
             /* Warna luar, mulai dari 50% hingga 100% radius */
         );
 }
+
 .color.glasses3 {
     background: radial-gradient(circle,
-    #FFD16E 15%,
+            #FFD16E 15%,
             /* Warna tengah, dominan hingga 50% radius */
             #2B1F1A 70%
             /* Warna luar, mulai dari 50% hingga 100% radius */
         );
 }
-.color.blackfaux{
+
+.color.blackfaux {
     background-color: #2C2430;
-} 
+}
+
 .color.domgrey {
     background-color: #413F41;
 }

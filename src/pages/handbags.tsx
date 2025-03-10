@@ -257,7 +257,7 @@ const Handbags = () => {
             {/* Fresh Drops Section */}
             <section class="product">
                 <div class="section-header">
-                    <h2>Handbags</h2>
+                    <h2>Bags</h2>
                     <div class="search-container">
                         <input
                             type="text"

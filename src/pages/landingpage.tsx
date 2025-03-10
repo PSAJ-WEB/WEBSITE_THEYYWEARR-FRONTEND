@@ -5,6 +5,8 @@ import logowhite from '../img/logowhite.png';
 import translate from '../img/Translate.svg';
 import trendy from '../img/Infinity.svg';
 import totebag from '../img/Tote.svg';
+import heart from '../img/Heart.svg';
+import heartfull from '../img/Heart (1).svg';
 import truck from '../img/Truck.svg';
 import returns from '../img/ArrowsClockwise.svg'
 import line from '../img/Union.png';
@@ -40,6 +42,15 @@ import tas4grouporange from '../img/4) Frosted Bowling Handbag/4 FBH  BUTTERSCOT
 import './landingpage.css';
 
 const LandingPage = () => {
+  const toggleLike = (index) => {
+    const updatedProducts = products().map((product, i) => {
+      if (i === index) {
+        return { ...product, liked: !product.liked };
+      }
+      return product;
+    });
+    setProducts(updatedProducts);
+  };
   const [products, setProducts] = createSignal([
     {
       name: "Lady Pattern Pillow Handbag",
@@ -53,6 +64,7 @@ const LandingPage = () => {
         { color: "mint", image: tas1groupmint },
         { color: "pink", image: tas1grouppink },
       ],
+      liked: false, // Tambahkan properti liked
     },
     {
       name: "Retro Small Square Handbag",
@@ -66,6 +78,7 @@ const LandingPage = () => {
         { color: "ijo", image: tas2groupijo },
         { color: "beige", image: tas2groupbeige },
       ],
+      liked: false
     },
     {
       name: "Autumn Pearl Handbag",
@@ -79,19 +92,7 @@ const LandingPage = () => {
         { color: "gradient3", image: tas3groupd },
         { color: "gradient4", image: tas3groupa },
       ],
-    },
-    {
-      name: "Frosted Bowling Handbag",
-      category: "Handbag",
-      price: "⁠192.000 IDR",
-      image: tas4groupblack,
-      defaultImage: tas4groupblack,
-      colors: [
-        { color: "black", image: tas4groupblack },
-        { color: "brown", image: tas4groupbrown },
-        { color: "grey", image: tas4groupgrey },
-        { color: "orange", image: tas4grouporange },
-      ],
+      liked: false
     }
   ]);
 
@@ -178,14 +179,19 @@ const LandingPage = () => {
           <h2>Fresh Drops for You</h2>
           <a href="/products" class="view-all">View More</a>
         </div>
-        <div class="products-gridl">
+        <div class="products-grid">
           {products().map((product, index) => (
-            <div class="product-card" key={product.name} id={product.name}>
-              <div class="product-img" style={{ "background-color": "rgba(242, 242, 242, 1)", padding: "30px" }}>
-                <img src={product.image} alt={product.name} class="main-image" />
+            <div class="pro-card" key={product.name} id={product.name}>
+              <div class="product-imagee">
+                <img src={product.image} alt={product.name} class="pro-image" />
               </div>
-              <p class="section-product">{product.category}</p>
-              <h3 innerHTML={highlightText(product.name, searchQuery())}></h3>
+              <p class="section-products">{product.category}</p>
+                <span class="heart-icon" onClick={() => toggleLike(index)}>
+                  <img src={product.liked ? heartfull : heart} alt="Like" />
+                </span>
+              <h3 class="name-product">
+                <span innerHTML={highlightText(product.name, searchQuery())}></span>
+              </h3>
               <p class="price">{product.price}</p>
               <div class="color-options" onMouseLeave={() => setMainImage(index, product.defaultImage)}>
                 {product.colors.map((color, colorIndex) => (
@@ -204,7 +210,7 @@ const LandingPage = () => {
       {/* Categories Section */}
       <section class="categories-sec">
         <div class="category-card-sec handbag">
-          <h2>Handbags</h2>
+          <h2>Bags</h2>
           <button class="shop-now-btn" onClick={() => navigate("/handbags")}>
             Shop Now
           </button>

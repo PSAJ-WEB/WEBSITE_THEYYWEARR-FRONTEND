@@ -196,8 +196,8 @@ const Dashboard = () => {
                 <div class="products-gridl">
                     {products().map((product, index) => (
                         <div class="product-card" key={product.name} id={product.name}>
-                            <div class="product-img" style={{ "background-color": "rgba(242, 242, 242, 1)", padding: "30px" }}>
-                                <img src={product.image} alt={product.name} class="main-image" />
+                            <div class="product-img">
+                                <img src={product.image} alt={product.name} class="pro-image" />
                             </div>
                             <p class="section-product">{product.category}</p>
                             <h3 innerHTML={highlightText(product.name, searchQuery())}></h3>
@@ -219,7 +219,7 @@ const Dashboard = () => {
             {/* Categories Section */}
             <section class="categories-sec">
                 <div class="category-card-sec handbag">
-                    <h2>Handbags</h2>
+                    <h2>Bags</h2>
                     <button class="shop-now-btn" onClick={() => navigate("/handbags")}>
                         Shop Now
                     </button>

@@ -230,7 +230,7 @@ const Accessories = () => {
                 <div class="products-grid3">
                     {filteredProducts().map((product, index) => (
                         <div class="product-card" key={product.name} id={product.name}>
-                            <div class="product-img" style={{ "background-color": "rgba(242, 242, 242, 1)", padding: "30px" }}>
+                            <div class="product-img" >
                                 <img src={product.image} alt={product.name} class="main-image" />
                             </div>
                             <p class="section-product">{product.category}</p>
