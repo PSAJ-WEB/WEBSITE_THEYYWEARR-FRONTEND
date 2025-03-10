@@ -3,6 +3,8 @@ import { useNavigate } from "@solidjs/router";
 import logo from '../img/logo.png';
 import logowhite from '../img/logowhite.png';
 import translate from '../img/Translate.svg';
+import heart from '../img/Heart.svg';
+import heartfull from '../img/Heart (1).svg';
 import tas1groupred from '../img/1) Litchi Pattern Pillow Handbag/1 LPPH RED (Cover).svg';
 import tas1groupblack from '../img/1) Litchi Pattern Pillow Handbag/2 LPPH BLACK.svg';
 import tas1groupmint from '../img/1) Litchi Pattern Pillow Handbag/3 LPPH MINT.svg';
@@ -51,6 +53,15 @@ import accountIcon from '../img/UserCircle (2).svg';
 import './accessories.css';
 
 const Accessories = () => {
+    const toggleLike = (index) => {
+        const updatedProducts = products().map((product, i) => {
+            if (i === index) {
+                return { ...product, liked: !product.liked };
+            }
+            return product;
+        });
+        setProducts(updatedProducts);
+    };
     const navigate = useNavigate();
     const [searchQuery, setSearchQuery] = createSignal("");
     const [products, setProducts] = createSignal([
@@ -63,6 +74,7 @@ const Accessories = () => {
             colors: [
                 { color: "glasses1", image: lunettesdesoleilm },
             ],
+            liked: false
         },
         {
             name: "Metal Sunglasses",
@@ -73,6 +85,7 @@ const Accessories = () => {
             colors: [
                 { color: "glasses2", image: metalsunglasses },
             ],
+            liked: false
         },
         {
             name: "Aviator Sunglasses",
@@ -83,6 +96,7 @@ const Accessories = () => {
             colors: [
                 { color: "glasses3", image: aviatorsunglasses },
             ],
+            liked: false
         },
         {
             name: "Black Faux Belt",
@@ -93,6 +107,7 @@ const Accessories = () => {
             colors: [
                 { color: "blackfaux", image: blackfauxbelt },
             ],
+            liked: false
         },
         {
             name: "Thin Brown Faux Belt",
@@ -103,6 +118,7 @@ const Accessories = () => {
             colors: [
                 { color: "belt2", image: thinbeltsquarebuckle },
             ],
+            liked: false
         },
         {
             name: "Thin Belt Square Buckle",
@@ -113,6 +129,7 @@ const Accessories = () => {
             colors: [
                 { color: "belt3", image: thinbeltsquarebuckle },
             ],
+            liked: false
         },
     ]);
 
@@ -233,6 +250,9 @@ const Accessories = () => {
                             <div class="product-img" >
                                 <img src={product.image} alt={product.name} class="main-image" />
                             </div>
+                            <span class="heart-icon" onClick={() => toggleLike(index)}>
+                                <img src={product.liked ? heartfull : heart} alt="Like" />
+                            </span>
                             <p class="section-product">{product.category}</p>
                             <h3 innerHTML={highlightText(product.name, searchQuery())}></h3>
                             <p class="price">{product.price}</p>
