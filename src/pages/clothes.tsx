@@ -206,8 +206,8 @@ const Clothes = () => {
                 <div class="products-grid3">
                     {filteredProducts().map((product, index) => (
                         <div class="product-card" key={product.name} id={product.name}>
-                            <div class="product-img" style={{ "background-color": "rgba(242, 242, 242, 1)", padding: "30px" }}>
-                                <img src={product.image} alt={product.name} class="main-image" />
+                            <div class="product-img">
+                                <img src={product.image} alt={product.name} class="main-images" />
                             </div>
                             <span class="heart-icon" onClick={() => toggleLike(index)}>
                                 <img src={product.liked ? heartfull : heart} alt="Like" />
