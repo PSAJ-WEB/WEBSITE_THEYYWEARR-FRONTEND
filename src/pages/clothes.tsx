@@ -5,40 +5,9 @@ import logowhite from '../img/logowhite.png';
 import translate from '../img/Translate.svg';
 import heart from '../img/Heart.svg';
 import heartfull from '../img/Heart (1).svg';
-import tas1groupred from '../img/1) Litchi Pattern Pillow Handbag/1 LPPH RED (Cover).svg';
-import tas1groupblack from '../img/1) Litchi Pattern Pillow Handbag/2 LPPH BLACK.svg';
-import tas1groupmint from '../img/1) Litchi Pattern Pillow Handbag/3 LPPH MINT.svg';
-import tas1grouppink from '../img/1) Litchi Pattern Pillow Handbag/4 LPPH PINK.svg';
-import tas2groupblackgrey from '../img/2 ) Retro Small Square Handbag/2 RSSH CHARCOAL.svg';
-import tas2groupbrown from '../img/2 ) Retro Small Square Handbag/1 RSSH BROWN (Cover).svg';
-import tas2groupijo from '../img/2 ) Retro Small Square Handbag/3 RSSH MATCHA.svg';
-import tas2groupbeige from '../img/2 ) Retro Small Square Handbag/4 RSSH CREAM.svg';
-import tas3groupa from '../img/3) Autumn Pearl Handbag/1 APH CREAM (Cover).svg';
-import tas3groupb from '../img/3) Autumn Pearl Handbag/2 APH BLACK.svg';
-import tas3groupc from '../img/3) Autumn Pearl Handbag/3 APH GREY.svg';
-import tas3groupd from '../img/3) Autumn Pearl Handbag/4 APH PINK.svg';
-import tas4groupblack from '../img/4) Frosted Bowling Handbag/1 FBH BLACK (Cover).svg';
-import tas4groupbrown from '../img/4) Frosted Bowling Handbag/2 FBH BROWN.svg';
-import tas4groupgrey from '../img/4) Frosted Bowling Handbag/3 FBH GREY.svg';
-import tas4grouporange from '../img/4) Frosted Bowling Handbag/4 FBH  BUTTERSCOTCH.svg';
-import tas5groupblack from '../img/5) Versatile Shoulder Bag/2 VSB BLACK.svg';
-import tas5groupbrown from '../img/5) Versatile Shoulder Bag/1 VSB DESERT (Cover).svg';
-import tas5groupbeige from '../img/5) Versatile Shoulder Bag/3 VSB OAT.svg';
-import tas5grouppink from '../img/5) Versatile Shoulder Bag/4 VSB LEMONADE.svg';
-import tas6groupblack from '../img/6) Rhombus Shoulder Bag/2 RSB BLACK.svg';
-import tas6groupnavy from '../img/6) Rhombus Shoulder Bag/1 RSB BOLD DENIM (Cover).svg';
-import tas6groupdenim from '../img/6) Rhombus Shoulder Bag/3 RSB LIGHT DENIM.svg';
-import tas7groupblack from '../img/7) Diamond Chain Shoulder Bag/1 DCSB BLACK (Cover).svg';
-import tas7groupsalmon from '../img/7) Diamond Chain Shoulder Bag/2 DCSB SALMON.svg';
-import tas7groupseafoam from '../img/7) Diamond Chain Shoulder Bag/3 DCSB SEAFOAM.svg';
-import tas7groupbone from '../img/7) Diamond Chain Shoulder Bag/4 DCSB BONE.svg';
-import tas8grouplightdenim from '../img/8) American Shoulder Bag/1 ASB LIGHT DENIM (Cover).svg';
-import tas8groupashgrey from '../img/8) American Shoulder Bag/2 ASB GREY.svg';
-import tas8groupbrown from '../img/8) American Shoulder Bag/3 ASB BROWN.svg';
-import tas8grouplightgrey from '../img/8) American Shoulder Bag/4 ASB LIGHT GREY.svg';
 import clothes1 from '../img/Theyy Wearr Blouses Catalogue/Line Drawing Floral Pattern Blouse.svg';
 import clothes2 from '../img/Theyy Wearr Blouses Catalogue/Ruffle Collar Design Blouse.svg';
-import clothes3 from '../img/Theyy Wearr Blouses Catalogue/Blouse With Gold Buttons.svg'
+import clothes3 from '../img/Theyy Wearr Blouses Catalogue/Blouse With Gold Buttons.svg';
 import befooter from '../img/befooter.png';
 import cartIcon from '../img/Tote.svg';
 import accountIcon from '../img/UserCircle (2).svg';
@@ -54,6 +23,7 @@ const Clothes = () => {
         });
         setProducts(updatedProducts);
     };
+
     const navigate = useNavigate();
     const [searchQuery, setSearchQuery] = createSignal("");
     const [products, setProducts] = createSignal([
@@ -119,7 +89,7 @@ const Clothes = () => {
                             productElement.classList.remove("highlight-product");
                         }, 1000); // Hapus highlight setelah 1 detik
                     }
-                }, 0); 
+                }, 0);
             }
         }
     });
@@ -205,17 +175,19 @@ const Clothes = () => {
 
                 <div class="products-grid3">
                     {filteredProducts().map((product, index) => (
-                        <div class="product-card" key={product.name} id={product.name}>
-                            <div class="product-img">
-                                <img src={product.image} alt={product.name} class="main-images" />
+                        <div class="pro-card" key={product.name} id={product.name}>
+                            <div class="product-imagee">
+                                <img src={product.image} alt={product.name} class="pro-image" />
                             </div>
+                            <p class="section-products">{product.category}</p>
                             <span class="heart-icon" onClick={() => toggleLike(index)}>
                                 <img src={product.liked ? heartfull : heart} alt="Like" />
                             </span>
-                            <p class="section-product">{product.category}</p>
-                            <h3 innerHTML={highlightText(product.name, searchQuery())}></h3>
+                            <h3 class="name-product">
+                                <span innerHTML={highlightText(product.name, searchQuery())}></span>
+                            </h3>
                             <p class="price">{product.price}</p>
-                            <div class="color-options" onMouseLeave={() => setMainImage(index, product.defaultImage)}>
+                            <div class="color-optionss" onMouseLeave={() => setMainImage(index, product.defaultImage)}>
                                 {product.colors.map((color, colorIndex) => (
                                     <span
                                         class={`color ${color.color}`}

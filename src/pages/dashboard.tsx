@@ -39,9 +39,20 @@ import tas4groupblack from '../img/4) Frosted Bowling Handbag/1 FBH BLACK (Cover
 import tas4groupbrown from '../img/4) Frosted Bowling Handbag/2 FBH BROWN.svg'
 import tas4groupgrey from '../img/4) Frosted Bowling Handbag/3 FBH GREY.svg'
 import tas4grouporange from '../img/4) Frosted Bowling Handbag/4 FBH  BUTTERSCOTCH.svg'
+import heart from '../img/Heart.svg';
+import heartfull from '../img/Heart (1).svg';
 import './dashboard.css';
 
 const Dashboard = () => {
+    const toggleLike = (index) => {
+        const updatedProducts = products().map((product, i) => {
+          if (i === index) {
+            return { ...product, liked: !product.liked };
+          }
+          return product;
+        });
+        setProducts(updatedProducts);
+      };
     const navigate = useNavigate();
 
     // Fungsi untuk navigasi ke halaman Cart
@@ -68,6 +79,7 @@ const Dashboard = () => {
                 { color: "mint", image: tas1groupmint },
                 { color: "pink", image: tas1grouppink },
             ],
+            liked:false,
         },
         {
             name: "Retro Small Square Handbag",
@@ -81,6 +93,7 @@ const Dashboard = () => {
                 { color: "ijo", image: tas2groupijo },
                 { color: "beige", image: tas2groupbeige },
             ],
+            liked: false,
         },
         {
             name: "Autumn Pearl Handbag",
@@ -94,6 +107,7 @@ const Dashboard = () => {
                 { color: "gradient3", image: tas3groupd },
                 { color: "gradient4", image: tas3groupa },
             ],
+            liked: false
         }
     ]);
 
@@ -180,16 +194,21 @@ const Dashboard = () => {
                     <h2>Fresh Drops for You</h2>
                     <a href="/products" class="view-all">View More</a>
                 </div>
-                <div class="products-gridl">
+                <div class="products-grid">
                     {products().map((product, index) => (
-                        <div class="product-card" key={product.name} id={product.name}>
-                            <div class="product-img">
+                        <div class="pro-card" key={product.name} id={product.name}>
+                            <div class="product-imagee">
                                 <img src={product.image} alt={product.name} class="pro-image" />
                             </div>
-                            <p class="section-product">{product.category}</p>
-                            <h3 innerHTML={highlightText(product.name, searchQuery())}></h3>
+                            <p class="section-products">{product.category}</p>
+                            <span class="heart-icon" onClick={() => toggleLike(index)}>
+                                <img src={product.liked ? heartfull : heart} alt="Like" />
+                            </span>
+                            <h3 class="name-product">
+                                <span innerHTML={highlightText(product.name, searchQuery())}></span>
+                            </h3>
                             <p class="price">{product.price}</p>
-                            <div class="color-options" onMouseLeave={() => setMainImage(index, product.defaultImage)}>
+                            <div class="color-optionss" onMouseLeave={() => setMainImage(index, product.defaultImage)}>
                                 {product.colors.map((color, colorIndex) => (
                                     <span
                                         class={`color ${color.color}`}
