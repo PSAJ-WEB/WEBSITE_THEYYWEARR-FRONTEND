@@ -363,6 +363,11 @@ header {
     margin-bottom: 1rem;
     aspect-ratio: 1/1;
     object-fit: cover;
+    transition: transform 0.3s ease; 
+}
+.product-card img:hover {
+    transform: scale(1.05); /* Sedikit zoom saat hover */
+
 }
 
 .section-product {
@@ -376,10 +381,10 @@ header {
     margin-top: 7px;
 }
 
-.price {
-    font-weight: 400;
+.prices{
+    margin-top: 0px;
+    font-weight: 500;
     color: #0E0E0E;
-    margin-top: 10px;
 }
 
 .product-img {
@@ -392,7 +397,7 @@ header {
     align-items: center;
 }
 
-.color-options {
+.color-optionss {
     margin-top: 10px;
     display: flex;
     gap: 2px;

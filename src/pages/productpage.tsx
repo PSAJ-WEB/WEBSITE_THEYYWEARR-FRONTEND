@@ -36,9 +36,6 @@ import tas8groupbrown from '../img/8) American Shoulder Bag/3 ASB BROWN.svg';
 import tas8grouplightgrey from '../img/8) American Shoulder Bag/4 ASB LIGHT GREY.svg';
 import clothes1 from '../img/Theyy Wearr Blouses Catalogue/Line Drawing Floral Pattern Blouse.svg';
 import clothes2 from '../img/Theyy Wearr Blouses Catalogue/Ruffle Collar Design Blouse.svg';
-import glasses from '../img/Hippie  Mod Glasses.svg';
-import belt1 from '../img/Theyy Wearr Belts Catalogue/Black Double O-Ring Belt.svg';
-import belt2 from '../img/Theyy Wearr Belts Catalogue/Almond Belt Leather.svg';
 import lunettesdesoleilm from '../img/Lunettes De Soleil M.svg';
 import metalsunglasses from '../img/Metal Sunglasses.svg';
 import aviatorsunglasses from '../img/Aviator Sunglasses.svg';
@@ -48,13 +45,28 @@ import thinbeltsquarebuckle from '../img/Thin Belt with Square Buckle.svg'
 import befooter from '../img/befooter.png';
 import cartIcon from '../img/Tote.svg';
 import accountIcon from '../img/UserCircle (2).svg';
+import heart from '../img/Heart.svg';
+import heartfull from '../img/Heart (1).svg';
 import './productpage.css';
 
 const ProductPage = () => {
+    const toggleLike = (index) => {
+        const updatedProducts = products().map((product, i) => {
+            if (i === index) {
+                return { ...product, liked: !product.liked };
+            }
+            return product;
+        });
+        setProducts(updatedProducts);
+    };
     const navigate = useNavigate();
+    const goToProductDetail = (productId) => {
+        navigate(`/products/detail/${productId}`);
+    };
     const [searchQuery, setSearchQuery] = createSignal("");
     const [products, setProducts] = createSignal([
         {
+            id: 1,
             name: "Lady Pattern Pillow Handbag",
             category: "Handbag",
             price: "285.300 IDR",
@@ -66,8 +78,10 @@ const ProductPage = () => {
                 { color: "mint", image: tas1groupmint },
                 { color: "pink", image: tas1grouppink },
             ],
+            liked: false
         },
         {
+            id: 2,
             name: "Retro Small Square Handbag",
             category: "Handbag",
             price: "174.000 IDR",
@@ -81,6 +95,7 @@ const ProductPage = () => {
             ],
         },
         {
+            id: 3,
             name: "Autumn Pearl Handbag",
             category: "Handbag",
             price: "250.000 IDR",
@@ -94,6 +109,7 @@ const ProductPage = () => {
             ],
         },
         {
+            id: 4,
             name: "Frosted Bowling Handbag",
             category: "Handbag",
             price: "⁠192.000 IDR",
@@ -107,6 +123,7 @@ const ProductPage = () => {
             ],
         },
         {
+            id: 5,
             name: "Versatile Shoulder Bag",
             category: "Handbag",
             price: "221.000 IDR",
@@ -120,6 +137,7 @@ const ProductPage = () => {
             ],
         },
         {
+            id: 6,
             name: "Rhombus Shoulder Bag",
             category: "Handbag",
             price: "134.000 IDR",
@@ -132,6 +150,7 @@ const ProductPage = () => {
             ],
         },
         {
+            id: 7,
             name: "Diamond Chain Shoulder Bag",
             category: "Handbag",
             price: "⁠160.000 IDR",
@@ -145,6 +164,7 @@ const ProductPage = () => {
             ],
         },
         {
+            id: 8,
             name: "American Shoulder Bag",
             category: "Handbag",
             price: "256.000 IDR",
@@ -158,6 +178,7 @@ const ProductPage = () => {
             ],
         },
         {
+            id: 9,
             name: "Drawing Floral Pattern Blouse",
             category: "Clothes",
             price: "300.000 IDR",
@@ -168,6 +189,7 @@ const ProductPage = () => {
             ],
         },
         {
+            id: 10,
             name: "Ruffle Collar Design Blouse",
             category: "CLothes",
             price: "220.000 IDR",
@@ -178,6 +200,7 @@ const ProductPage = () => {
             ],
         },
         {
+            id: 11,
             name: "Lunettes De Soleil M",
             category: "Accessories",
             price: "112.300 IDR",
@@ -188,6 +211,7 @@ const ProductPage = () => {
             ],
         },
         {
+            id: 12,
             name: "Metal Sunglasses",
             category: "Accessories",
             price: "86.900 IDR",
@@ -198,6 +222,7 @@ const ProductPage = () => {
             ],
         },
         {
+            id: 13,
             name: "Aviator Sunglasses",
             category: "Accessories",
             price: "79.900 IDR",
@@ -208,6 +233,7 @@ const ProductPage = () => {
             ],
         },
         {
+            id: 14,
             name: "Black Faux Belt",
             category: "Accessories",
             price: "143.300 IDR",
@@ -218,6 +244,7 @@ const ProductPage = () => {
             ],
         },
         {
+            id: 15,
             name: "Thin Brown Faux Belt",
             category: "Accessories",
             price: "96.200 IDR",
@@ -228,6 +255,7 @@ const ProductPage = () => {
             ],
         },
         {
+            id: 16,
             name: "Thin Belt Square Buckle",
             category: "Accessories",
             price: "110.400 IDR",
@@ -266,7 +294,7 @@ const ProductPage = () => {
                             productElement.classList.remove("highlight-product");
                         }, 1000); // Hapus highlight setelah 1 detik
                     }
-                }, 0); 
+                }, 0);
             }
         }
     });
@@ -351,15 +379,18 @@ const ProductPage = () => {
                 </div>
 
                 <div class="products-grid3">
-                    {filteredProducts().map((product, index) => (
-                        <div class="product-card" key={product.name} id={product.name}>
+                    {products().map((product, index) => (
+                        <div class="pro-card" key={product.id} id={product.name} onClick={() => goToProductDetail(product.id)}>
                             <div class="product-img">
-                                <img src={product.image} alt={product.name} class="pro-image" />
+                                <img src={product.image} alt={product.name} class="main-image-hb" />
                             </div>
+                            <span class="heart-icon" onClick={() => toggleLike(index)}>
+                                <img src={product.liked ? heartfull : heart} alt="Like" />
+                            </span>
                             <p class="section-product">{product.category}</p>
                             <h3 innerHTML={highlightText(product.name, searchQuery())}></h3>
                             <p class="price">{product.price}</p>
-                            <div class="color-options" onMouseLeave={() => setMainImage(index, product.defaultImage)}>
+                            <div class="color-optionss" onMouseLeave={() => setMainImage(index, product.defaultImage)}>
                                 {product.colors.map((color, colorIndex) => (
                                     <span
                                         class={`color ${color.color}`}

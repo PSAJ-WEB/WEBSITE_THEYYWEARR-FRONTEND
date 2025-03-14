@@ -193,7 +193,7 @@ const LandingPage = () => {
                 <span innerHTML={highlightText(product.name, searchQuery())}></span>
               </h3>
               <p class="price">{product.price}</p>
-              <div class="color-options" onMouseLeave={() => setMainImage(index, product.defaultImage)}>
+              <div class="color-optionss" onMouseLeave={() => setMainImage(index, product.defaultImage)}>
                 {product.colors.map((color, colorIndex) => (
                   <span
                     class={`color ${color.color}`}

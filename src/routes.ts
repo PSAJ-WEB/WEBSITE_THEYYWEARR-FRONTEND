@@ -42,6 +42,7 @@ import SuccesPayment from './pages/SuccesPayment';
 import ForgotPassword1 from './pages/forgotpassword1';
 import ForgotVerify from './pages/forgotpasswordverify';
 import NewPassword from './pages/NewPassword';
+import ProductPageDetail from './pages/productpagedetail';
 
 export const routes: RouteDefinition[] = [
   {
@@ -207,5 +208,9 @@ export const routes: RouteDefinition[] = [
   {
     path: '/NewPassword',
     component: NewPassword,
+  },
+  {
+    path: '/products/detail/:id',
+    component: ProductPageDetail,
   }
 ];
