@@ -291,25 +291,31 @@ const Handbags = () => {
 
                 <div class="products-grid3">
                     {filteredProducts().map((product, index) => (
-                        <div class="product-card" key={product.name} id={product.name}>
-                            <div class="product-img">
-                                <img src={product.image} alt={product.name} class="main-image-hb" />
-                            </div>
-                            <span class="heart-icon" onClick={() => toggleLike(index)}>
-                                <img src={product.liked ? heartfull : heart} alt="Like" />
-                            </span>
-                            <p class="section-product">{product.category}</p>
-                            <h3 innerHTML={highlightText(product.name, searchQuery())}></h3>
-                            <p class="price">{product.price}</p>
-                            <div class="color-options" onMouseLeave={() => setMainImage(index, product.defaultImage)}>
-                                {product.colors.map((color, colorIndex) => (
-                                    <span
-                                        class={`color ${color.color}`}
-                                        onMouseOver={() => setMainImage(index, color.image)}
-                                        key={colorIndex}
-                                    ></span>
-                                ))}
-                            </div>
+                        <div class="products-grid">
+                            {products().map((product, index) => (
+                                <div class="pro-card" key={product.name} id={product.name}>
+                                    <div class="product-imagee">
+                                        <img src={product.image} alt={product.name} class="pro-image" />
+                                    </div>
+                                    <p class="section-products">{product.category}</p>
+                                    <span class="heart-icon" onClick={() => toggleLike(index)}>
+                                        <img src={product.liked ? heartfull : heart} alt="Like" />
+                                    </span>
+                                    <h3 class="name-product">
+                                        <span innerHTML={highlightText(product.name, searchQuery())}></span>
+                                    </h3>
+                                    <p class="price">{product.price}</p>
+                                    <div class="color-optionss" onMouseLeave={() => setMainImage(index, product.defaultImage)}>
+                                        {product.colors.map((color, colorIndex) => (
+                                            <span
+                                                class={`color ${color.color}`}
+                                                onMouseOver={() => setMainImage(index, color.image)}
+                                                key={colorIndex}
+                                            ></span>
+                                        ))}
+                                    </div>
+                                </div>
+                            ))}
                         </div>
                     ))}
                 </div>

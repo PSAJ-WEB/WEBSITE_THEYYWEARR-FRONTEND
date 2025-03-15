@@ -375,6 +375,7 @@ header {
     font-size: 18px;
     font-weight: 500;
     margin-top: 7px;
+    margin-bottom: 0px !important;
 }
 
 .price {
