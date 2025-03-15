@@ -1,5 +1,6 @@
 import { createSignal, createEffect } from "solid-js";
 import { useNavigate } from "@solidjs/router";
+import { useLocation } from "@solidjs/router";
 import logo from '../img/logo.png';
 import logowhite from '../img/logowhite.png';
 import translate from '../img/Translate.svg';
@@ -42,6 +43,11 @@ import tas4grouporange from '../img/4) Frosted Bowling Handbag/4 FBH  BUTTERSCOT
 import './dashboard.css';
 
 const Dashboard = () => {
+    const location = useLocation();
+
+    createEffect(() => {
+        window.scrollTo(0, 0);
+    });
     const navigate = useNavigate();
 
     // Fungsi untuk navigasi ke halaman Cart
@@ -202,7 +208,7 @@ const Dashboard = () => {
                     ))}
                 </div>
             </section>
-
+            
             {/* Categories Section */}
             <section class="categories-sec">
                 <div class="category-card-sec handbag">

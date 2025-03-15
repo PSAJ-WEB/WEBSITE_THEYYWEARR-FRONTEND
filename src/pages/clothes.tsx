@@ -1,5 +1,6 @@
 import { createSignal, createEffect } from "solid-js";
 import { useNavigate } from "@solidjs/router";
+import { useLocation } from "@solidjs/router";
 import logo from '../img/logo.png';
 import logowhite from '../img/logowhite.png';
 import translate from '../img/Translate.svg';
